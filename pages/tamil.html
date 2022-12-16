@@ -189,24 +189,11 @@
           ><br />
         </a>
       </div>  
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
+<a class="prev">❮</a>
+<a class="next">❯</a>
 </div>
     </div>
-    <br />
-    <br />
-    <br />
-    <br /><br />
-    <div style="text-align:center">
-      <span class="dot" onclick="currentSlide(1)"></span> 
-      <span class="dot" onclick="currentSlide(2)"></span> 
-      <span class="dot" onclick="currentSlide(3)"></span> 
-      <span class="dot" onclick="currentSlide(4)"></span>
-      <span class="dot" onclick="currentSlide(5)"></span>
-      <span class="dot" onclick="currentSlide(6)"></span>
-      <span class="dot" onclick="currentSlide(7)"></span>
-      <span class="dot" onclick="currentSlide(8)"></span>
-    </div>
+
     <br />
     <br />
     <br />
@@ -1330,4 +1317,21 @@
     </div>
 
   </body>
+  <script>
+    const productContainers = [...document.querySelectorAll(".menu")];
+    const nxtBtn = [...document.querySelectorAll(".next")];
+    const prevBtn = [...document.querySelectorAll(".prev")];
+
+    productContainers.forEach((item, i) => {
+      let containerDimensions = item.getBoundingClientRect();
+      let containerWidth = containerDimensions.width;
+
+      nxtBtn[i].addEventListener("click", () => {
+        item.scrollLeft += containerWidth;
+      });
+      prevBtn[i].addEventListener("click", () => {
+        item.scrollLeft -= containerWidth;
+      });
+    });
+  </script>
 </html>

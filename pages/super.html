@@ -12,7 +12,6 @@
     />
     <title>Superhero Movies</title>
     <link rel="stylesheet" href="../assets/css/movie.css" />
-    <script src="../assets/js/javascript.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -230,22 +229,8 @@
           ><br />
         </a>
       </div>
-      <a class="prev" onclick="plusSlides(-1)">❮</a>
-      <a class="next" onclick="plusSlides(1)">❯</a>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br /><br />
-    <div style="text-align: center">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-      <span class="dot" onclick="currentSlide(4)"></span>
-      <span class="dot" onclick="currentSlide(5)"></span>
-      <span class="dot" onclick="currentSlide(6)"></span>
-      <span class="dot" onclick="currentSlide(7)"></span>
-      <span class="dot" onclick="currentSlide(8)"></span>
+      <a class="prev">❮</a>
+      <a class="next">❯</a>
     </div>
     <br />
     <br />
@@ -1714,4 +1699,21 @@
       </div>
     </div>
   </body>
+  <script>
+    const productContainers = [...document.querySelectorAll(".menu")];
+    const nxtBtn = [...document.querySelectorAll(".next")];
+    const prevBtn = [...document.querySelectorAll(".prev")];
+
+    productContainers.forEach((item, i) => {
+      let containerDimensions = item.getBoundingClientRect();
+      let containerWidth = containerDimensions.width;
+
+      nxtBtn[i].addEventListener("click", () => {
+        item.scrollLeft += containerWidth;
+      });
+      prevBtn[i].addEventListener("click", () => {
+        item.scrollLeft -= containerWidth;
+      });
+    });
+  </script>
 </html>
