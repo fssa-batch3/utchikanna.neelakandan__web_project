@@ -92,10 +92,11 @@ h1:hover {
   float: right;
   border: 2px solid black;
   width: 40%;
-  height: 300px;
+  height: 350px;
   border-radius: 25px;
   padding: 80px;
   margin-right: 30px;
+  line-height: 35px;
   margin-bottom: 200px;
 }
 .left:hover {
@@ -421,7 +422,6 @@ h4 {
 }
 a {
   text-decoration: none;
-  color: white;
 }
 .btn4 {
   padding: 18px;
@@ -609,4 +609,7 @@ a {
 }
 .last-one:hover {
   text-decoration: underline;
+}
+.log2 {
+  color: white;
 }

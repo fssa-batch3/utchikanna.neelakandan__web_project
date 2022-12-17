@@ -93,9 +93,10 @@ h1:hover {
   float: right;
   border: 2px solid black;
   width: 40%;
-  height: 300px;
+  height: 350px;
   border-radius: 25px;
   padding: 80px;
+  line-height: 35px;
   margin-right: 30px;
   margin-bottom: 200px;
 }
