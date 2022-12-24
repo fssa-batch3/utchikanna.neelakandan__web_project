@@ -1,9 +1,10 @@
 html {
   overflow-x: hidden;
+  background-color: #efefef;
 }
-
+/* title */
 h1 {
-  color: #f5c518;
+  color: black;
   text-align: center;
   font-size: 50px;
   transition: width 2s;
@@ -11,21 +12,12 @@ h1 {
 h1:hover {
   cursor: pointer;
 }
-
-.head {
-  font-size: 40px;
-  text-align: center;
-  color: brown;
-}
-.head:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
+/* sub heading */
 .up {
   font-size: 40px;
   color: #333;
   margin-left: 50px;
-  margin-top: 250px;
+  margin-top: 200px;
   margin-bottom: 50px;
   border-bottom: 1px solid white;
   width: 1px;
@@ -36,11 +28,30 @@ h1:hover {
   width: 180px;
   cursor: pointer;
 }
+/* iframe */
 .for {
-  margin-left: 65px;
-  margin-top: 80px;
+  margin: 40px 15px 100px;
+  border-radius: 10px;
+  border: none;
+  transition: 0.5s;
 }
-
+.for:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.embed {
+  height: 400px;
+  margin-left: 60px;
+  margin-right: 50px;
+  margin-top: 100px;
+  position: relative;
+  bottom: 70px;
+  display: flex;
+  overflow-x: auto;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+/* slider button */
 .prev,
 .next {
   cursor: pointer;
@@ -88,7 +99,7 @@ h1:hover {
     font-size: 11px;
   }
 }
-
+/* movie content */
 .left {
   float: right;
   border: 2px solid black;
@@ -101,16 +112,18 @@ h1:hover {
   margin-bottom: 200px;
 }
 .left:hover {
-  background-color: #efefef;
+  background-color: white;
 }
+/* universel */
 * {
   margin: 0;
   padding: 0;
   font-family: monospace;
 }
+/* nav bar */
 ul {
   list-style: none;
-  background: brown;
+  background: white;
   position: fixed;
   width: 1485px;
   z-index: 100;
@@ -123,8 +136,8 @@ ul li a {
   display: block;
   padding: 25px 25px;
   position: relative;
-  bottom: 10px;
-  color: #fff;
+  bottom: 0px;
+  color: #333;
   text-decoration: none;
   text-align: center;
   font-size: 20px;
@@ -132,7 +145,7 @@ ul li a {
 .width {
   display: block;
   padding: 20px 45px;
-  color: #fff;
+  color: #333;
   text-decoration: none;
   text-align: center;
   font-size: 20px;
@@ -143,14 +156,15 @@ ul li ul.dropdown li {
 }
 ul li ul.dropdown {
   width: 100%;
-  background: #333;
+  background: white;
   position: absolute;
   text-align: center;
   z-index: 999;
   display: none;
 }
 ul li a:hover {
-  text-decoration: underline;
+  background-color: black;
+  color: white;
 }
 ul li:hover ul.dropdown {
   display: block;
@@ -167,7 +181,7 @@ img {
   border-radius: 8px;
 }
 h2 {
-  color: gray;
+  color: #333;
   font-size: 30px;
 }
 p {
@@ -176,7 +190,7 @@ p {
 #star {
   margin-top: 10px;
   margin-left: 13px;
-  color: gray;
+  color: #333;
   padding: 10px;
   font-size: 25px;
 }
@@ -186,21 +200,23 @@ p {
   padding-left: 5px;
   position: relative;
   bottom: 35px;
+  color: #333;
 }
 .slider {
   display: flex;
 }
+/* slider card */
 .box {
   margin-left: 130px;
-  border: 2px solid brown;
+  border: 2px solid black;
   border-radius: 10px;
-  background-color: rgba(247, 229, 229, 0.913);
+  background-color: white;
   max-width: 200px;
   height: 430px;
   margin-top: 50px;
   margin-bottom: 50px;
   cursor: pointer;
-  box-shadow: 12px 15px 10px rgba(238, 206, 206, 0.913);
+  box-shadow: 12px 15px 10px white;
   transition: 0.4s;
   animation-name: box;
   animation-duration: 1.5s;
@@ -222,7 +238,7 @@ p {
   margin-left: 25px;
   color: white;
   font-size: 15px;
-  background-color: gray;
+  background-color: #333;
   position: relative;
   bottom: 30px;
   border: none;
@@ -242,11 +258,13 @@ p {
   text-decoration: none;
   color: gray;
 }
+/* slider */
 .menu {
+  margin-right: 80px;
   display: flex;
   overflow-x: auto;
   margin-left: 40px;
-  background-color: white;
+  background-color: #efefef;
   scroll-behavior: smooth;
 }
 .menu::-webkit-scrollbar {
@@ -262,7 +280,7 @@ p {
 }
 .about {
   font-size: 40px;
-  color: rgb(202, 172, 172);
+  color: #666;
   max-height: 300px;
 }
 .finish {
@@ -271,7 +289,7 @@ p {
   margin-right: 40px;
 }
 .film {
-  color: brown;
+  color: black;
   font-weight: bold;
   font-size: 50px;
 }
@@ -281,12 +299,12 @@ p {
   position: relative;
   top: 150px;
   right: 30px;
-  background-color: brown;
+  background-color: white;
 }
 
 .last {
   text-decoration: none;
-  color: white;
+  color: #333;
   font-size: 20px;
   padding: 8px;
   display: block;
@@ -297,13 +315,13 @@ p {
 }
 .links {
   font-size: 25px;
-  color: gray;
+  color: black;
   margin-left: 135px;
 }
 
 #itag {
   padding: 20px;
-  color: white;
+  color: #333;
   font-size: 40px;
   margin-left: 30px;
   position: relative;
@@ -311,7 +329,7 @@ p {
   top: 100px;
 }
 #itag:hover {
-  color: gray;
+  color: black;
 }
 .quick {
   padding-top: 30px;
@@ -321,17 +339,7 @@ p {
   position: relative;
   left: 600px;
 }
-.vid {
-  width: 70px;
-  position: relative;
-  top: 20px;
-  left: 30px;
-  transition: 0.4s;
-}
-.vid:hover {
-  transform: scale(0.8);
-  transition: 0.4s;
-}
+
 .home {
   max-width: 1440px;
 }
@@ -492,12 +500,11 @@ a {
 .btn-log {
   margin-left: 840px;
 }
+
 .btn-log-1 {
   margin-left: 777px;
 }
-.bg {
-  background-color: rgb(209, 69, 69);
-}
+
 .btn6 {
   width: 30%;
   background: gray;
@@ -558,7 +565,6 @@ a {
 .conForm {
   width: 50%;
   padding: 40px;
-  background: white;
 }
 
 .log {
@@ -591,6 +597,7 @@ a {
   font-size: 20px;
   margin: 10px 0px;
   border: none;
+  background-color: #efefef;
   border-bottom: 2px solid #333;
   outline: none;
   resize: none;
@@ -604,21 +611,21 @@ a {
   margin: 10px 0px;
   pointer-events: none;
   transition: 0.5s;
-  color: #666;
+  color: #333;
 }
 
 .inputBox input:focus ~ span,
 .inputBox input:valid ~ span,
 .inputBox textarea:focus ~ span,
 .inputBox textarea:valid ~ span {
-  color: brown;
+  color: black;
   font-size: 20px;
   transform: translateY(-20px);
 }
 
 .btn5 {
   width: 20%;
-  background: brown;
+  background: #333;
   color: #fff;
   border: none;
   border-radius: 7px;
@@ -633,7 +640,7 @@ a {
   transition: 0.4s;
 }
 .form {
-  border: 1px solid brown;
+  border: 1px solid black;
   border-radius: 15px;
   padding: 50px;
   height: 350px;
@@ -648,12 +655,10 @@ a {
   top: 50px;
 }
 .avatar-2 {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   padding-left: 15px;
   padding-right: 15px;
-  position: relative;
-  top: 15px;
 }
 .policy {
   display: flex;
@@ -665,7 +670,7 @@ a {
   margin-top: 80px;
   margin-left: 50px;
   font-size: 20px;
-  color: white;
+  color: #333;
 }
 .privacy {
   position: relative;

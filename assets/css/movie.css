@@ -1,8 +1,9 @@
 html {
   overflow-x: hidden;
+  background-color: #efefef;
 }
 h1 {
-  color: #f5c518;
+  color: black;
   text-align: center;
   font-size: 50px;
   transition: width 2s;
@@ -22,24 +23,41 @@ h1:hover {
 }
 .up {
   font-size: 40px;
-  color: gray;
+  color: #333;
   margin-left: 50px;
-  margin-top: 250px;
+  margin-top: 200px;
   margin-bottom: 50px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid white;
   width: 1px;
   transition: all 1s ease;
 }
 .up:hover {
-  border-bottom: 7px solid gray;
+  border-bottom: 7px solid #333;
   width: 180px;
   cursor: pointer;
 }
 .for {
-  margin-left: 65px;
-  margin-top: 80px;
+  margin: 40px 15px 100px;
+  border-radius: 10px;
+  border: none;
+  transition: 0.5s;
 }
-
+.for:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.embed {
+  height: 400px;
+  margin-left: 60px;
+  margin-right: 50px;
+  margin-top: 80px;
+  position: relative;
+  bottom: 70px;
+  display: flex;
+  overflow-x: auto;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
 .prev,
 .next {
   cursor: pointer;
@@ -100,7 +118,7 @@ h1:hover {
   margin-bottom: 200px;
 }
 .left:hover {
-  background-color: #efefef;
+  background-color: white;
 }
 * {
   margin: 0;
@@ -109,7 +127,7 @@ h1:hover {
 }
 ul {
   list-style: none;
-  background: brown;
+  background-color: white;
   position: fixed;
   width: 1485px;
   z-index: 100;
@@ -121,7 +139,7 @@ ul li {
 ul li a {
   display: block;
   padding: 20px 25px;
-  color: #fff;
+  color: #333;
   text-decoration: none;
   text-align: center;
   font-size: 20px;
@@ -129,7 +147,7 @@ ul li a {
 .width {
   display: block;
   padding: 20px 45px;
-  color: #fff;
+  color: #333;
   text-decoration: none;
   text-align: center;
   font-size: 20px;
@@ -139,13 +157,14 @@ ul li ul.dropdown li {
 }
 ul li ul.dropdown {
   width: 100%;
-  background: brown;
+  background-color: white;
   position: absolute;
   z-index: 999;
   display: none;
 }
 ul li a:hover {
-  background: gray;
+  background: black;
+  color: white;
 }
 ul li:hover ul.dropdown {
   display: block;
@@ -153,16 +172,11 @@ ul li:hover ul.dropdown {
 body {
   width: 100%;
 }
-iframe {
-  border-radius: 10px;
-  border: none;
-  margin-left: 40px;
-}
 img {
   border-radius: 8px;
 }
 h2 {
-  color: gray;
+  color: #333;
   font-size: 30px;
 }
 p {
@@ -171,7 +185,7 @@ p {
 #star {
   margin-top: 10px;
   margin-left: 13px;
-  color: gray;
+  color: #333;
   padding: 10px;
   font-size: 25px;
 }
@@ -181,21 +195,20 @@ p {
   padding-left: 5px;
   position: relative;
   bottom: 35px;
+  color: #333;
 }
-.slider {
-  display: flex;
-}
+
 .box {
   margin-left: 140px;
-  border: 2px solid brown;
+  border: 2px solid black;
   border-radius: 10px;
-  background-color: rgba(247, 229, 229, 0.913);
+  background-color: white;
   max-width: 200px;
   height: 430px;
   margin-top: 50px;
   margin-bottom: 50px;
   cursor: pointer;
-  box-shadow: 12px 15px 10px rgba(238, 206, 206, 0.913);
+  box-shadow: 12px 15px 10px white;
   transition: 0.4s;
   animation-name: box;
   animation-duration: 1.5s;
@@ -217,7 +230,7 @@ p {
   margin-left: 25px;
   color: white;
   font-size: 15px;
-  background-color: gray;
+  background-color: #333;
   position: relative;
   bottom: 30px;
   border: none;
@@ -238,9 +251,10 @@ p {
   color: gray;
 }
 .menu {
+  margin-right: 110px;
   display: flex;
   overflow-x: auto;
-  background-color: white;
+  background-color: #efefef;
   scroll-behavior: smooth;
 }
 .menu::-webkit-scrollbar {
@@ -256,7 +270,7 @@ p {
 }
 .about {
   font-size: 40px;
-  color: rgb(202, 172, 172);
+  color: #666;
   max-height: 300px;
 }
 .finish {
@@ -265,7 +279,7 @@ p {
   margin-right: 40px;
 }
 .film {
-  color: brown;
+  color: black;
   font-weight: bold;
   font-size: 50px;
 }
@@ -275,12 +289,12 @@ p {
   position: relative;
   top: 150px;
   right: 30px;
-  background-color: brown;
+  background-color: white;
 }
 
 .last {
   text-decoration: none;
-  color: white;
+  color: #333;
   font-size: 20px;
   padding: 8px;
   display: block;
@@ -291,13 +305,13 @@ p {
 }
 .links {
   font-size: 25px;
-  color: gray;
+  color: black;
   margin-left: 135px;
 }
 
 #itag {
   padding: 20px;
-  color: white;
+  color: #333;
   font-size: 40px;
   margin-left: 30px;
   position: relative;
@@ -305,7 +319,7 @@ p {
   top: 100px;
 }
 #itag:hover {
-  color: gray;
+  color: black;
 }
 .quick {
   padding-top: 30px;
@@ -445,13 +459,13 @@ a {
   width: 20%;
   height: 350px;
   padding: 80px;
-  border: 1px solid brown;
+  border: 1px solid black;
   border-radius: 15px;
   transition: 0.4s;
   position: relative;
   left: 550px;
   top: 250px;
-  background: #efefef;
+  background-color: white;
 }
 .conForm:hover {
   transition: 0.4s;
@@ -459,7 +473,7 @@ a {
 }
 .log {
   font-size: 30px;
-  color: brown;
+  color: black;
   font-weight: 800;
   position: relative;
   left: 100px;
@@ -477,7 +491,6 @@ a {
   font-size: 20px;
   margin: 10px 0px;
   border: none;
-  background-color: #efefef;
   border-bottom: 2px solid #333;
   outline: none;
   resize: none;
@@ -498,14 +511,14 @@ a {
 .inputBox input:valid ~ span,
 .inputBox textarea:focus ~ span,
 .inputBox textarea:valid ~ span {
-  color: brown;
+  color: black;
   font-size: 12px;
   transform: translateY(-20px);
 }
 
 .btn5 {
   width: 30%;
-  background: brown;
+  background: black;
   color: #fff;
   border: none;
   margin-top: 60px;
@@ -518,7 +531,7 @@ a {
   transition: 1.5s;
 }
 .btn5:hover {
-  background-color: rgb(212, 88, 88);
+  background-color: #666;
   transition: 1.5s;
 }
 .with {
@@ -570,11 +583,11 @@ a {
   margin-left: 777px;
 }
 .bg {
-  background-color: rgb(209, 69, 69);
+  background-color: #efefef;
 }
 .btn6 {
   width: 30%;
-  background: gray;
+  background: #666;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -588,7 +601,7 @@ a {
   transition: 1.5s;
 }
 .btn6:hover {
-  background-color: #333;
+  background-color: black;
   transition: 1.5s;
 }
 .policy {
@@ -601,7 +614,7 @@ a {
   margin-top: 80px;
   margin-left: 50px;
   font-size: 20px;
-  color: white;
+  color: #333;
 }
 .privacy {
   position: relative;
