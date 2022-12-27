@@ -4,9 +4,10 @@ html {
 }
 h1 {
   color: black;
-  text-align: center;
-  font-size: 50px;
-  transition: width 2s;
+  font-size: 35px;
+  margin-left: 80px;
+  position: relative;
+  bottom: 35px;
 }
 h1:hover {
   cursor: pointer;
@@ -38,6 +39,7 @@ h1:hover {
 }
 .for {
   margin: 40px 15px 100px;
+  margin-top: 80px;
   border-radius: 10px;
   border: none;
   transition: 0.5s;
@@ -45,6 +47,11 @@ h1:hover {
 .for:hover {
   transform: scale(1.1);
   transition: 0.5s;
+}
+iframe {
+  margin-left: 40px;
+  border-radius: 10px;
+  border: none;
 }
 .embed {
   height: 400px;
@@ -58,6 +65,7 @@ h1:hover {
   overflow: hidden;
   scroll-behavior: smooth;
 }
+
 .prev,
 .next {
   cursor: pointer;
@@ -125,16 +133,22 @@ h1:hover {
   padding: 0;
   font-family: monospace;
 }
+.dropdown-list {
+  margin-right: 400px;
+}
 ul {
   list-style: none;
   background-color: white;
   position: fixed;
+  max-height: 100px;
   width: 1485px;
   z-index: 100;
 }
-ul li {
+.nav-list {
   display: inline-block;
   position: relative;
+  left: 800px;
+  bottom: 85px;
 }
 ul li a {
   display: block;
@@ -154,21 +168,26 @@ ul li a {
 }
 ul li ul.dropdown li {
   display: block;
+  position: relative;
 }
-ul li ul.dropdown {
+.nav-list ul.dropdown {
   width: 100%;
   background-color: white;
   position: absolute;
   z-index: 999;
   display: none;
 }
-ul li a:hover {
-  background: black;
-  color: white;
+.nav-list a:hover {
+  text-decoration: underline;
 }
-ul li:hover ul.dropdown {
+.dropdown-list:hover {
+  text-decoration: underline;
+}
+.nav-list:hover ul.dropdown {
   display: block;
+  max-height: 240px;
 }
+
 body {
   width: 100%;
 }
@@ -208,7 +227,7 @@ p {
   margin-top: 50px;
   margin-bottom: 50px;
   cursor: pointer;
-  box-shadow: 12px 15px 10px white;
+  box-shadow: 12px 15px 10px #333;
   transition: 0.4s;
   animation-name: box;
   animation-duration: 1.5s;
@@ -251,7 +270,7 @@ p {
   color: gray;
 }
 .menu {
-  margin-right: 110px;
+  margin-right: 20px;
   display: flex;
   overflow-x: auto;
   background-color: #efefef;
@@ -277,6 +296,7 @@ p {
   display: flex;
   margin-left: 40px;
   margin-right: 40px;
+  margin-top: 100px;
 }
 .film {
   color: black;
@@ -457,14 +477,14 @@ a {
 }
 .conForm {
   width: 20%;
-  height: 350px;
+  max-height: 550px;
   padding: 80px;
   border: 1px solid black;
   border-radius: 15px;
   transition: 0.4s;
   position: relative;
   left: 550px;
-  top: 250px;
+  top: 90px;
   background-color: white;
 }
 .conForm:hover {
@@ -517,7 +537,7 @@ a {
 }
 
 .btn5 {
-  width: 30%;
+  width: 35%;
   background: black;
   color: #fff;
   border: none;
@@ -540,7 +560,16 @@ a {
   font-size: 15px;
   color: #666;
 }
-.with:hover {
+.with1 {
+  margin-top: 20px;
+  margin-left: 8px;
+  font-size: 15px;
+  color: #666;
+}
+.log-user {
+  padding-left: 5px;
+}
+.log-user:hover {
   text-decoration: underline;
 }
 .login-with {
@@ -576,9 +605,7 @@ a {
   box-shadow: 2px 2px 2px #666;
   transition: 0.8s;
 }
-.btn-log {
-  margin-left: 835px;
-}
+
 .btn-log-1 {
   margin-left: 777px;
 }
@@ -596,7 +623,7 @@ a {
   font-size: 18px;
   position: relative;
   left: 210px;
-  bottom: 130px;
+  bottom: 168px;
   opacity: 1;
   transition: 1.5s;
 }
@@ -626,4 +653,31 @@ a {
 }
 .log2 {
   color: white;
+}
+.letter-c {
+  width: 60px;
+  margin-left: 20px;
+  position: relative;
+  top: 20px;
+  cursor: pointer;
+}
+.try1 {
+  color: black;
+}
+.btn7 {
+  padding: 18px;
+  font-size: 20px;
+  background-color: #f5c518;
+  border: none;
+  border-radius: 10px;
+  transition: 0.4s;
+  position: relative;
+  top: 100px;
+  margin-left: 600px;
+  font-weight: bold;
+}
+.btn7:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  cursor: pointer;
 }

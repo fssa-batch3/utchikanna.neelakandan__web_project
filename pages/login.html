@@ -8,16 +8,20 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../assets/images/play.gif"
+      href="../assets/images/Cinephile.png"
     />
-    <title>Login</title>
+    <title>Sign in</title>
     <link rel="stylesheet" href="../assets/css/movie.css" />
   </head>
   <body class="bg">
     <div class="conForm">
       <form>
-        <h2 class="log">Log In</h2>
+        <h2 class="log">Sign In</h2>
         <br />
+        <div class="inputBox">
+          <input type="text" name="" required="required" />
+          <span>Enter Your Name</span>
+        </div>
         <div class="inputBox">
           <input type="gmail" name="" required="required" />
           <span>Email or Phone Number</span>
@@ -26,14 +30,21 @@
           <input type="password" name="" required="required" />
           <span>Password</span>
         </div>
+        <div class="inputBox">
+          <input type="password" name="" required="required" />
+          <span>Re-enter Password</span>
+        </div>
 
         <button class="btn5">
-          <a class="log2" href="../after-login/index.html">Log in</a>
+          <a class="log2" href="../after-login/index.html">Sign in</a>
         </button>
       </form>
       <br /><br />
+      <h2 class="with1">
+        Already a user?<a class="log-user" href="./log.html">Log In</a>
+      </h2>
       <div class="login-with">
-        <h2 class="with">Or login with</h2>
+        <h2 class="with">Or Sign in with</h2>
         <a
           href="https://accounts.google.com/v3/signin/identifier?dsh=S-1962032761%3A1670749601777868&continue=https%3A%2F%2Fwww.google.com%3Fhl%3Den-GB&ec=GAlA8wE&hl=en-GB&flowName=GlifWebSignIn&flowEntry=AddSession"
         >
@@ -47,6 +58,7 @@
           />
         </a>
       </div>
+
       <a href="../index.html">
         <button class="btn6">Back</button>
       </a>
