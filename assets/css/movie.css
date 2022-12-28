@@ -156,6 +156,8 @@ ul li a {
   color: #333;
   text-decoration: none;
   text-align: center;
+  border-bottom: 1px solid white;
+  transition: 0.6s;
   font-size: 20px;
 }
 .width {
@@ -169,6 +171,7 @@ ul li a {
 ul li ul.dropdown li {
   display: block;
   position: relative;
+  width: 100%;
 }
 .nav-list ul.dropdown {
   width: 100%;
@@ -178,14 +181,15 @@ ul li ul.dropdown li {
   display: none;
 }
 .nav-list a:hover {
-  text-decoration: underline;
-}
-.dropdown-list:hover {
-  text-decoration: underline;
+  border-bottom: 4px solid #333;
+  transition: 0.6s;
+  width: 75px;
+  cursor: pointer;
 }
 .nav-list:hover ul.dropdown {
   display: block;
   max-height: 240px;
+  width: 100%;
 }
 
 body {
@@ -1068,5 +1072,28 @@ a {
     font-weight: 800;
     position: relative;
     left: 80px;
+  }
+  .gif {
+    width: 40%;
+    height: 250px;
+    float: right;
+    position: relative;
+    bottom: 100px;
+  }
+  .about {
+    font-size: 10px;
+    color: #666;
+    max-height: 150px;
+  }
+  .finish {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+  }
+  .film {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
   }
 }

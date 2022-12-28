@@ -153,6 +153,10 @@ ul li a {
   color: #333;
   text-decoration: none;
   text-align: center;
+  border-bottom: 1px solid white;
+  position: relative;
+  bottom: 10px;
+  transition: 0.6s;
   font-size: 20px;
 }
 .width {
@@ -166,6 +170,7 @@ ul li a {
 ul li ul.dropdown li {
   display: block;
   position: relative;
+  width: 100%;
 }
 .nav-list ul.dropdown {
   width: 100%;
@@ -175,14 +180,16 @@ ul li ul.dropdown li {
   display: none;
 }
 .nav-list a:hover {
-  text-decoration: underline;
-}
-.dropdown-list:hover {
-  text-decoration: underline;
+  border-bottom: 4px solid #333;
+  color: black;
+  transition: 0.6s;
+  width: 70px;
+  cursor: pointer;
 }
 .nav-list:hover ul.dropdown {
   display: block;
   max-height: 240px;
+  width: 100%;
 }
 body {
   width: 100%;
@@ -1037,16 +1044,8 @@ a {
     font-weight: bold;
   }
   .conForm {
-    width: 40%;
-    max-height: 550px;
+    width: 50%;
     padding: 40px;
-    border: 1px solid black;
-    border-radius: 15px;
-    transition: 0.4s;
-    position: relative;
-    left: 130px;
-    top: 200px;
-    background-color: white;
   }
   .btn5 {
     width: 40%;
@@ -1107,5 +1106,85 @@ a {
     transition: 0.4s;
     margin-left: 10px;
     font-weight: bold;
+  }
+  .gif {
+    width: 40%;
+    height: 250px;
+    float: right;
+    position: relative;
+    bottom: 100px;
+  }
+  .about {
+    font-size: 15px;
+    color: #666;
+    max-height: 150px;
+  }
+  .finish {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+  }
+  .film {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .form {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 25px;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    left: 200px;
+    bottom: 300px;
+  }
+  .log {
+    font-size: 20px;
+    color: #333;
+    font-weight: 800;
+    position: relative;
+    left: 10px;
+    bottom: 300px;
+    border-bottom: 1px solid white;
+    width: 1px;
+    transition: all 1s ease;
+  }
+  .inputBox input,
+  .inputBox textarea {
+    width: 100%;
+    padding: 5px 0px;
+    font-size: 10px;
+    margin: 10px 0px;
+    border: none;
+    background-color: #efefef;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+  }
+
+  .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0px;
+    font-size: 15px;
+    margin: 10px 0px;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #333;
+  }
+  .btn5 {
+    width: 30%;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 18px;
+    margin-left: 150px;
+    transition: 0.4s;
   }
 }
