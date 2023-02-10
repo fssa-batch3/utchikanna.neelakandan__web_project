@@ -52,12 +52,7 @@
           <span>Phone Number</span>
         </div>
         <div class="inputBox">
-          <input
-            id="first_password"
-            type="password"
-            name=""
-            required="required"
-          />
+          <input id="first_password" type="password" name="" required="true" />
 
           <span>Create Password</span>
         </div>
@@ -66,7 +61,7 @@
             id="first_re_password"
             type="password"
             name=""
-            required="required"
+            required="true"
           />
           <span>Confirm Password</span>
         </div>
@@ -101,16 +96,15 @@
     </div>
 
     <script>
-      let arr = [];
-
       let form = document.getElementById("form");
       form.addEventListener("submit", function (event) {
         event.preventDefault();
+        let arr = [];
 
-        let userdata = {};
-        let fname = document.getElementById("first_name").value.trim();
+        // let userdata = {};
+        let fname = document.getElementById("first_name").value;
 
-        let lname = document.getElementById("last_name").value.trim();
+        let lname = document.getElementById("last_name").value;
 
         let email = document.getElementById("first_email").value;
 
@@ -119,6 +113,8 @@
         let password = document.getElementById("first_password").value;
 
         let rePassword = document.getElementById("first_re_password").value;
+
+        // let already_user = window.localStorage.getItem("user");
 
         if (password.length < 6) {
           alert("Password is  must be 6 characters");
@@ -133,43 +129,45 @@
           return false;
         }
 
-        userdata["first_name"] = fname;
-        userdata["last_name"] = lname;
-        userdata["first_email"] = email;
-        userdata["phone_no"] = phone_no;
-        userdata["first_password"] = password;
-        userdata["first_re_password"] = rePassword;
+        let checking = JSON.parse(localStorage.getItem("user"));
 
-        // window.localStorage.setItem("sign_value", JSON.stringify(userdata));
-        arr.push(userdata);
+        let match = false;
 
-        if (window.localStorage.getItem("user") != null) {
-          let exist_email = window.localStorage.getItem("user");
-          let already_user = JSON.parse(exist_email);
-          console.log(already_user);
-
-          for (let i = 0; i <= already_user.length; i++) {
-            // console.log(alreadyUser_check[i]);
-
-            if (userdata["first_email"] === already_user[i].first_email) {
-              alert("Email-id already Exist!");
+        if (localStorage.getItem("user") != null) {
+          for (let i = 0; i < checking.length; i++) {
+            if (email == checking[i].email) {
+              match = true;
               break;
-            } else {
-              already_user.push(userdata);
-              window.localStorage.setItem("user", JSON.stringify(already_user));
-              window.location.href = "../pages/log.html";
             }
           }
+
+          if (match == true) {
+            alert("this email-id is already exist!");
+          }
         } else {
-          // if (window.localStorage.getItem("user") === null) {
-          window.localStorage.setItem("user", JSON.stringify(arr));
-          window.location.href = "../pages/log.html";
-          // }
-          //  else {
-          //   let local = window.localStorage.getItem("user");
-          //   let json = JSON.parse(local);
-          //   json.push(userdata);
-          //   window.localStorage.setItem("user", JSON.stringify(json));
+          let userdata = {
+            fname,
+            lname,
+            email,
+            phone_no,
+            password,
+            rePassword,
+          };
+          // window.localStorage.setItem("sign_value", JSON.stringify(userdata));
+          arr.push(userdata);
+
+          if (localStorage.getItem("user") === null) {
+            localStorage.setItem("user", JSON.stringify(arr));
+          } else {
+            let local = localStorage.getItem("user");
+            let json = JSON.parse(local);
+            json.push(userdata);
+            localStorage.setItem("user", JSON.stringify(json));
+          }
+          location.href = "../pages/log.html";
+
+          // if(arr.value == email.v){
+
           // }
         }
       });
