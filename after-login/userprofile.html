@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="../assets/images/Cinephile.png"
+  />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../after-login/assets/css/userprofile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="wholeprofilecontainer">
+      <div class="userimg">
+        <img class="userimground" src="../after-login/assets/images/images.png" alt="" />
+      </div>
+
+      <div class="userdetails">
+        <h1 class="profileh1">Personal Details</h1>
+        <form action="homepage.html">
+          <div class="namesurflex">
+            <div>
+              <label for="name">First Name</label><br />
+              <input
+                type="text"
+                id="name"
+                placeholder=" enter your name"
+              /><br />
+            </div>
+            <div>
+              <label for="surname">Last name</label><br />
+              <input
+                type="text"
+                class="surname"
+                id="surname"
+                placeholder=" enter your last name"
+              /><br />
+            </div>
+          </div>
+          <label for="emailid">Email ID</label><br />
+          <input
+            type="email"
+            class="emailid"
+            id="emailid"
+            placeholder=" enter your Email ID"
+          /><br />
+          <label for="mobilenumber">Mobile Number</label><br />
+          <input
+            type="tel"
+            class="mobilenumber"
+            id="mobilenumber"
+            placeholder=" enter your mobilenumber"
+          /><br />
+          <label for="addressline1">Date of Brith</label><br />
+          <input
+            type="date"
+            class="addressline1"
+            id="addressline1"
+          /><br />
+          <label for="postalcode">Password</label><br />
+          <input
+            type="number"
+            class="postalcode"
+            id="password"
+          /><br />
+          <label for="state">State</label><br />
+          <input
+            type="text"
+            class="state"
+            id="state"
+            placeholder=" enter your State"
+          /><br />
+          
+
+          <div class="countrystateflex">
+            <div>
+              <label for="country">Country</label><br />
+              <input
+                type="text"
+                class="country"
+                id="country"
+                placeholder="Country"
+              /><br />
+            </div>
+           
+          </div>
+          
+            <button class="btn6">Submit</button>
+          <a href="../index.html">
+          <button class="submit" type="submit">Back</button>
+        </a>
+        </form>
+      </div>
+
+      
+    <script>
+      const user_details = JSON.parse(window.localStorage.getItem("details"))
+
+      console.log(user_details)
+
+      const fname = document.getElementById("name");
+      const lname = document.getElementById("surname");
+      const mail = document.getElementById("emailid");
+      const phone = document.getElementById("mobilenumber");
+      const pass = document.getElementById("password");
+
+      fname.value =  user_details["first_name"] ;
+      lname.value =  user_details["last_name"] ;
+      mail.value =  user_details["first_email"] ;
+      phone.value =  user_details["phone_no"] ;
+      pass.value  =  user_details["first_password"];
+
+
+      
+      
+    </script>
+  </body>
+</html>

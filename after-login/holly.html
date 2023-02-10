@@ -65,8 +65,10 @@
             alt=""
         /></a>
         <ul class="dropdown">
-          <li class="dropdown-list"><a href="#">Edit Profile</a></li>
           <li class="dropdown-list"><a href="../index.html">Log Out</a></li>
+          <li class="dropdown-list">
+            <a href="../after-login/userprofile.html">Personal Details</a>
+          </li>
         </ul>
       </li>
     </ul>
@@ -74,12 +76,13 @@
     <br id="back" />
     <h2 class="up" id="holly">Hollywood</h2>
     <div class="menu">
-      <div class="box">
+      <!-- <div class="box">
         <a class="link" href="#triangle">
           <img
             alt="image"
             src="../after-login/assets/images/triangle.jpg"
             width="200"
+            id="image-1"
             height="250"
           /><br />
           <i id="star" class="fa fa-star"></i>
@@ -101,6 +104,7 @@
             alt="image"
             src="../after-login/assets/images/top.jpg"
             width="200"
+            id="image-1"
             height="250"
           /><br />
           <i id="star" class="fa fa-star"></i>
@@ -122,6 +126,7 @@
             alt="image"
             src="../after-login/assets/images/inter.jpg"
             width="200"
+            id="image-1"
             height="250"
           /><br />
           <i id="star" class="fa fa-star"></i>
@@ -143,6 +148,7 @@
             alt="image"
             src="../after-login/assets/images/ince.jpg"
             width="200"
+            id="image-1"
             height="250"
           /><br />
           <i id="star" class="fa fa-star"></i>
@@ -164,6 +170,7 @@
             alt="image"
             src="../after-login/assets/images/pre.jpg"
             width="200"
+            id="image-1"
             height="250"
           /><br />
           <i id="star" class="fa fa-star"></i>
@@ -185,6 +192,7 @@
             alt="image"
             src="../after-login/assets/images/pass.jpg"
             width="200"
+            id="image-1"
             height="250"
           /><br />
           <i id="star" class="fa fa-star"></i>
@@ -206,6 +214,7 @@
             alt="image"
             src="../after-login/assets/images/john.jpg"
             width="200"
+            id="image-1"
             height="250"
           /><br />
           <i id="star" class="fa fa-star"></i>
@@ -227,6 +236,7 @@
             alt="image"
             src="../after-login/assets/images/dont.jpg"
             width="200"
+            id="image-1"
             height="250"
           /><br />
           <i id="star" class="fa fa-star"></i>
@@ -241,7 +251,7 @@
             ></button
           ><br />
         </a>
-      </div>
+      </div> -->
       <a class="prev">❮</a>
       <a class="next">❯</a>
     </div>
@@ -256,30 +266,36 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <div class="left">
-        <hr />
-        <h2><b>Rating:</b> 8.5/10</h2>
-        <hr />
+      <div class="content">
+        <div class="left">
+          <hr />
+          <h2><b>Rating:</b> 8.5/10</h2>
+          <hr />
 
-        <h2>About the Movie</h2>
-        <p>
-          When a storm upturns their yacht, a group of passengers jump on board
-          a ship close by. However, they soon realise that they are in greater
-          danger aboard the mysterious vessel.
-        </p>
-        <hr />
-        <p><b>Release date:</b> 16 October 2009</p>
-        <hr />
-        <p>
-          <b>Director:</b
-          ><a href="https://www.imdb.com/name/nm1247462/">Christopher Smith</a>
-        </p>
-        <hr />
-        <p>
-          <b>Cinematography:</b
-          ><a href="https://www.imdb.com/name/nm1338122/">Robert Humphreys </a>
-        </p>
-        <hr />
+          <h2>About the Movie</h2>
+          <p>
+            When a storm upturns their yacht, a group of passengers jump on
+            board a ship close by. However, they soon realise that they are in
+            greater danger aboard the mysterious vessel.
+          </p>
+          <hr />
+          <p><b>Release date:</b> 16 October 2009</p>
+          <hr />
+          <p>
+            <b>Director:</b
+            ><a href="https://www.imdb.com/name/nm1247462/"
+              >Christopher Smith</a
+            >
+          </p>
+          <hr />
+          <p>
+            <b>Cinematography:</b
+            ><a href="https://www.imdb.com/name/nm1338122/"
+              >Robert Humphreys
+            </a>
+          </p>
+          <hr />
+        </div>
       </div>
     </div>
     <h2 class="cast">
@@ -427,32 +443,35 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <div class="left">
-        <hr />
-        <h2><b>Rating:</b> 8/10</h2>
-        <hr />
-        <h2>About the Movie</h2>
-        <p>
-          After more than 30 years of service as one of the Navy's top aviators,
-          Pete "Maverick" Mitchell is where he belongs, Training a detachment of
-          graduates for a special assignment, culminating in a mission that
-          demands the ultimate sacrifice from those who choose to fly it.
-        </p>
-        <hr />
-        <p><b>Release date:</b> 27 May 2009</p>
-        <hr />
-        <p>
-          <b>Director:</b
-          ><a href="https://en.wikipedia.org/wiki/Joseph_Kosinski"
-            >Joseph Kosinski</a
-          >
-        </p>
-        <hr />
-        <p>
-          <b>Art Director:</b
-          ><a href="https://www.imdb.com/name/nm1261793/"> Clint Wallace </a>
-        </p>
-        <hr />
+      <div class="content">
+        <div class="left">
+          <hr />
+          <h2><b>Rating:</b> 8/10</h2>
+          <hr />
+          <h2>About the Movie</h2>
+          <p>
+            After more than 30 years of service as one of the Navy's top
+            aviators, Pete "Maverick" Mitchell is where he belongs, Training a
+            detachment of graduates for a special assignment, culminating in a
+            mission that demands the ultimate sacrifice from those who choose to
+            fly it.
+          </p>
+          <hr />
+          <p><b>Release date:</b> 27 May 2009</p>
+          <hr />
+          <p>
+            <b>Director:</b
+            ><a href="https://en.wikipedia.org/wiki/Joseph_Kosinski"
+              >Joseph Kosinski</a
+            >
+          </p>
+          <hr />
+          <p>
+            <b>Art Director:</b
+            ><a href="https://www.imdb.com/name/nm1261793/"> Clint Wallace </a>
+          </p>
+          <hr />
+        </div>
       </div>
     </div>
     <h2 class="cast">
@@ -599,31 +618,35 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <div class="left">
-        <hr />
-        <h2><b>Rating:</b> 9/10</h2>
-        <hr />
-        <h2>About the Movie</h2>
-        <p>
-          When Earth becomes uninhabitable in the future, a farmer and ex-NASA
-          pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a
-          team of researchers, to find a new planet for humans.
-        </p>
-        <hr />
-        <p><b>Release date:</b> 7 November 2014</p>
-        <hr />
-        <p>
-          <b>Director:</b
-          ><a href="https://www.imdb.com/name/nm0634240/">Christopher Nolan</a>
-        </p>
-        <hr />
-        <p>
-          <b>Cinematography:</b
-          ><a href="https://en.wikipedia.org/wiki/Hoyte_van_Hoytema">
-            Hoyte van Hoytema
-          </a>
-        </p>
-        <hr />
+      <div class="content">
+        <div class="left">
+          <hr />
+          <h2><b>Rating:</b> 9/10</h2>
+          <hr />
+          <h2>About the Movie</h2>
+          <p>
+            When Earth becomes uninhabitable in the future, a farmer and ex-NASA
+            pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a
+            team of researchers, to find a new planet for humans.
+          </p>
+          <hr />
+          <p><b>Release date:</b> 7 November 2014</p>
+          <hr />
+          <p>
+            <b>Director:</b
+            ><a href="https://www.imdb.com/name/nm0634240/"
+              >Christopher Nolan</a
+            >
+          </p>
+          <hr />
+          <p>
+            <b>Cinematography:</b
+            ><a href="https://en.wikipedia.org/wiki/Hoyte_van_Hoytema">
+              Hoyte van Hoytema
+            </a>
+          </p>
+          <hr />
+        </div>
       </div>
     </div>
     <h2 class="cast">
@@ -770,31 +793,35 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <div class="left">
-        <hr />
-        <h2><b>Rating:</b> 9.5/10</h2>
-        <hr />
-        <h2>About the Movie</h2>
-        <p>
-          Cobb steals information from his targets by entering their dreams.
-          Saito offers to wipe clean Cobb's criminal history as payment for
-          performing an inception on his sick competitor's son.
-        </p>
-        <hr />
-        <p><b>Release date:</b> 16 July 2010</p>
-        <hr />
-        <p>
-          <b>Director:</b
-          ><a href="https://www.imdb.com/name/nm0634240/">Christopher Nolan</a>
-        </p>
-        <hr />
-        <p>
-          <b>Cinematography:</b
-          ><a href="https://en.wikipedia.org/wiki/Wally_Pfister">
-            Wally Pfister
-          </a>
-        </p>
-        <hr />
+      <div class="content">
+        <div class="left">
+          <hr />
+          <h2><b>Rating:</b> 9.5/10</h2>
+          <hr />
+          <h2>About the Movie</h2>
+          <p>
+            Cobb steals information from his targets by entering their dreams.
+            Saito offers to wipe clean Cobb's criminal history as payment for
+            performing an inception on his sick competitor's son.
+          </p>
+          <hr />
+          <p><b>Release date:</b> 16 July 2010</p>
+          <hr />
+          <p>
+            <b>Director:</b
+            ><a href="https://www.imdb.com/name/nm0634240/"
+              >Christopher Nolan</a
+            >
+          </p>
+          <hr />
+          <p>
+            <b>Cinematography:</b
+            ><a href="https://en.wikipedia.org/wiki/Wally_Pfister">
+              Wally Pfister
+            </a>
+          </p>
+          <hr />
+        </div>
       </div>
     </div>
     <h2 class="cast">
@@ -941,31 +968,35 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <div class="left">
-        <hr />
-        <h2><b>Rating:</b> 9/10</h2>
-        <hr />
-        <h2>About the Movie</h2>
-        <p>
-          Two friends and fellow magicians become bitter enemies after a sudden
-          tragedy. As they devote themselves to this rivalry, they make
-          sacrifices that bring them fame but, with terrible consequences.
-        </p>
-        <hr />
-        <p><b>Release date:</b> 20 October 2006</p>
-        <hr />
-        <p>
-          <b>Director:</b
-          ><a href="https://www.imdb.com/name/nm0634240/">Christopher Nolan</a>
-        </p>
-        <hr />
-        <p>
-          <b>Cinematography:</b
-          ><a href="https://en.wikipedia.org/wiki/Wally_Pfister">
-            Wally Pfister
-          </a>
-        </p>
-        <hr />
+      <div class="content">
+        <div class="left">
+          <hr />
+          <h2><b>Rating:</b> 9/10</h2>
+          <hr />
+          <h2>About the Movie</h2>
+          <p>
+            Two friends and fellow magicians become bitter enemies after a
+            sudden tragedy. As they devote themselves to this rivalry, they make
+            sacrifices that bring them fame but, with terrible consequences.
+          </p>
+          <hr />
+          <p><b>Release date:</b> 20 October 2006</p>
+          <hr />
+          <p>
+            <b>Director:</b
+            ><a href="https://www.imdb.com/name/nm0634240/"
+              >Christopher Nolan</a
+            >
+          </p>
+          <hr />
+          <p>
+            <b>Cinematography:</b
+            ><a href="https://en.wikipedia.org/wiki/Wally_Pfister">
+              Wally Pfister
+            </a>
+          </p>
+          <hr />
+        </div>
       </div>
     </div>
     <h2 class="cast">
@@ -1112,33 +1143,36 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <div class="left">
-        <hr />
-        <h2><b>Rating:</b> 8/10</h2>
-        <hr />
-        <h2>About the Movie</h2>
-        <p>
-          During a voyage to a distant colony planet, Jim's hypersleep pod
-          malfunctions, waking him up. He and fellow passenger Aurora must work
-          together to prevent their spaceship from meeting with a disaster.
-        </p>
-        <hr />
-        <p><b>Release date:</b> 21 December 2016</p>
-        <hr />
-        <p>
-          <b>Director:</b
-          ><a href="https://en.wikipedia.org/wiki/Morten_Tyldum">
-            Morten Tyldum</a
-          >
-        </p>
-        <hr />
-        <p>
-          <b>Music Director:</b
-          ><a href="https://en.wikipedia.org/wiki/Thomas_Newman"
-            >Thomas Newman
-          </a>
-        </p>
-        <hr />
+      <div class="content">
+        <div class="left">
+          <hr />
+          <h2><b>Rating:</b> 8/10</h2>
+          <hr />
+          <h2>About the Movie</h2>
+          <p>
+            During a voyage to a distant colony planet, Jim's hypersleep pod
+            malfunctions, waking him up. He and fellow passenger Aurora must
+            work together to prevent their spaceship from meeting with a
+            disaster.
+          </p>
+          <hr />
+          <p><b>Release date:</b> 21 December 2016</p>
+          <hr />
+          <p>
+            <b>Director:</b
+            ><a href="https://en.wikipedia.org/wiki/Morten_Tyldum">
+              Morten Tyldum</a
+            >
+          </p>
+          <hr />
+          <p>
+            <b>Music Director:</b
+            ><a href="https://en.wikipedia.org/wiki/Thomas_Newman"
+              >Thomas Newman
+            </a>
+          </p>
+          <hr />
+        </div>
       </div>
     </div>
     <h2 class="cast">
@@ -1285,31 +1319,33 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <div class="left">
-        <hr />
-        <h2><b>Rating:</b> 9/10</h2>
-        <hr />
-        <h2>About the Movie</h2>
-        <p>
-          John Wick, a retired hitman, is forced to return to his old ways after
-          a group of Russian gangsters steal his car and kill a puppy gifted to
-          him by his late wife.
-        </p>
-        <hr />
-        <p><b>Release date:</b> 14 November 2014</p>
-        <hr />
-        <p>
-          <b>Director:</b
-          ><a href="https://en.wikipedia.org/wiki/Chad_Stahelski"
-            >Chad Stahelski</a
-          >
-        </p>
-        <hr />
-        <p>
-          <b>Cinematography:</b
-          ><a href="https://www.imdb.com/name/nm0782930/">Jonathan Sela </a>
-        </p>
-        <hr />
+      <div class="content">
+        <div class="left">
+          <hr />
+          <h2><b>Rating:</b> 9/10</h2>
+          <hr />
+          <h2>About the Movie</h2>
+          <p>
+            John Wick, a retired hitman, is forced to return to his old ways
+            after a group of Russian gangsters steal his car and kill a puppy
+            gifted to him by his late wife.
+          </p>
+          <hr />
+          <p><b>Release date:</b> 14 November 2014</p>
+          <hr />
+          <p>
+            <b>Director:</b
+            ><a href="https://en.wikipedia.org/wiki/Chad_Stahelski"
+              >Chad Stahelski</a
+            >
+          </p>
+          <hr />
+          <p>
+            <b>Cinematography:</b
+            ><a href="https://www.imdb.com/name/nm0782930/">Jonathan Sela </a>
+          </p>
+          <hr />
+        </div>
       </div>
     </div>
     <h2 class="cast">
@@ -1456,29 +1492,31 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <div class="left">
-        <hr />
-        <h2><b>Rating:</b> 8.5/10</h2>
-        <hr />
-        <h2>About the Movie</h2>
-        <p>
-          Three delinquents break into the house of Norman, a Gulf War veteran
-          who is blind, to steal his money. However, much to their horror, they
-          discover that Norman is not as defenceless as he seems.
-        </p>
-        <hr />
-        <p><b>Release date:</b> 26 August 2016</p>
-        <hr />
-        <p>
-          <b>Director:</b
-          ><a href="https://www.imdb.com/name/nm1793079/">Fede Álvarez</a>
-        </p>
-        <hr />
-        <p>
-          <b>Produced by:</b
-          ><a href="https://en.wikipedia.org/wiki/Sam_Raimi">Sam Raimi </a>
-        </p>
-        <hr />
+      <div class="content">
+        <div class="left">
+          <hr />
+          <h2><b>Rating:</b> 8.5/10</h2>
+          <hr />
+          <h2>About the Movie</h2>
+          <p>
+            Three delinquents break into the house of Norman, a Gulf War veteran
+            who is blind, to steal his money. However, much to their horror,
+            they discover that Norman is not as defenceless as he seems.
+          </p>
+          <hr />
+          <p><b>Release date:</b> 26 August 2016</p>
+          <hr />
+          <p>
+            <b>Director:</b
+            ><a href="https://www.imdb.com/name/nm1793079/">Fede Álvarez</a>
+          </p>
+          <hr />
+          <p>
+            <b>Produced by:</b
+            ><a href="https://en.wikipedia.org/wiki/Sam_Raimi">Sam Raimi </a>
+          </p>
+          <hr />
+        </div>
       </div>
     </div>
     <h2 class="cast">
@@ -1672,5 +1710,144 @@
         item.scrollLeft -= containerWidth;
       });
     });
+
+    let card = [
+      {
+        image: "../assets/images/triangle.jpg",
+        href: "#triangle",
+        rate: 8.5,
+        title: "Triangle",
+        link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+      },
+      {
+        image: "../assets/images/top.jpg",
+        href: "#top",
+        rate: 8,
+        title: "Top Gun:Maverick",
+        link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+      },
+      {
+        image: "../assets/images/inter.jpg",
+        href: "#inter",
+        rate: 9,
+        title: "Intersteller",
+        link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+      },
+      {
+        image: "../assets/images/ince.jpg",
+        href: "#inception",
+        rate: 9.5,
+        title: "Inception",
+        link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+      },
+      {
+        image: "../assets/images/pre.jpg",
+        href: "#prestige",
+        rate: 9,
+        title: "The Prestige",
+        link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+      },
+      {
+        image: "../assets/images/pass.jpg",
+        href: "#pass",
+        rate: 8,
+        title: "Passengers",
+        link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+      },
+      {
+        image: "../assets/images/john.jpg",
+        href: "#john",
+        rate: 9,
+        title: "John Wick",
+        link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+      },
+      {
+        image: "../assets/images/dont.jpg",
+        href: "#carter",
+        rate: 8.5,
+        title: "Don't Breathe",
+        link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+      },
+    ];
+
+    // card
+    let card_div;
+    let a_tag;
+    let image;
+    let rate;
+    let rating;
+    let title;
+    let btn;
+    let link;
+
+    for (let i = 0; i < card.length; i++) {
+      // box
+      card_div = document.createElement("div");
+      card_div.setAttribute("class", "box");
+
+      // a tag
+
+      a_tag = document.createElement("a");
+      a_tag.setAttribute("href", card[i]["href"]);
+      card_div.append(a_tag);
+
+      // image
+
+      image = document.createElement("img");
+      image.setAttribute("id", "image-1");
+      image.setAttribute("src", card[i]["image"]);
+      image.setAttribute("alt", "image");
+      a_tag.append(image);
+
+      // star
+
+      rate = document.createElement("i");
+      rate.setAttribute("id", "star");
+      rate.setAttribute("class", "fa fa-star");
+      a_tag.append(rate);
+
+      // rating
+
+      rating = document.createElement("h3");
+      rating.setAttribute("class", "rate");
+      rating.innerText = card[i]["rate"];
+      a_tag.append(rating);
+
+      // title
+
+      title = document.createElement("h2");
+      title.setAttribute("class", "title");
+      title.innerText = card[i]["title"];
+      rating.append(title);
+
+      // button
+
+      btn = document.createElement("button");
+      btn.setAttribute("href", card[i]["link"]);
+      btn.setAttribute("class", "btn");
+      btn.innerText = "Watch Now";
+      a_tag.append(btn);
+
+      // a tag
+
+      link = document.createElement("a");
+      link.setAttribute("class", "try");
+      link.setAttribute("href", card[i]["link"]);
+      btn.append(link);
+
+      document.querySelector(".menu").append(card_div);
+    }
+    let content_box = [
+      {
+        bolt: "Rating:",
+        rating_outOf: 8.5 / 10,
+        about: "About the Movie",
+        description:
+          "When a storm upturns their yacht, a group of passengers jump on board a ship close by. However, they soon realise that they are in greater danger aboard the mysterious vessel.",
+        bolt_2: "Release date:",
+        release_date: "16 October 2009",
+        bolt_3: "Director:",
+      },
+    ];
   </script>
 </html>

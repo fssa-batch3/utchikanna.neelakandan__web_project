@@ -75,7 +75,7 @@ iframe {
   width: auto;
   padding: 16px;
   margin-top: 135px;
-  margin-left: 35px;
+  margin-left: 80px;
   margin-right: 20px;
   color: #333;
   font-weight: bold;
@@ -243,9 +243,9 @@ p {
 }
 .title {
   font-size: 25px;
-  margin-left: 25px;
+  margin-left: -20px;
   position: relative;
-  bottom: 25px;
+  bottom: -10px;
   cursor: pointer;
 }
 .btn {
@@ -256,7 +256,7 @@ p {
   font-size: 15px;
   background-color: #333;
   position: relative;
-  bottom: 30px;
+  bottom: 15px;
   border: none;
   border-radius: 5px;
   transition: 0.5s;
@@ -283,6 +283,11 @@ p {
 }
 .menu::-webkit-scrollbar {
   display: none;
+}
+
+#image-1 {
+  width: 200px;
+  height: 250px;
 }
 
 .gif {
@@ -482,20 +487,17 @@ a {
 }
 .conForm {
   width: 20%;
-  max-height: 550px;
+  max-height: 650px;
   padding: 80px;
   border: 1px solid black;
   border-radius: 15px;
   transition: 0.4s;
   position: relative;
   left: 550px;
-  top: 90px;
+  top: 50px;
   background-color: white;
 }
-.conForm:hover {
-  transition: 0.4s;
-  transform: scale(1.1);
-}
+
 .log {
   font-size: 30px;
   color: black;
@@ -539,6 +541,15 @@ a {
   color: black;
   font-size: 12px;
   transform: translateY(-20px);
+}
+
+input:valid {
+  border-width: 2px;
+  border-color: green;
+}
+input:invalid {
+  border-width: 2px;
+  border-color: red;
 }
 
 .btn5 {

@@ -10,29 +10,28 @@
       sizes="32x32"
       href="../assets/images/Cinephile.png"
     />
-    <title>Sign in</title>
+    <title>Sign up</title>
     <link rel="stylesheet" href="../assets/css/movie.css" />
   </head>
   <body class="bg">
     <div class="conForm">
-      <form>
+      <form id="form">
         <h2 class="log">Log In</h2>
         <br />
         <div class="inputBox">
-          <input type="gmail" name="" required="required" />
-          <span>Email or Phone Number</span>
+          <input id="email" type="gmail" name="" required="required" />
+          <span>Enter your Email</span>
         </div>
         <div class="inputBox">
-          <input type="password" name="" required="required" />
-          <span>Password</span>
+          <input id="password" type="password" name="" required="required" />
+          <span>Enter your Password</span>
         </div>
-        <button class="btn5">
-          <a class="log2" href="../after-login/index.html">Log in</a>
-        </button>
+        <!-- <a class="log2" href="../after-login/index.html"></a> -->
+        <button type="submit" class="btn5">Log in</button>
       </form>
       <br /><br />
       <h2 class="with1">
-        Not a member yet?<a class="log-user" href="./login.html">Sign Up</a>
+        Not a member yet?<a class="log-user" href="./login.html">Sign up</a>
       </h2>
       <div class="login-with">
         <h2 class="with">Or Log in with</h2>
@@ -50,9 +49,47 @@
         </a>
       </div>
 
-      <a href="../index.html">
-        <button class="btn6">Back</button>
-      </a>
+      <a href="../index.html"> </a>
+      <button class="btn6">Back</button>
     </div>
+    <script>
+      let logIn = document.getElementById("form");
+      logIn.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let Data = localStorage.getItem("user");
+        let checker = JSON.parse(Data);
+        let email = document.getElementById("email").value;
+        let Password = document.getElementById("password").value;
+
+        let Match = false;
+
+        for (let i = 0; i < checker.length; i++) {
+          // console.log(checker[i]);
+          let specific_user = JSON.parse(localStorage.getItem("user"));
+          console.log(specific_user[i]);
+
+          window.localStorage.setItem(
+            "details",
+            JSON.stringify(specific_user[i])
+          );
+
+          if (
+            email === checker[i].first_email &&
+            Password === checker[i].first_password
+          ) {
+            Match = true;
+            break;
+          } else {
+            Match = false;
+          }
+        }
+        if ((Match = true)) {
+          window.alert("Log in Successfully!");
+          window.location.href = "../after-login/index.html";
+        } else {
+          window.alert("Log in failed! You not a Member Please sign up");
+        }
+      });
+    </script>
   </body>
 </html>

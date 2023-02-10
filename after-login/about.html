@@ -65,8 +65,10 @@
             alt=""
         /></a>
         <ul class="dropdown">
-          <li class="dropdown-list"><a href="#">Edit Profile</a></li>
           <li class="dropdown-list"><a href="../index.html">Log Out</a></li>
+          <li class="dropdown-list">
+            <a href="../after-login/userprofile.html">Personal Details</a>
+          </li>
         </ul>
       </li>
     </ul>
@@ -98,18 +100,18 @@
       <h2 class="log">Sent Message</h2>
       <form class="form">
         <div class="inputBox">
-          <input type="text" name="" required="required" />
+          <input id="name" type="text" name="" required="required" />
           <span>Full Name</span>
         </div>
         <div class="inputBox">
-          <input type="text" name="" required="required" />
+          <input id="email" type="text" name="" required="required" />
           <span>Email</span>
         </div>
         <div class="inputBox">
-          <textarea required="required"></textarea>
+          <textarea id="feed" required="required"></textarea>
           <span>Type your Message...</span>
         </div>
-        <button class="btn5">Send</button>
+        <button type="button" onclick="feedback()" class="btn5">Send</button>
       </form>
     </div>
     <div class="footer">
@@ -140,5 +142,22 @@
         <a class="last-one" href="#">Interest-Based Ads</a>
       </div>
     </div>
+    <script>
+      function feedback() {
+        const userName = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const feed = document.getElementById("feed").value;
+
+        console.log(userName);
+        console.log(email);
+        console.log(feed);
+
+        localStorage.setItem("user_name", userName);
+        localStorage.setItem("user_email", email);
+        localStorage.setItem("user_feedback", feed);
+
+        window.location.href = "";
+      }
+    </script>
   </body>
 </html>

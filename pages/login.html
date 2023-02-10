@@ -10,41 +10,77 @@
       sizes="32x32"
       href="../assets/images/Cinephile.png"
     />
-    <title>Sign in</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="../assets/css/movie.css" />
   </head>
   <body class="bg">
     <div class="conForm">
-      <form>
-        <h2 class="log">Sign In</h2>
+      <form id="form">
+        <h2 class="log">Sign Up</h2>
         <br />
         <div class="inputBox">
-          <input type="text" name="" required="required" />
-          <span>Enter Your Name</span>
+          <input
+            id="first_name"
+            type="text"
+            autocomplete="off"
+            required="true"
+            pattern="[A-Za-z]{1,32}"
+          />
+          <span>Enter Your First Name</span>
         </div>
         <div class="inputBox">
-          <input type="gmail" name="" required="required" />
-          <span>Email or Phone Number</span>
+          <input
+            id="last_name"
+            type="text"
+            autocomplete="off"
+            required="true"
+            pattern="[A-Za-z]{1,32}"
+          />
+          <span>Enter Your Last Name</span>
         </div>
         <div class="inputBox">
-          <input type="password" name="" required="required" />
-          <span>Password</span>
+          <input
+            id="first_email"
+            type="email"
+            autocomplete="off"
+            required="true"
+          />
+          <span>Email</span>
         </div>
         <div class="inputBox">
-          <input type="password" name="" required="required" />
-          <span>Re-enter Password</span>
+          <input id="phone_no" type="tel" autocomplete="off" required="true" />
+          <span>Phone Number</span>
+        </div>
+        <div class="inputBox">
+          <input
+            id="first_password"
+            type="password"
+            name=""
+            required="required"
+          />
+
+          <span>Create Password</span>
+        </div>
+        <div class="inputBox">
+          <input
+            id="first_re_password"
+            type="password"
+            name=""
+            required="required"
+          />
+          <span>Confirm Password</span>
         </div>
 
-        <button class="btn5">
-          <a class="log2" href="../after-login/index.html">Sign in</a>
-        </button>
+        <!-- <a class="log2" href="../after-login/index.html">Sign in</a> -->
+        <button type="submit" class="btn5">Sign Up</button>
       </form>
+
       <br /><br />
       <h2 class="with1">
         Already a user?<a class="log-user" href="./log.html">Log In</a>
       </h2>
       <div class="login-with">
-        <h2 class="with">Or Sign in with</h2>
+        <h2 class="with">Or Create with</h2>
         <a
           href="https://accounts.google.com/v3/signin/identifier?dsh=S-1962032761%3A1670749601777868&continue=https%3A%2F%2Fwww.google.com%3Fhl%3Den-GB&ec=GAlA8wE&hl=en-GB&flowName=GlifWebSignIn&flowEntry=AddSession"
         >
@@ -63,5 +99,80 @@
         <button class="btn6">Back</button>
       </a>
     </div>
+
+    <script>
+      let arr = [];
+
+      let form = document.getElementById("form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let userdata = {};
+        let fname = document.getElementById("first_name").value.trim();
+
+        let lname = document.getElementById("last_name").value.trim();
+
+        let email = document.getElementById("first_email").value;
+
+        let phone_no = document.getElementById("phone_no").value;
+
+        let password = document.getElementById("first_password").value;
+
+        let rePassword = document.getElementById("first_re_password").value;
+
+        if (password.length < 6) {
+          alert("Password is  must be 6 characters");
+          return false;
+        }
+        if (password != rePassword) {
+          alert("Confirm is diffrent from password");
+          return false;
+        }
+        if (phone_no.length < 10) {
+          alert("Phone number must be 10 number");
+          return false;
+        }
+
+        userdata["first_name"] = fname;
+        userdata["last_name"] = lname;
+        userdata["first_email"] = email;
+        userdata["phone_no"] = phone_no;
+        userdata["first_password"] = password;
+        userdata["first_re_password"] = rePassword;
+
+        // window.localStorage.setItem("sign_value", JSON.stringify(userdata));
+        arr.push(userdata);
+
+        if (window.localStorage.getItem("user") != null) {
+          let exist_email = window.localStorage.getItem("user");
+          let already_user = JSON.parse(exist_email);
+          console.log(already_user);
+
+          for (let i = 0; i <= already_user.length; i++) {
+            // console.log(alreadyUser_check[i]);
+
+            if (userdata["first_email"] === already_user[i].first_email) {
+              alert("Email-id already Exist!");
+              break;
+            } else {
+              already_user.push(userdata);
+              window.localStorage.setItem("user", JSON.stringify(already_user));
+              window.location.href = "../pages/log.html";
+            }
+          }
+        } else {
+          // if (window.localStorage.getItem("user") === null) {
+          window.localStorage.setItem("user", JSON.stringify(arr));
+          window.location.href = "../pages/log.html";
+          // }
+          //  else {
+          //   let local = window.localStorage.getItem("user");
+          //   let json = JSON.parse(local);
+          //   json.push(userdata);
+          //   window.localStorage.setItem("user", JSON.stringify(json));
+          // }
+        }
+      });
+    </script>
   </body>
 </html>
