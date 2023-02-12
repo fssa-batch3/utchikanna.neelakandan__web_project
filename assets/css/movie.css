@@ -182,9 +182,10 @@ ul li ul.dropdown li {
   display: none;
 }
 .nav-list a:hover {
-  border-bottom: 4px solid #333;
-  transition: 0.6s;
-  width: 75px;
+  background-color: #333;
+  border-radius: 12px;
+  color: #efefef;
+  transition: 0.7s;
   cursor: pointer;
 }
 .nav-list:hover ul.dropdown {

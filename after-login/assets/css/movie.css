@@ -148,7 +148,7 @@ ul {
   display: inline-block;
   position: relative;
   left: 800px;
-  bottom: 85px;
+  bottom: 95px;
 }
 ul li a {
   display: block;
@@ -157,8 +157,6 @@ ul li a {
   text-decoration: none;
   text-align: center;
   border-bottom: 1px solid white;
-  position: relative;
-  bottom: 10px;
   transition: 0.6s;
   font-size: 20px;
 }
@@ -183,10 +181,10 @@ ul li ul.dropdown li {
   display: none;
 }
 .nav-list a:hover {
-  border-bottom: 4px solid #333;
-  color: black;
-  transition: 0.6s;
-  width: 70px;
+  background-color: #333;
+  border-radius: 12px;
+  color: #efefef;
+  transition: 0.7s;
   cursor: pointer;
 }
 .nav-list:hover ul.dropdown {
@@ -690,8 +688,8 @@ a {
   top: 50px;
 }
 .avatar-2 {
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 30px;
   padding-left: 15px;
   padding-right: 15px;
 }
