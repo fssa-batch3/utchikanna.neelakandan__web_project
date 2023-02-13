@@ -43,7 +43,9 @@
       </form>
       <br /><br />
       <h2 class="with1">
-        Not a member yet?<a class="log-user" href="./login.html">Sign up</a>
+        Don’t have an account?<a class="log-user" href="./login.html"
+          >Sign up</a
+        >
       </h2>
       <div class="login-with">
         <h2 class="with">Or Log in with</h2>
@@ -68,7 +70,7 @@
       let logIn = document.getElementById("form");
       logIn.addEventListener("submit", (event) => {
         event.preventDefault();
-        let Data = localStorage.getItem("user");
+        let Data = window.localStorage.getItem("user");
         let checker = JSON.parse(Data);
         let email = document.getElementById("email").value;
         let Password = document.getElementById("password").value;
@@ -77,24 +79,22 @@
 
         for (let i = 0; i < checker.length; i++) {
           // console.log(checker[i]);
-          let specific_user = JSON.parse(localStorage.getItem("user"));
-          console.log(specific_user[i]);
+          let specific_user = JSON.parse(window.localStorage.getItem("user"));
 
-          window.localStorage.setItem(
-            "details",
-            JSON.stringify(specific_user[i])
-          );
-
-          if (email == checker[i].email && Password == checker[i].password) {
+          if (email === checker[i].email && Password === checker[i].password) {
             Match = true;
+            window.localStorage.setItem(
+              "details",
+              JSON.stringify(checker[i].email)
+            );
             break;
           }
         }
-        if (Match == true) {
+        if (Match === true) {
           window.alert("Log in Successfully!");
           window.location.href = "../after-login/index.html";
         } else {
-          window.alert("Log in failed! You not a Member Please sign up");
+          window.alert("Incorrect Email-id or Password");
         }
       });
     </script>

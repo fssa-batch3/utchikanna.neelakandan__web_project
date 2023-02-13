@@ -655,6 +655,22 @@ a {
   font-size: 20px;
   transform: translateY(-20px);
 }
+input:valid {
+  border-width: 2px;
+  border-color: green;
+}
+input:invalid {
+  border-width: 2px;
+  border-color: red;
+}
+textarea:valid {
+  border-width: 2px;
+  border-color: green;
+}
+textarea:invalid {
+  border-width: 2px;
+  border-color: red;
+}
 
 .btn5 {
   width: 20%;

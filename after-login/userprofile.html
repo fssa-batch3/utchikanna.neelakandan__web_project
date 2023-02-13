@@ -28,28 +28,34 @@
 
       <div class="userdetails">
         <h1 class="profileh1">Personal Details</h1>
-        <form action="homepage.html">
-          <div class="namesurflex">
-            <div>
+        <form id="form">
+          <div class="flex_form">
+          <div class="user_details2">
               <label for="name">First Name</label><br />
               <input
+                autocomplete="off"
+                required="true"
+                pattern="[A-Za-z]{1,32}"
                 type="text"
                 id="name"
                 placeholder=" enter your name"
               /><br />
-            </div>
-            <div>
+            
               <label for="surname">Last name</label><br />
               <input
+                autocomplete="off"
+                required="true"
+                pattern="[A-Za-z]{1,32}"
                 type="text"
                 class="surname"
                 id="surname"
                 placeholder=" enter your last name"
               /><br />
-            </div>
-          </div>
+            
           <label for="emailid">Email ID</label><br />
           <input
+            autocomplete="off"
+            required="true"
             type="email"
             class="emailid"
             id="emailid"
@@ -57,72 +63,161 @@
           /><br />
           <label for="mobilenumber">Mobile Number</label><br />
           <input
+             autocomplete="off"
+             required="true"
             type="tel"
             class="mobilenumber"
             id="mobilenumber"
             placeholder=" enter your mobilenumber"
           /><br />
+        </div>
+          <div class="user_details1">
           <label for="addressline1">Date of Brith</label><br />
           <input
+            autocomplete="off"
+            required="true"
             type="date"
             class="addressline1"
-            id="addressline1"
+            id="dob"
           /><br />
-          <label for="postalcode">Password</label><br />
-          <input
-            type="number"
-            class="postalcode"
-            id="password"
-          /><br />
+          <label for="addressline1">Gender</label><br />
+          <select autocomplete="off"
+             required="true" id="gender" name="gender">
+            <option value="">Please select one…</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="non-binary">Non-Binary</option>
+            <option value="other">Other</option>
+            <option value="Prefer not to answer">Perfer not to Answer</option>
+            </select>
+      <br />
           <label for="state">State</label><br />
           <input
+            autocomplete="off"
+            required="true"
+            pattern="[A-Za-z]{1,32}"
             type="text"
             class="state"
             id="state"
             placeholder=" enter your State"
           /><br />
           
-
-          <div class="countrystateflex">
-            <div>
+  
               <label for="country">Country</label><br />
               <input
+                autocomplete="off"
+                required="true"
+                pattern="[A-Za-z]{1,32}"
                 type="text"
                 class="country"
                 id="country"
                 placeholder="Country"
               /><br />
-            </div>
            
           </div>
-          
-            <button class="btn6">Submit</button>
-          <a href="../index.html">
-          <button class="submit" type="submit">Back</button>
+        </div>
+            <button type="submit"  class="btn6">Submit</button>
+          </form>
+          <a href="../after-login/index.html">
+          <button  class="submit" >Back</button>
         </a>
-        </form>
-      </div>
+     
 
       
     <script>
-      const user_details = JSON.parse(window.localStorage.getItem("details"))
-
-      console.log(user_details)
+       const user_email = JSON.parse(window.localStorage.getItem("details"))
+     
+      const user_details = JSON.parse(window.localStorage.getItem("user"))
+      let get_obj = user_details.find(function(user_obj){
+        let check_email = user_obj["email"]
+        if(user_email===check_email){   
+          return true ;
+        }
+      });
+      console.log(get_obj)
 
       const fname = document.getElementById("name");
       const lname = document.getElementById("surname");
       const mail = document.getElementById("emailid");
       const phone = document.getElementById("mobilenumber");
-      const pass = document.getElementById("password");
 
-      fname.value =  user_details["fname"] ;
-      lname.value =  user_details["lname"] ;
-      mail.value =  user_details["email"] ;
-      phone.value =  user_details["phone_no"] ;
-      pass.value  =  user_details["password"];
+      fname.value =  get_obj["fname"] ;
+      lname.value =  get_obj["lname"] ;
+      mail.value  =  user_email ;
+      phone.value =  get_obj["phone_no"] ;
+     
 
 
+  
+      let form = document.getElementById("form");
+      form.addEventListener("submit" , function(event){
+      event.preventDefault()
+      let fname = document.getElementById("name").value;
+      let lname = document.getElementById("surname").value;
+      let mail = document.getElementById("emailid").value;
+      let phone = document.getElementById("mobilenumber").value;
+      let dob = document.getElementById("dob").value;
+      let state = document.getElementById("state").value;  
+      let country = document.getElementById("country").value; 
+      let gender  = document.getElementById("gender").value; 
       
+      let new_data = {
+        fname,
+        lname,
+        mail,
+        phone,
+        dob,
+        state,
+        country,
+        gender,
+      };
+    
+    let updates = Object.assign(get_obj,new_data);
+    console.log(updates); 
+
+    let index = user_details.indexOf(get_obj)
+    console.log(index);
+
+    user_details[index] = updates;
+
+    localStorage.setItem("user", JSON.stringify(user_details))
+
+    alert("You have successfully updated your account details!");
+
+ 
+    });
+
+
+    // const user_email = JSON.parse(window.localStorage.getItem("details"))
+    let check = true;
+    const presend_details = JSON.parse(window.localStorage.getItem("user"))
+      let get_presend = user_details.find(function(user_obj){
+        let check_email = user_obj["email"]
+        if(user_email===check_email){ 
+         
+          
+      let fname1 = document.getElementById("name");
+      let lname1 = document.getElementById("surname");
+      let mail1 = document.getElementById("emailid");
+      let phone1 = document.getElementById("mobilenumber");
+      let dob1 = document.getElementById("dob");
+      let state1 = document.getElementById("state");  
+      let country1 = document.getElementById("country"); 
+      let gender1  = document.getElementById("gender");
+
+      fname1.value  = user_obj["fname"];
+      lname1.value  = user_obj["lname"];
+      mail1.value  = user_obj["email"];
+      phone1.value  = user_obj["phone"];
+      dob1.value  = user_obj["dob"];
+      state1.value  = user_obj["state"];
+      country1.value  = user_obj["country"];
+      gender1.value  = user_obj["gender"];  
+          
+        }else{
+          check = false;
+        }    
+      });
       
     </script>
   </body>

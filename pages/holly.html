@@ -52,7 +52,10 @@
 
       <li class="nav-list"><a href="../pages/about.html">About</a></li>
       <li class="nav-list">
-        <a href="../pages/log.html">Log in</a>
+        <a href="../pages/log.html">Log In</a>
+      </li>
+      <li id="sign" class="nav-list">
+        <a href="../pages/login.html">Sign Up</a>
       </li>
     </ul>
     <br id="back" />
@@ -1638,10 +1641,6 @@
     // const urlParams = new URLSearchParams(url); // converting string into key value pair
     // const datas = urlParams.get("datas"); // return value of the "name" key
 
-    let updates = window.localStorage.getItem("updates");
-
-    card.push(JSON.parse(updates));
-
     // card
     let card_div;
     let a_tag;
@@ -1700,6 +1699,12 @@
       a_tag.append(btn);
 
       document.querySelector(".menu").append(card_div);
+    }
+
+    let updates = window.localStorage.getItem("user_detailes");
+
+    for (let i = 0; i < updates.length; i++) {
+      card.push(updates);
     }
 
     localStorage.setItem("card", JSON.stringify(card));

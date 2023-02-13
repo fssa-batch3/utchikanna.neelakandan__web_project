@@ -65,11 +65,14 @@
         creat_card.push(updates);
 
         if (window.localStorage.getItem("user_detailes") === null) {
-          window.localStorage.setItem("user_detailes", JSON.stringify());
+          window.localStorage.setItem(
+            "user_detailes",
+            JSON.stringify(creat_card)
+          );
         } else {
           let local = window.localStorage.getItem("user_detailes");
           let json = JSON.parse(local);
-          json.push(userdata);
+          json.push(updates);
           window.localStorage.setItem("user_detailes", JSON.stringify(json));
         }
       });

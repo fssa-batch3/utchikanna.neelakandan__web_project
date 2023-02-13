@@ -97,21 +97,34 @@
         src="../after-login/assets/images/man-giving-online-feedback.gif"
         alt="image"
       />
-      <h2 class="log">Sent Message</h2>
+      <h2 class="log">Send Message</h2>
       <form class="form">
         <div class="inputBox">
-          <input id="name" type="text" name="" required="required" />
+          <input
+            id="name"
+            type="text"
+            name=""
+            required="true"
+            pattern="[A-Za-z]{1,32}"
+            autocomplete="off"
+          />
           <span>Full Name</span>
         </div>
         <div class="inputBox">
-          <input id="email" type="text" name="" required="required" />
+          <input
+            id="email"
+            type="email"
+            name=""
+            required="true"
+            autocomplete="off"
+          />
           <span>Email</span>
         </div>
         <div class="inputBox">
           <textarea id="feed" required="required"></textarea>
           <span>Type your Message...</span>
         </div>
-        <button type="button" onclick="feedback()" class="btn5">Send</button>
+        <button type="button" class="btn5">Send</button>
       </form>
     </div>
     <div class="footer">
@@ -143,21 +156,21 @@
       </div>
     </div>
     <script>
-      function feedback() {
-        const userName = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const feed = document.getElementById("feed").value;
+      // function feedback() {
+      //   const userName = document.getElementById("name").value;
+      //   const email = document.getElementById("email").value;
+      //   const feed = document.getElementById("feed").value;
 
-        console.log(userName);
-        console.log(email);
-        console.log(feed);
+      //   console.log(userName);
+      //   console.log(email);
+      //   console.log(feed);
 
-        localStorage.setItem("user_name", userName);
-        localStorage.setItem("user_email", email);
-        localStorage.setItem("user_feedback", feed);
+      //   localStorage.setItem("user_name", userName);
+      //   localStorage.setItem("user_email", email);
+      //   localStorage.setItem("user_feedback", feed);
 
-        window.location.href = "";
-      }
+      //   window.location.href = "";
+      // }
     </script>
   </body>
 </html>
