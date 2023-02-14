@@ -114,9 +114,10 @@
                 placeholder="Country"
               /><br />
            
-          </div>
+          </div>  
         </div>
             <button type="submit"  class="btn6">Submit</button>
+            <button type="delete" id="delete"  class="btn6">Delete Details</button>
           </form>
           <a href="../after-login/index.html">
           <button  class="submit" >Back</button>
@@ -171,18 +172,24 @@
         country,
         gender,
       };
+      // if( mail.value != user_email ){
+      //   alert("You can't change the email-id")
+      //   return 
+      // }
     
     let updates = Object.assign(get_obj,new_data);
     console.log(updates); 
 
-    let index = user_details.indexOf(get_obj)
-    console.log(index);
+    let index = user_details.indexOf(get_obj) 
+    // console.log(index);
 
-    user_details[index] = updates;
+    user_details[index] = updates; 
 
     localStorage.setItem("user", JSON.stringify(user_details))
 
     alert("You have successfully updated your account details!");
+
+    location.reload()
 
  
     });
@@ -208,17 +215,39 @@
       fname1.value  = user_obj["fname"];
       lname1.value  = user_obj["lname"];
       mail1.value  = user_obj["email"];
-      phone1.value  = user_obj["phone"];
+      phone1.value  = user_obj["phone_no"];
       dob1.value  = user_obj["dob"];
       state1.value  = user_obj["state"];
       country1.value  = user_obj["country"];
       gender1.value  = user_obj["gender"];  
+
+      
           
-        }else{
-          check = false;
         }    
       });
+
+
       
+      let delete_user = document.getElementById("delete") 
+      delete_user.addEventListener("click" , function(event){
+      event.preventDefault()
+
+      let index = user_details.indexOf(get_obj)
+
+    let msg =  confirm("Are you sure you want to delete this account")
+
+      if(msg !== true){
+        return 
+        
+      } else{
+        
+        user_details.splice(index,1)
+        console.log(user_details);
+        localStorage.setItem("user",JSON.stringify(user_details))
+        window.location.href ="../pages/login.html";
+      }
+    });
     </script>
   </body>
+  <link >
 </html>
