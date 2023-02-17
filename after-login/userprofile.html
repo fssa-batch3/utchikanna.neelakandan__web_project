@@ -22,10 +22,7 @@
 
   <body>
     <div class="wholeprofilecontainer">
-      <div class="userimg">
-        <img class="userimground" src="../after-login/assets/images/images.png" alt="" />
-      </div>
-
+     
       <div class="userdetails">
         <h1 class="profileh1">Personal Details</h1>
         <form id="form">
@@ -126,7 +123,7 @@
 
       
     <script>
-       const user_email = JSON.parse(window.localStorage.getItem("details"))
+      const user_email = JSON.parse(window.localStorage.getItem("details"))
      
       const user_details = JSON.parse(window.localStorage.getItem("user"))
       let get_obj = user_details.find(function(user_obj){
@@ -141,11 +138,19 @@
       const lname = document.getElementById("surname");
       const mail = document.getElementById("emailid");
       const phone = document.getElementById("mobilenumber");
+      // const dob = document.getElementById("dob");
+      // const state = document.getElementById("state");  
+      // const country = document.getElementById("country"); 
+      // const gender  = document.getElementById("gender"); 
 
       fname.value =  get_obj["fname"] ;
       lname.value =  get_obj["lname"] ;
       mail.value  =  user_email ;
       phone.value =  get_obj["phone_no"] ;
+      // dob.value =  get_obj[" _"] ;
+      // state.value = get_obj [" _"] ;
+      // country.value =  get_obj[" _"] ;
+      // gender.value =  get_obj[" _"] ;
      
 
 
@@ -181,7 +186,7 @@
     console.log(updates); 
 
     let index = user_details.indexOf(get_obj) 
-    // console.log(index);
+     console.log(index);
 
     user_details[index] = updates; 
 
@@ -191,18 +196,15 @@
 
     location.reload()
 
- 
     });
-
 
     // const user_email = JSON.parse(window.localStorage.getItem("details"))
     let check = true;
-    const presend_details = JSON.parse(window.localStorage.getItem("user"))
-      let get_presend = user_details.find(function(user_obj){
+     const present_details = JSON.parse(window.localStorage.getItem("user"))
+      let get_present = user_details.find(function(user_obj){
         let check_email = user_obj["email"]
         if(user_email===check_email){ 
-         
-          
+              
       let fname1 = document.getElementById("name");
       let lname1 = document.getElementById("surname");
       let mail1 = document.getElementById("emailid");
@@ -220,34 +222,25 @@
       state1.value  = user_obj["state"];
       country1.value  = user_obj["country"];
       gender1.value  = user_obj["gender"];  
-
       
-          
-        }    
+     }    
       });
 
-
-      
+ 
       let delete_user = document.getElementById("delete") 
-      delete_user.addEventListener("click" , function(event){
+      delete_user.addEventListener("click" , function(event){   
       event.preventDefault()
-
       let index = user_details.indexOf(get_obj)
-
-    let msg =  confirm("Are you sure you want to delete this account")
-
+      let msg =  confirm("Are you sure you want to delete this account")
       if(msg !== true){
-        return 
-        
-      } else{
-        
+        return   
+      } else{ 
         user_details.splice(index,1)
         console.log(user_details);
         localStorage.setItem("user",JSON.stringify(user_details))
-        window.location.href ="../pages/login.html";
+        window.location.href ="../pages/signUp.html";
       }
     });
     </script>
   </body>
-  <link >
 </html>

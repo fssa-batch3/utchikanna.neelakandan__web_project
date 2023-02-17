@@ -31,13 +31,13 @@
         <a class="width" href="#">Movies</a>
         <ul class="dropdown">
           <li class="dropdown-list">
-            <a href="../after-login/tamil.html">Kollywood</a>
+            <a href="../after-login/kollywood.html">Kollywood</a>
           </li>
           <li class="dropdown-list">
-            <a href="../after-login/holly.html">Hollywood</a>
+            <a href="../after-login/hollywood.html">Hollywood</a>
           </li>
           <li class="dropdown-list">
-            <a href="../after-login/super.html">Superhero Movies </a>
+            <a href="../after-login/superHero.html">Superhero Movies </a>
           </li>
         </ul>
       </li>
@@ -45,7 +45,7 @@
         <a href="#">Series</a>
         <ul class="dropdown">
           <li class="dropdown-list">
-            <a href="../after-login/web.html">Web Series</a>
+            <a href="../after-login/webSerise.html">Web Series</a>
           </li>
           <li class="dropdown-list">
             <a href="../after-login/marvel.html">Marvel Series</a>
@@ -363,23 +363,8 @@
       </div>
     </div>
   </body>
+  <script src="../after-login/assets/js/star.js"></script>
   <script>
-    const productContainers = [...document.querySelectorAll(".menu")];
-    const nxtBtn = [...document.querySelectorAll(".next")];
-    const prevBtn = [...document.querySelectorAll(".prev")];
-
-    productContainers.forEach((item, i) => {
-      let containerDimensions = item.getBoundingClientRect();
-      let containerWidth = containerDimensions.width;
-
-      nxtBtn[i].addEventListener("click", () => {
-        item.scrollLeft += containerWidth;
-      });
-      prevBtn[i].addEventListener("click", () => {
-        item.scrollLeft -= containerWidth;
-      });
-    });
-
     let card = [
       {
         image: "../assets/images/avatar.jpg",
@@ -474,19 +459,19 @@
       title.innerText = card[i]["title"];
       rating.append(title);
 
-      // button
-
-      btn = document.createElement("button");
-      btn.setAttribute("class", "btn");
-      btn.innerText = "Show Times";
-      card_div.append(btn);
-
       // a tag
 
       link = document.createElement("a");
       link.setAttribute("class", "try");
       link.setAttribute("href", card[i]["link"]);
-      btn.append(link);
+      card_div.append(link);
+
+      // button
+
+      btn = document.createElement("button");
+      btn.setAttribute("class", "btn");
+      btn.innerText = "Show Times";
+      link.append(btn);
 
       document.querySelector(".menu").append(card_div);
     }

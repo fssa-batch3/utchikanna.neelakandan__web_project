@@ -28,13 +28,13 @@
         <a class="width" href="#">Movies</a>
         <ul class="dropdown">
           <li class="dropdown-list">
-            <a href="./pages/tamil.html">Kollywood</a>
+            <a href="./pages/kollywood.html">Kollywood</a>
           </li>
           <li class="dropdown-list">
-            <a href="./pages/holly.html">Hollywood</a>
+            <a href="./pages/hollywood.html">Hollywood</a>
           </li>
           <li class="dropdown-list">
-            <a href="./pages/super.html">Superhero Movies </a>
+            <a href="./pages/superHero.html">Superhero Movies </a>
           </li>
         </ul>
       </li>
@@ -42,7 +42,7 @@
         <a href="#">Series</a>
         <ul class="dropdown">
           <li class="dropdown-list">
-            <a href="./pages/web.html">Web Series</a>
+            <a href="./pages/webSerise.html">Web Series</a>
           </li>
           <li class="dropdown-list">
             <a href="./pages/marvel.html">Marvel Series</a>
@@ -52,10 +52,10 @@
 
       <li class="nav-list"><a href="./pages/about.html">About</a></li>
       <li class="nav-list">
-        <a href="./pages/log.html">Log In</a>
+        <a href="./pages/logIn.html">Log In</a>
       </li>
       <li id="sign" class="nav-list">
-        <a href="../pages/login.html">Sign Up</a>
+        <a href="./pages/signUp.html">Sign Up</a>
       </li>
     </ul>
 
@@ -355,22 +355,23 @@
       </div>
     </div>
   </body>
+  <script src="./assets/js/json.js"></script>
   <script>
-    const productContainers = [...document.querySelectorAll(".menu")];
-    const nxtBtn = [...document.querySelectorAll(".next")];
-    const prevBtn = [...document.querySelectorAll(".prev")];
+    // const productContainers = [...document.querySelectorAll(".menu")];
+    // const nxtBtn = [...document.querySelectorAll(".next")];
+    // const prevBtn = [...document.querySelectorAll(".prev")];
 
-    productContainers.forEach((item, i) => {
-      let containerDimensions = item.getBoundingClientRect();
-      let containerWidth = containerDimensions.width;
+    // productContainers.forEach((item, i) => {
+    //   let containerDimensions = item.getBoundingClientRect();
+    //   let containerWidth = containerDimensions.width;
 
-      nxtBtn[i].addEventListener("click", () => {
-        item.scrollLeft += containerWidth;
-      });
-      prevBtn[i].addEventListener("click", () => {
-        item.scrollLeft -= containerWidth;
-      });
-    });
+    //   nxtBtn[i].addEventListener("click", () => {
+    //     item.scrollLeft += containerWidth;
+    //   });
+    //   prevBtn[i].addEventListener("click", () => {
+    //     item.scrollLeft -= containerWidth;
+    //   });
+    // });
 
     let card = [
       {
@@ -466,19 +467,19 @@
       title.innerText = card[i]["title"];
       rating.append(title);
 
-      // button
-
-      btn = document.createElement("button");
-      btn.setAttribute("class", "btn");
-      btn.innerText = "Show Times";
-      card_div.append(btn);
-
       // a tag
 
       link = document.createElement("a");
       link.setAttribute("class", "try");
       link.setAttribute("href", card[i]["link"]);
-      btn.append(link);
+      card_div.append(link);
+
+      // button
+
+      btn = document.createElement("button");
+      btn.setAttribute("class", "btn");
+      btn.innerText = "Show Times";
+      link.append(btn);
 
       document.querySelector(".menu").append(card_div);
     }

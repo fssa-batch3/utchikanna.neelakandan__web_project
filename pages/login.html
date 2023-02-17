@@ -10,73 +10,45 @@
       sizes="32x32"
       href="../assets/images/Cinephile.png"
     />
-    <title>Sign Up</title>
+    <title>Sign up</title>
     <link rel="stylesheet" href="../assets/css/movie.css" />
   </head>
   <body class="bg">
     <div class="conForm">
       <form id="form">
-        <h2 class="log">Sign Up</h2>
+        <h2 class="log">Log In</h2>
         <br />
         <div class="inputBox">
           <input
-            id="first_name"
-            type="text"
-            autocomplete="off"
-            required="true"
-            pattern="[A-Za-z]{1,32}"
-          />
-          <span>Enter Your First Name</span>
-        </div>
-        <div class="inputBox">
-          <input
-            id="last_name"
-            type="text"
-            autocomplete="off"
-            required="true"
-            pattern="[A-Za-z]{1,32}"
-          />
-          <span>Enter Your Last Name</span>
-        </div>
-        <div class="inputBox">
-          <input
-            id="first_email"
+            id="email"
             type="email"
+            name=""
             autocomplete="off"
             required="true"
           />
-          <span>Email</span>
-        </div>
-        <div class="inputBox">
-          <input id="phone_no" type="tel" autocomplete="off" required="true" />
-          <span>Phone Number</span>
-        </div>
-        <div class="inputBox">
-          <input id="first_password" type="password" name="" required="true" />
-
-          <span>Create Password</span>
+          <span>Enter your Email</span>
         </div>
         <div class="inputBox">
           <input
-            id="first_re_password"
+            id="password"
             type="password"
             name=""
+            autocomplete="off"
             required="true"
           />
-          <span>Confirm Password</span>
+          <span>Enter your Password</span>
         </div>
-
-        <!-- <a class="log2" href="../after-login/index.html">Sign in</a> -->
-        <button type="submit" class="btn5">Sign Up</button>
+        <!-- <a class="log2" href="../after-login/index.html"></a> -->
+        <button type="submit" class="btn5">Log in</button>
       </form>
-
       <br /><br />
       <h2 class="with1">
-        Already registered User?
-        <a class="log-user" href="./log.html">Log In</a>
+        Don’t have an account?<a class="log-user" href="./signUp.html"
+          >Sign up</a
+        >
       </h2>
       <div class="login-with">
-        <h2 class="with">Or Create with</h2>
+        <h2 class="with">Or Log in with</h2>
         <a
           href="https://accounts.google.com/v3/signin/identifier?dsh=S-1962032761%3A1670749601777868&continue=https%3A%2F%2Fwww.google.com%3Fhl%3Den-GB&ec=GAlA8wE&hl=en-GB&flowName=GlifWebSignIn&flowEntry=AddSession"
         >
@@ -91,65 +63,38 @@
         </a>
       </div>
 
-      <a href="../index.html">
-        <button class="btn6">Back</button>
-      </a>
+      <a href="../index.html"> </a>
+      <button class="btn6">Back</button>
     </div>
-
     <script>
-      let form = document.getElementById("form");
-      form.addEventListener("submit", function (event) {
+      let logIn = document.getElementById("form");
+      logIn.addEventListener("submit", (event) => {
         event.preventDefault();
-        let arr = [];
-        let fname = document.getElementById("first_name").value;
-        let lname = document.getElementById("last_name").value;
-        let email = document.getElementById("first_email").value;
-        let phone_no = document.getElementById("phone_no").value;
-        let password = document.getElementById("first_password").value;
-        let rePassword = document.getElementById("first_re_password").value;
-        if (password.length < 6) {
-          alert("Password is  must be 6 characters");
-          return false;
-        }
-        if (password != rePassword) {
-          alert("Confirm is diffrent from password");
-          return false;
-        }
-        if (phone_no.length < 10) {
-          alert("Phone number must be 10 number");
-          return false;
-        }
+        let Data = window.localStorage.getItem("user");
+        let checker = JSON.parse(Data);
+        let email = document.getElementById("email").value;
+        let Password = document.getElementById("password").value;
 
-        if (localStorage.getItem("user") === null) {
-          localStorage.setItem("user", JSON.stringify(arr));
+        let Match = false;
+
+        for (let i = 0; i < checker.length; i++) {
+          // console.log(checker[i]);
+          let specific_user = JSON.parse(window.localStorage.getItem("user"));
+
+          if (email === checker[i].email && Password === checker[i].password) {
+            Match = true;
+            window.localStorage.setItem(
+              "details",
+              JSON.stringify(checker[i].email)
+            );
+            break;
+          }
+        }
+        if (Match === true) {
+          window.alert("Log in Successfully!");
+          window.location.href = "../after-login/index.html";
         } else {
-          let checking = JSON.parse(localStorage.getItem("user"));
-          let match = false;
-
-          for (let i = 0; i < checking.length; i++) {
-            if (email == checking[i].email) {
-              match = true;
-              break;
-            }
-          }
-          if (match == true) {
-            alert("this email-id is already exist!");
-          } else {
-            let userdata = {
-              fname,
-              lname,
-              email,
-              phone_no,
-              password,
-              rePassword,
-            };
-            arr.push(userdata);
-            let new_data = localStorage.getItem("user");
-            let backup_data = JSON.parse(new_data);
-            backup_data.push(userdata);
-            localStorage.setItem("user", JSON.stringify(backup_data));
-            window.location.href = "../pages/log.html";
-          }
+          window.alert("Incorrect Email-id or Password");
         }
       });
     </script>

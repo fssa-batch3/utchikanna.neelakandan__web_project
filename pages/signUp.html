@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/Cinephile.png"
+    />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../assets/css/movie.css" />
+  </head>
+  <body class="bg">
+    <div class="conForm">
+      <form id="form">
+        <h2 class="log">Sign Up</h2>
+        <br />
+        <div class="inputBox">
+          <input
+            id="first_name"
+            type="text"
+            autocomplete="off"
+            required="true"
+            pattern="[A-Za-z]{1,32}"
+          />
+          <span>Enter Your First Name</span>
+        </div>
+        <div class="inputBox">
+          <input
+            id="last_name"
+            type="text"
+            autocomplete="off"
+            required="true"
+            pattern="[A-Za-z]{1,32}"
+          />
+          <span>Enter Your Last Name</span>
+        </div>
+        <div class="inputBox">
+          <input
+            id="first_email"
+            type="email"
+            autocomplete="off"
+            required="true"
+          />
+          <span>Email</span>
+        </div>
+        <div class="inputBox">
+          <input id="phone_no" type="tel" autocomplete="off" required="true" />
+          <span>Phone Number</span>
+        </div>
+        <div class="inputBox">
+          <input id="first_password" type="password" name="" required="true" />
+
+          <span>Create Password</span>
+        </div>
+        <div class="inputBox">
+          <input
+            id="first_re_password"
+            type="password"
+            name=""
+            required="true"
+          />
+          <span>Confirm Password</span>
+        </div>
+
+        <!-- <a class="log2" href="../after-login/index.html">Sign in</a> -->
+        <button type="submit" class="btn5">Sign Up</button>
+      </form>
+
+      <br /><br />
+      <h2 class="with1">
+        Already registered User?
+        <a class="log-user" href="./logIn.html">Log In</a>
+      </h2>
+      <div class="login-with">
+        <h2 class="with">Or Create with</h2>
+        <a
+          href="https://accounts.google.com/v3/signin/identifier?dsh=S-1962032761%3A1670749601777868&continue=https%3A%2F%2Fwww.google.com%3Fhl%3Den-GB&ec=GAlA8wE&hl=en-GB&flowName=GlifWebSignIn&flowEntry=AddSession"
+        >
+          <img alt="image" class="google" src="../assets/images/google.png" />
+        </a>
+        <a href="https://www.facebook.com/">
+          <img
+            alt="image"
+            class="facebook"
+            src="../assets/images/facebook.png"
+          />
+        </a>
+      </div>
+
+      <a href="../index.html">
+        <button class="btn6">Back</button>
+      </a>
+    </div>
+
+    <script>
+      let form = document.getElementById("form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let arr = [];
+        let fname = document.getElementById("first_name").value;
+        let lname = document.getElementById("last_name").value;
+        let email = document.getElementById("first_email").value;
+        let phone_no = document.getElementById("phone_no").value;
+        let password = document.getElementById("first_password").value;
+        let rePassword = document.getElementById("first_re_password").value;
+        if (password.length < 6) {
+          alert("Password is  must be 6 characters");
+          return false;
+        }
+        if (password != rePassword) {
+          alert("Confirm is diffrent from password");
+          return false;
+        }
+        if (phone_no.length < 10) {
+          alert("Phone number must be 10 number");
+          return false;
+        }
+
+        if (localStorage.getItem("user") === null) {
+          localStorage.setItem("user", JSON.stringify(arr));
+        } else {
+          let checking = JSON.parse(localStorage.getItem("user"));
+          let match = false;
+
+          for (let i = 0; i < checking.length; i++) {
+            if (email == checking[i].email) {
+              match = true;
+              break;
+            }
+          }
+          if (match == true) {
+            alert("this email-id is already exist!");
+          } else {
+            let userdata = {
+              fname,
+              lname,
+              email,
+              phone_no,
+              password,
+              rePassword,
+            };
+            arr.push(userdata);
+            let new_data = localStorage.getItem("user");
+            let backup_data = JSON.parse(new_data);
+            backup_data.push(userdata);
+            localStorage.setItem("user", JSON.stringify(backup_data));
+            window.location.href = "../pages/logIn.html";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
