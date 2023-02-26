@@ -143,7 +143,7 @@ ul {
   position: fixed;
   max-height: 100px;
   width: 1485px;
-  z-index: 100;
+  z-index: 10;
 }
 .nav-list {
   display: inline-block;
@@ -198,8 +198,8 @@ ul li ul.dropdown li {
   cursor: pointer;
 }
 #sign a:hover {
-    background-color: #666;
-    border-radius: 0px;
+  background-color: #666;
+  border-radius: 0px;
 }
 .nav-list:hover ul.dropdown {
   display: block;
@@ -730,7 +730,7 @@ input:invalid {
     position: fixed;
     max-height: 80px;
     width: 100%;
-    z-index: 100;
+    z-index: 10;
   }
   .nav-list {
     display: inline-block;
@@ -1145,7 +1145,7 @@ input:invalid {
     position: fixed;
     max-height: 50px;
     width: 600px;
-    z-index: 100;
+    z-index: 10;
   }
   .nav-list {
     display: inline-block;
@@ -1992,7 +1992,7 @@ input:invalid {
     width: 250px;
     background-color: white;
     position: absolute;
-    z-index: 999;
+    z-index: 10;
     display: none;
   }
   .nav-list a:hover {

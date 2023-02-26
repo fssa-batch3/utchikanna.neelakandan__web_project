@@ -97,16 +97,18 @@
     </div>
 
     <script>
+      let arr = [];
       let form = document.getElementById("form");
       form.addEventListener("submit", function (event) {
         event.preventDefault();
-        let arr = [];
+
         let fname = document.getElementById("first_name").value;
         let lname = document.getElementById("last_name").value;
         let email = document.getElementById("first_email").value;
         let phone_no = document.getElementById("phone_no").value;
         let password = document.getElementById("first_password").value;
         let rePassword = document.getElementById("first_re_password").value;
+        let id = Date.now();
         if (password.length < 6) {
           alert("Password is  must be 6 characters");
           return false;
@@ -142,6 +144,9 @@
               phone_no,
               password,
               rePassword,
+              id,
+              state: "Enter your State",
+              country: "Enter your Country",
             };
             arr.push(userdata);
             let new_data = localStorage.getItem("user");

@@ -142,7 +142,7 @@ ul {
   position: fixed;
   max-height: 100px;
   width: 1485px;
-  z-index: 100;
+  z-index: 10;
 }
 .nav-list {
   display: inline-block;
@@ -748,7 +748,7 @@ textarea:invalid {
     position: fixed;
     max-height: 80px;
     width: 100%;
-    z-index: 100;
+    z-index: 10;
   }
   .nav-list {
     display: inline-block;
@@ -1251,7 +1251,7 @@ textarea:invalid {
     position: fixed;
     max-height: 50px;
     width: 600px;
-    z-index: 100;
+    z-index: 10;
   }
   .nav-list {
     display: inline-block;
@@ -1754,7 +1754,7 @@ textarea:invalid {
     position: fixed;
     max-height: 50px;
     width: 400px;
-    z-index: 100;
+    z-index: 10;
   }
   .nav-list {
     display: inline-block;
