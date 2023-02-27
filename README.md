@@ -8,5 +8,15 @@ User flow:https://drive.google.com/drive/u/0/folders/10W-zOPrsUy4Cx0VMnLVV1FQyJs
 Wireframe:https://drive.google.com/drive/u/0/folders/1M6ouFV7l0nhsZFiuE4L3doCl2htaKJsX
 Sonar Cloud:https://sonarcloud.io/summary/overall?id=fssa-batch3_utchikanna.neelakandan__web_project
 
+CRUD For User signing page
+=> Create user account [completed]
+=> Read User Data For Profile Page [completed]
+=> Update user details For Edit Page [completed]
+=> Delete user details For deactivate [completed]
 
+CRUD For User Features page
 
+=> Create products card/list [completed]
+=> Read Product Data For card [completed]
+=> Update user details For card [Working..]
+=> Deactivate Product details For Card [Working..]
