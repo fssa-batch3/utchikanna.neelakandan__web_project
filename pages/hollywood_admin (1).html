@@ -60,7 +60,11 @@
     </ul>
     <br id="back" />
     <h2 class="up" id="holly">Hollywood</h2>
-
+    <button class="btn4">
+      <a href="../pages/form.html">
+        <i id="top-arrow" class="fa fa-caret-square-o-up"></i>&nbsp;Add Items
+      </a>
+    </button>
     <div class="menu">
       <!-- <div class="box">
         <a class="link" href="#triangle">
@@ -242,40 +246,33 @@
       <a class="next">❯</a>
     </div>
 
-    <br id="triangle" />
-    <h2 class="up">Triangle</h2>
-
+    <!-- <br id="triangle" /> -->
+    <h2 class="up" id="movie_title"></h2>
     <div>
       <iframe
         width="600"
         height="400"
-        src="https://www.youtube.com/embed/17XqBdCiHOI"
+        id="trailer"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
       <div class="left">
         <hr />
-        <h2><b>Rating:</b> 7/10</h2>
+        <h2><b>Rating:</b> <span id="rateOfTheMovie"></span></h2>
         <hr />
         <h2>About the Movie</h2>
-        <p>
-          When a storm upturns their yacht, a group of passengers jump on board
+        <p id="contentOfMovie">
+          <!-- When a storm upturns their yacht, a group of passengers jump on board
           <br />a ship close by. However, they soon realise that they are<br />
-          in greater danger aboard the mysterious vessel.
+          in greater danger aboard the mysterious vessel. -->
         </p>
         <hr />
-        <p><b>Release date:</b> 16 October 2009</p>
+        <p><b>Release date:</b><span id="releaseDate"></span></p>
         <hr />
-        <p>
-          <b>Director:</b
-          ><a href="https://www.imdb.com/name/nm1247462/">Christopher Smith</a>
-        </p>
+        <p><b>Director:</b><a id="directorLink"></a></p>
         <hr />
-        <p>
-          <b>Cinematography:</b
-          ><a href="https://www.imdb.com/name/nm1338122/">Robert Humphreys </a>
-        </p>
+        <p><b>Cinematography:</b><a id="mDirectorLink"></a></p>
         <hr />
       </div>
     </div>
@@ -285,90 +282,50 @@
         alt="image"
         class="angle"
         src="../assets/images/angle-small-right.png"
-        alt=""
       />
     </h2>
-
     <div class="top">
       <div class="img-actor">
-        <a class="ang" href="https://en.wikipedia.org/wiki/Melissa_George">
-          <img
-            alt="image"
-            class="actor"
-            src="../assets/images/MelissaGeorgeJun.jpg"
-            alt=""
-          />
-          <span class="actor-name">Melissa George</span>
+        <a class="ang" id="actor_wiki1">
+          <img alt="image" class="actor" id="actor_img1" />
+          <span class="actor-name" id="actor_name1"></span>
         </a>
       </div>
       <div class="img-actor">
-        <a class="ang" href="https://en.wikipedia.org/wiki/Michael_Dorman">
-          <img
-            alt="image"
-            class="actor"
-            src="../assets/images/Dorman.jpg"
-            alt=""
-          />
-          <span class="actor-name">Michael Dorman</span>
+        <a class="ang" id="actor_wiki2">
+          <img alt="image" class="actor" id="actor_img2" />
+          <span class="actor-name" id="actor_name2"></span>
         </a>
       </div>
       <div class="img-actor">
-        <a class="ang" href="https://en.wikipedia.org/wiki/Liam_Hemsworth">
-          <img
-            alt="image"
-            class="actor"
-            src="../assets/images/liam.jpg"
-            alt=""
-          />
-          <span class="actor-name">Liam Hemsworth</span>
+        <a class="ang" id="actor_wiki3">
+          <img alt="image" class="actor" id="actor_img3" />
+          <span class="actor-name" id="actor_name3"></span>
         </a>
       </div>
       <div class="img-actor">
-        <a class="ang" href="https://en.wikipedia.org/wiki/Henry_Nixon">
-          <img
-            alt="image"
-            class="actor"
-            src="../assets/images/henry.jpg"
-            alt=""
-          />
-          <span class="actor-name">Henry Nixon</span>
+        <a class="ang" id="actor_wiki4">
+          <img alt="image" class="actor" id="actor_img4" />
+          <span class="actor-name" id="actor_name4"></span>
         </a>
       </div>
       <div class="sec-list">
         <div class="img-actor">
-          <a class="ang" href="https://en.wikipedia.org/wiki/Rachael_Carpani">
-            <img
-              alt="image"
-              class="actor"
-              src="../assets/images/Rachael.jpg"
-              alt=""
-            />
-            <span class="actor-name">Rachael Carpani</span>
+          <a class="ang" id="actor_wiki5">
+            <img alt="image" class="actor" id="actor_img5" />
+            <span class="actor-name" id="actor_name5"></span>
           </a>
         </div>
         <div class="img-actor">
-          <a class="ang" href="https://en.wikipedia.org/wiki/Emma_Lung">
-            <img
-              alt="image"
-              class="actor"
-              src="../assets/images/Emma_Lung.jpg"
-              alt=""
-            />
-            <span class="actor-name">Emma Lung</span>
+          <a class="ang" id="actor_wiki6">
+            <img alt="image" class="actor" id="actor_img6" />
+            <span class="actor-name" id="actor_name6"></span>
           </a>
         </div>
         <div class="img-actor">
-          <a
-            class="ang"
-            href="https://en.wikipedia.org/wiki/Jack_Taylor_(American_actor)"
-          >
-            <img
-              alt="image"
-              class="actor"
-              src="../assets/images/jack-1jpg.jpg"
-              alt=""
-            />
-            <span class="actor-name">Jack Taylor</span>
+          <a class="ang" id="actor_wiki7">
+            <img alt="image" class="actor" id="actor_img7" />
+            <span class="actor-name" id="actor_name7"></span>
           </a>
         </div>
       </div>
@@ -380,28 +337,24 @@
           alt="image"
           class="angle"
           src="../assets/images/angle-small-right.png"
-          alt=""
         />
       </h2>
-      <a
-        class="national"
-        href="https://m.imdb.com/title/tt1187064/awards/?ref_=tt_awd"
-        ><h4>1.Best Direct-to-Video Film [Winner]</h4></a
-      >
-
+      <a class="national" id="award_wiki">
+        <h4 id="award_name"></h4>
+      </a>
       <a href="#back">
         <button class="btn4">
           <i id="top-arrow" class="fa fa-caret-square-o-up"></i>&nbsp;Back
         </button>
       </a>
-      <a href="https://www.amazon.com/Triangle-Melissa-George/dp/B07JMZ4YDY">
+      <a id="movie_link">
         <button class="btn3">
           Watch on Prime Video <i id="play" class="fa fa-play-circle-o"></i>
         </button>
       </a>
     </div>
 
-    <br id="top" />
+    <!-- <br id="top" />
     <h2 class="up">Top Gun</h2>
 
     <div>
@@ -1531,7 +1484,7 @@
           Watch on Prime Video <i id="play" class="fa fa-play-circle-o"></i>
         </button>
       </a>
-    </div>
+    </div> -->
 
     <div class="footer">
       <ol class="social">
@@ -1563,5 +1516,6 @@
     </div>
   </body>
   <script src="../assets/js/json.js"></script>
-  <script src="../assets/js/hollywood.js"></script>
+  <script src="../assets/js/hollywood_admin.js"></script>
+  <script src="../assets/js/hollywoodForm.js"></script>
 </html>
