@@ -67,7 +67,17 @@
             id="mobilenumber"
             placeholder=" enter your mobilenumber"
           /><br />
+          <label for="emailid">Enter your Username</label><br />
+          <input
+            autocomplete="off"
+            required="true"
+            type="text"
+            class="emailid"
+            id="user_name"
+            placeholder="Enter your Username"
+          /><br />
         </div>
+      
           <div class="user_details1">
           <label for="addressline1">Date of Brith</label><br />
           <input
@@ -108,6 +118,16 @@
                 class="country"
                 id="country"
                 placeholder="Country"
+              /><br />
+
+              <label for="emailid">Enter your image URL</label><br />
+              <input
+                autocomplete="off"
+                required="true"
+                type="text"
+                class="emailid"
+                id="img_url"
+                placeholder="Enter your image URL"
               /><br />
            
           </div>  
@@ -165,6 +185,8 @@
       let state = document.getElementById("state").value;  
       let country = document.getElementById("country").value; 
       let gender  = document.getElementById("gender").value; 
+      let image  = document.getElementById("img_url").value;
+      let userName  = document.getElementById("user_name").value;
       
       let new_data = {
         fname,
@@ -175,6 +197,8 @@
         state,
         country,
         gender,
+        image,
+        userName,
       };
       // if( mail.value != user_email ){
       //   alert("You can't change the email-id")
@@ -212,6 +236,8 @@
       let state1 = document.getElementById("state");  
       let country1 = document.getElementById("country"); 
       let gender1  = document.getElementById("gender");
+      let image1  = document.getElementById("img_url");
+      let userName1  = document.getElementById("user_name");
 
       fname1.value  = user_obj["fname"];
       lname1.value  = user_obj["lname"];
@@ -221,7 +247,8 @@
       state1.value  = user_obj["state"];
       country1.value  = user_obj["country"];
       gender1.value  = user_obj["gender"];  
-      
+      image1.value = user_obj["image"]
+      userName1.value = user_obj["userName"];
      }    
       });
 

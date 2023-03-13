@@ -10,6 +10,7 @@ h1 {
   position: relative;
   bottom: 35px;
 }
+
 h1:hover {
   cursor: pointer;
 }
@@ -64,8 +65,8 @@ h1:hover {
   width: auto;
   padding: 16px;
   margin-top: 155px;
-  margin-left: 80px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: #333;
   font-weight: bold;
   font-size: 18px;
@@ -192,6 +193,10 @@ ul li ul.dropdown li {
   max-height: 240px;
   width: 100%;
 }
+.adj {
+  margin-left: 20px;
+  margin-right: 20px;
+}
 body {
   width: 100%;
 }
@@ -235,7 +240,7 @@ p {
 }
 /* slider card */
 .box {
-  margin-left: 130px;
+  margin-left: 80px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: white;
@@ -244,7 +249,7 @@ p {
   margin-top: 50px;
   margin-bottom: 50px;
   cursor: pointer;
-  box-shadow: 12px 15px 10px white;
+  box-shadow: 12px 15px 10px gray;
   transition: 0.4s;
   animation-name: box;
   animation-duration: 1.5s;
@@ -443,7 +448,7 @@ p {
 }
 .watch {
   position: relative;
-  left: 800px;
+  left: 850px;
   bottom: 780px;
 }
 .play {
@@ -560,7 +565,7 @@ a {
 .star_rating {
   user-select: none;
   position: relative;
-  top: 100px;
+  top: 250px;
   left: 180px;
 }
 .star {
@@ -704,10 +709,9 @@ textarea:invalid {
   top: 50px;
 }
 .avatar-2 {
-  width: 50px;
-  height: 30px;
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 350px;
 }
 .policy {
   display: flex;
@@ -728,6 +732,10 @@ textarea:invalid {
 }
 .last-one:hover {
   text-decoration: underline;
+}
+/* comment css */
+.input-group {
+  margin-left: 800px;
 }
 /* responsive width 900px*/
 @media screen and (max-width: 900px) {

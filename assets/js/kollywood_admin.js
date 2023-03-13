@@ -1,64 +1,4 @@
-let card = [
-  {
-    id: "",
-    image: "../assets/images/triangle.jpg",
-    href: "#triangle",
-    category: "hollywood",
-    genre: ["", ""],
-    rate: 8.5,
-    title: "Triangle",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/top.jpg",
-    href: "#top",
-    rate: 8,
-    title: "Top Gun:Maverick",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/inter.jpg",
-    href: "#inter",
-    rate: 9,
-    title: "Intersteller",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/ince.jpg",
-    href: "#inception",
-    rate: 9.5,
-    title: "Inception",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/pre.jpg",
-    href: "#prestige",
-    rate: 9,
-    title: "The Prestige",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/pass.jpg",
-    href: "#pass",
-    rate: 8,
-    title: "Passengers",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/john.jpg",
-    href: "#john",
-    rate: 9,
-    title: "John Wick",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/dont.jpg",
-    href: "#carter",
-    rate: 8.5,
-    title: "Don't Breathe",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-];
+let card = [];
 
 // const url = window.location.search; // ?datas={}
 // const urlParams = new URLSearchParams(url); // converting string into key value pair
@@ -155,8 +95,6 @@ for (let i = 0; i < card.length; i++) {
   document.querySelector(".menu").append(card_div);
   console.log(edit_btn);
 }
-
-//
 
 let movieTitle = document.getElementById("movie_title").value;
 let trailer = document.getElementById("trailer").value;

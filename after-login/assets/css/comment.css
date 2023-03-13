@@ -1,0 +1,154 @@
+/* Input container */
+.input-container {
+  position: relative;
+  margin: 20px;
+  margin-left: 950px;
+  position: relative;
+  bottom: 450px;
+  width: 100%;
+}
+
+/* Input field */
+.input-field {
+  display: block;
+  width: 30%;
+  padding: 10px;
+  font-size: 16px;
+  height: 80px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  border-radius: 18px;
+  box-shadow: 8px 8px 0px #333;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Input label */
+.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 25px;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Input highlight */
+.input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #007bff;
+  transition: all 0.3s ease;
+}
+
+/* Input field:focus styles */
+.input-field:focus + .input-label {
+  top: -20px;
+  font-size: 12px;
+  color: #007bff;
+}
+
+.input-field:focus + .input-label + .input-highlight {
+  width: 31.4%;
+}
+
+.user-comment {
+  width: 500px;
+  height: 400px;
+  scroll-behavior: auto;
+}
+
+.link-grey {
+  color: #aaa;
+}
+.link-grey:hover {
+  color: #00913b;
+}
+.comment_con {
+  margin-left: 150px;
+  height: 600px;
+  width: 68%;
+  position: relative;
+  bottom: 400px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  border-radius: 50px;
+}
+.comment_con::-webkit-scrollbar {
+  display: none;
+}
+.comment_fin {
+  width: 700px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 36px;
+}
+.comment_div {
+  margin-left: 10px;
+  margin-top: 30px;
+  display: flex;
+  margin-bottom: 10px;
+}
+.commenter_img {
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  width: 80px;
+  height: 80px;
+  border-radius: 400px;
+}
+.commenter_name {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.comment_one {
+  margin-left: 130px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  bottom: 35px;
+}
+.comment_input {
+  font-size: 20px;
+}
+#showComment {
+  margin-left: 1310px;
+  position: relative;
+  bottom: 1000px;
+}
+/* like button */
+
+#icon {
+  font-size: 30px;
+  cursor: pointer;
+  color: #f5c518;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  margin-left: 120px;
+}
+
+/* edit  */
+
+.comments_edit {
+  margin-left: 60px;
+  margin-right: 50px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+.comments_edit:hover {
+  color: #007bff;
+}
+.comments_delete {
+  cursor: pointer;
+  margin-top: 25px;
+  margin-right: 20px;
+}
+.comments_delete:hover {
+  color: red;
+}

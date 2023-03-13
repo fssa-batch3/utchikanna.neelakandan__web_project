@@ -57,6 +57,10 @@ let card = [
   },
 ];
 
+// const url = window.location.search; // ?datas={}
+// const urlParams = new URLSearchParams(url); // converting string into key value pair
+// const datas = urlParams.get("datas"); // return value of the "name" key
+
 // card
 let card_div;
 let a_tag;
@@ -65,7 +69,17 @@ let rate;
 let rating;
 let title;
 let btn;
+let delete_btn;
+let edit_btn;
 let link;
+
+let create_card = JSON.parse(localStorage.getItem("new_card"));
+console.log(create_card);
+
+for (let i = 0; i < create_card.length; i++) {
+  card.push(create_card[i]);
+  console.log(card);
+}
 
 for (let i = 0; i < card.length; i++) {
   // box
@@ -75,7 +89,10 @@ for (let i = 0; i < card.length; i++) {
   // a tag
 
   a_tag = document.createElement("a");
-  a_tag.setAttribute("href", card[i]["href"]);
+  a_tag.setAttribute(
+    "href",
+    "../after-login/productDetails.html?id=" + card[i]["id"]
+  );
   card_div.append(a_tag);
 
   // image
@@ -124,15 +141,5 @@ for (let i = 0; i < card.length; i++) {
 
   document.querySelector(".menu").append(card_div);
 }
-let content_box = [
-  {
-    bolt: "Rating:",
-    rating_outOf: 8.5 / 10,
-    about: "About the Movie",
-    description:
-      "When a storm upturns their yacht, a group of passengers jump on board a ship close by. However, they soon realise that they are in greater danger aboard the mysterious vessel.",
-    bolt_2: "Release date:",
-    release_date: "16 October 2009",
-    bolt_3: "Director:",
-  },
-];
+
+// let newCard = localStorage.setItem("new_card", JSON.stringify(card));

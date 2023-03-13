@@ -26,3 +26,18 @@ productContainers.forEach((item, i) => {
     item.scrollLeft -= containerWidth;
   });
 });
+
+let user_email = JSON.parse(localStorage.getItem("details"));
+
+let user_details = JSON.parse(localStorage.getItem("user"));
+console.log(user_details);
+let get_obj = user_details.find(function (user_obj) {
+  let check_email = user_obj["email"];
+  if (user_email === check_email) {
+    return true;
+  }
+});
+console.log(get_obj);
+
+let viewImage = document.getElementById("view_image");
+viewImage.src = get_obj["image"];
