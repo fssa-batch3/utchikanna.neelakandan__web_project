@@ -1,10 +1,62 @@
-let card = [];
+let card = [
+  {
+    image: "../assets/images/asuran_.jpg",
+    href: "#asuran",
+    rate: 8.5,
+    title: "Asuran",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/Nayakan.jpg",
+    href: "#nayakan",
+    rate: 8,
+    title: "Nayakan",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/thalapathy.jpg",
+    href: "#thalapathy",
+    rate: 8.5,
+    title: "Thalapathy",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/mahaan.jpg",
+    href: "#mahaan",
+    rate: 9,
+    title: "Mahaan",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/soorarai.jpg",
+    href: "#soorarai",
+    rate: 9.5,
+    title: "Soorarai Potru",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/kgf2.jpg",
+    href: "#captain",
+    rate: 8.5,
+    title: "KGF-2",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/vikram.jpg",
+    href: "#vikram",
+    rate: 7.5,
+    title: "Vikram",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/vada.jpg",
+    href: "#vada",
+    rate: 8.5,
+    title: "Vada Chennai",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+];
 
-// const url = window.location.search; // ?datas={}
-// const urlParams = new URLSearchParams(url); // converting string into key value pair
-// const datas = urlParams.get("datas"); // return value of the "name" key
-
-// card
 let card_div;
 let a_tag;
 let image;
@@ -16,7 +68,7 @@ let delete_btn;
 let edit_btn;
 let link;
 
-let create_card = JSON.parse(localStorage.getItem("new_card"));
+let create_card = JSON.parse(localStorage.getItem("kollywood"));
 console.log(create_card);
 
 for (let i = 0; i < create_card.length; i++) {

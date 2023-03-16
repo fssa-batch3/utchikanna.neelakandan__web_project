@@ -130,13 +130,13 @@ form.addEventListener("submit", function (event) {
 
   let all = [];
 
-  if (localStorage.getItem("new_card") != null) {
-    all = JSON.parse(localStorage.getItem("new_card"));
+  if (localStorage.getItem("kollywood") != null) {
+    all = JSON.parse(localStorage.getItem("kollywood"));
     console.log(all);
   }
 
   all.push(updates);
 
-  localStorage.setItem("new_card", JSON.stringify(all));
-  location.href = "../pages/hollywood_admin (1).html";
+  localStorage.setItem("kollywood", JSON.stringify(all));
+  location.href = "../pages/kollywood_admin (2).html";
 });

@@ -1,0 +1,24 @@
+{
+  "name": "cinephile",
+  "version": "1.0.0",
+  "description": "cinephile is an online database of information related to films, television series, and streaming content online – including cast, production crew and personal biographies, plot summaries, ratings, and fan and critical reviews.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fssa-batch3/utchikanna.neelakandan__web_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fssa-batch3/utchikanna.neelakandan__web_project/issues"
+  },
+  "homepage": "https://github.com/fssa-batch3/utchikanna.neelakandan__web_project#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "husky": "^8.0.3"
+  }
+}

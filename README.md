@@ -20,3 +20,10 @@ CRUD For User Features page
 => Read Product Data For card [completed]
 => Update user details For card [completed]
 => Deactivate Product details For Card [completed]
+
+CRUD For User Comments Feature
+
+=> Create comment [completed]
+=> Read comment [completed]
+=> Edit comment [completed]
+=> Delete comment [completed]
