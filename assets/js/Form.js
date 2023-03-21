@@ -122,6 +122,25 @@ form.addEventListener("submit", function (event) {
   let movieLink = document.getElementById("movieLink").value;
   updates["movieLink"] = movieLink;
 
+  let movieCategory = document.getElementById("movietype").value;
+  updates["movietype"] = movieCategory;
+  console.log(movieCategory);
+
+  // let kollywood = document.getElementById("kollywood").value;
+  // updates["kollywood"] = kollywood;
+
+  // let hollywood = document.getElementById("hollywood").value;
+  // updates["hollywood"] = hollywood;
+
+  // let marvel = document.getElementById("marvel").value;
+  // updates["marvel"] = marvel;
+
+  // let web = document.getElementById("web").value;
+  // updates["web"] = web;
+
+  // let superhero = document.getElementById("superhero").value;
+  // updates["superhero"] = superhero;
+
   let id = Date.now();
 
   updates["id"] = id;
@@ -130,13 +149,13 @@ form.addEventListener("submit", function (event) {
 
   let all = [];
 
-  if (localStorage.getItem("kollywood") != null) {
-    all = JSON.parse(localStorage.getItem("kollywood"));
+  if (localStorage.getItem("new_card") != null) {
+    all = JSON.parse(localStorage.getItem("new_card"));
     console.log(all);
   }
 
   all.push(updates);
 
-  localStorage.setItem("kollywood", JSON.stringify(all));
-  location.href = "../pages/kollywood_admin (2).html";
+  localStorage.setItem("new_card", JSON.stringify(all));
+  location.href = "../pages/hollywood_admin (1).html";
 });

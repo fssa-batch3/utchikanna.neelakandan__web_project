@@ -131,13 +131,13 @@
   color: #f5c518;
   margin-top: 15px;
   margin-bottom: 40px;
-  margin-left: 185px;
+  margin-left: 200px;
 }
 
 /* edit style  */
 
 .comments_edit {
-  margin-left: 60px;
+  margin-left: 40px;
   margin-right: 50px;
   margin-top: 25px;
   cursor: pointer;
@@ -148,7 +148,7 @@
 .comments_delete {
   cursor: pointer;
   margin-top: 25px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .comments_delete:hover {
   color: red;

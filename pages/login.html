@@ -76,23 +76,31 @@
         let Password = document.getElementById("password").value;
 
         let Match = false;
+        let admin = false;
 
         for (let i = 0; i < checker.length; i++) {
           // console.log(checker[i]);
           let specific_user = JSON.parse(window.localStorage.getItem("user"));
 
+          if (email == "admin@gmail.com" && Password == "kanna@3108") {
+            admin = true;
+          }
           if (email === checker[i].email && Password === checker[i].password) {
             Match = true;
             window.localStorage.setItem(
               "details",
               JSON.stringify(checker[i].email)
             );
-            break;
           }
         }
+
         if (Match === true) {
           window.alert("Log in Successfully!");
           window.location.href = "../after-login/index.html";
+        }
+        if (admin === true) {
+          window.alert("Welcome Admin!!!");
+          window.location.href = "../pages/admin_page.html";
         } else {
           window.alert("Incorrect Email-id or Password");
         }

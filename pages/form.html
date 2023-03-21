@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/movie.css" />
-    <title>Document</title>
+    <title>Hollywood Form</title>
+    <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="../assets/images/Cinephile.png"
+  />
   </head>
   <body>
     <form id="form">
@@ -202,11 +208,19 @@
         <span>Movie Link</span>
       </div>
       <br /><hr>
+      <select id="movietype" name="movietype" required="required">
+        <option value="hollywood">Hollywood</option>
+        <option value="kollywood">Kollywood</option>
+        <option value="web serise">Web Series</option>
+        <option value="marvel serise">Marvel Series</option>
+        <option value="superhero movies">Superhero Movie</option>
+      </select>
+    
 
       <button type="submit" class="btn5">Send</button>
+      <br><br><br>
     </form>
-    <script src="../assets/js/hollywoodForm.js"></script>
-    <script src="../assets/js/hollywood_admin.js "></script>
-    <script src="../assets/js/kollywood_admin.js "></script>
+    <script src="../assets/js/Form.js"></script>
+    <script src="../assets/js/admin_page.js "></script>
   </body>
 </html>

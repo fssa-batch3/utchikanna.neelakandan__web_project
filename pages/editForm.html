@@ -187,13 +187,22 @@
         <input id="movieLink" type="text" name="" required="required" />
         <span>Movie Link</span>
       </div>
+      <div class="inputBox">
+        <select id="movietype" name="movietype" required="required">
+          <option value="hollywood">Hollywood</option>
+          <option value="kollywood">Kollywood</option>
+          <option value="web serise">Web Series</option>
+          <option value="marvel serise">Marvel Series</option>
+          <option value="superhero movies">Superhero Movie</option>
+        </select>
+      </div>
       <br />
       <hr />
 
       <button type="submit" class="btn5">Send</button>
     </form>
     <button type="delete" onclick="del()" class="btn5">Delete</button>
-    <script src="../assets/js/hollywood_admin.js "></script>
+    <script src="../assets/js/admin_page.js "></script>
     <script>
       const c_id = window.location.search;
       const c_params = new URLSearchParams(c_id);
@@ -243,6 +252,7 @@
       const edit_awardName = document.getElementById("awardname");
       const edit_awardWiki = document.getElementById("awardWiki");
       const edit_movieLink = document.getElementById("movieLink");
+      const edit_movieType = document.getElementById("movietype");
 
       image_url.value = oneCard["image"];
 
@@ -311,6 +321,8 @@
       edit_awardWiki.value = oneCard["awardWiki"];
 
       edit_movieLink.value = oneCard["movieLink"];
+
+      edit_movieType.value = oneCard["movietype"];
 
       let form = document.getElementById("form");
 
@@ -424,6 +436,24 @@
 
         let movieLink = document.getElementById("movieLink").value;
         updates["movieLink"] = movieLink;
+
+        let movieType = document.getElementById("movietype").value;
+        updates["movietype"] = movieType;
+
+        // let kollywood = document.getElementById("kollywood").checked;
+        // updates["kollywood"] = kollywood;
+
+        // let hollywood = document.getElementById("hollywood").checked;
+        // updates["hollywood"] = hollywood;
+
+        // let marvel = document.getElementById("marvel").checked;
+        // updates["marvel"] = marvel;
+
+        // let web = document.getElementById("web").checked;
+        // updates["web"] = web;
+
+        // let superhero = document.getElementById("superhero").checked;
+        // updates["superhero"] = superhero;
 
         let edit_card = Object.assign(oneCard, updates);
 
