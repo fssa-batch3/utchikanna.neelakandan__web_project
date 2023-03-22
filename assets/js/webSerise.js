@@ -67,6 +67,17 @@ let title;
 let btn;
 let link;
 
+let create_card = JSON.parse(localStorage.getItem("new_card"));
+console.log(create_card);
+function movieType(type) {
+  const movietype = create_card.filter((h) => h.movietype == type);
+  return movietype;
+}
+for (let i = 0; i < movieType("Web Series").length; i++) {
+  card.push(movieType("Web Series")[i]);
+  console.log(card);
+}
+
 for (let i = 0; i < card.length; i++) {
   // box
   card_div = document.createElement("div");
