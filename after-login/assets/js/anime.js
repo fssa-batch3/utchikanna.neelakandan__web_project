@@ -95,7 +95,7 @@ for (let i = 0; i < card.length; i++) {
   a_tag = document.createElement("a");
   a_tag.setAttribute(
     "href",
-    "../pages/productDetails.html?id=" + card[i]["id"]
+    "../after-login/productDetails.html?id=" + card[i]["id"]
   );
   card_div.append(a_tag);
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -10,32 +10,41 @@
       sizes="32x32"
       href="../assets/images/Cinephile.png"
     />
-    <title>Anime Series</title>
+    <title>Hollywood</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="../assets/css/search.css" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/movie.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../after-login/assets/css/search.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../after-login/assets/css/movie.css"
+    />
   </head>
   <body class="home">
+    <!-- nav bar -->
     <ul>
       <img class="letter-c" src="../assets/images/letter-c.gif" alt="" />
       <h1>
         <span>inePhile</span>
       </h1>
-      <li class="nav-list"><a href="../index.html">Home</a></li>
+      <li class="nav-list"><a href="../after-login/index.html">Home</a></li>
       <li class="nav-list">
         <a class="width" href="#">Movies</a>
         <ul class="dropdown">
           <li class="dropdown-list">
-            <a href="../pages/kollywood.html">Kollywood</a>
+            <a href="../after-login/kollywood.html">Kollywood</a>
           </li>
           <li class="dropdown-list">
-            <a href="../pages/hollywood.html">Hollywood</a>
+            <a href="../after-login/hollywood.html">Hollywood</a>
           </li>
           <li class="dropdown-list">
-            <a href="../pages/superHero.html">Superhero Movies </a>
+            <a href="../after-login/superHero.html">Superhero Movies </a>
           </li>
         </ul>
       </li>
@@ -43,20 +52,25 @@
         <a href="#">Series</a>
         <ul class="dropdown">
           <li class="dropdown-list">
-            <a href="../pages/webSerise.html">Web Series</a>
+            <a href="../after-login/webSerise.html">Web Series</a>
           </li>
           <li class="dropdown-list">
-            <a href="../pages/anime.html">Anime Series</a>
+            <a href="../after-login/anime.html">Anime Series</a>
           </li>
         </ul>
       </li>
 
-      <li class="nav-list"><a href="../pages/about.html">About </a></li>
+      <li class="nav-list"><a href="../after-login/about.html">About</a></li>
       <li class="nav-list">
-        <a href="../pages/logIn.html">Log In</a>
-      </li>
-      <li id="sign" class="nav-list">
-        <a href="../pages/signUp.html">Sign Up</a>
+        <a href="#" class="adj"
+          ><img alt="image" class="avatar-2" id="view_image"
+        /></a>
+        <ul class="dropdown">
+          <li class="dropdown-list"><a href="../index.html">Log Out</a></li>
+          <li class="dropdown-list">
+            <a href="../after-login/userprofile.html">Personal Details</a>
+          </li>
+        </ul>
       </li>
     </ul>
     <div class="input-container">
@@ -298,6 +312,7 @@
       </div>
     </div>
   </body>
-  <script src="../assets/js/json.js"></script>
-  <script src="../assets/js/anime.js"></script>
+  <script src="../after-login/assets/js/star.js"></script>
+  <script src="../after-login/assets/js/search.js"></script>
+  <script src="../after-login/assets/js/anime.js"></script>
 </html>

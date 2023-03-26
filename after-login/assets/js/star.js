@@ -1,16 +1,20 @@
+// star
+
 const allStars = document.querySelectorAll(".star");
-allStars.forEach((star, i) => {
-  star.onclick = function () {
-    let current_star_level = i + 1;
+
+allStars.forEach((star, index) => {
+  star.addEventListener("click", () => {
+    const currentStarLevel = index + 1;
+
     allStars.forEach((star, j) => {
-      if (current_star_level >= j + 1) {
-        star.innerHTML = "&#9733;";
-      } else {
-        star.innerHTML = "&#9734;";
-      }
+      const isStarActive = currentStarLevel >= j + 1;
+      star.innerHTML = isStarActive ? "&#9733;" : "&#9734;";
     });
-  };
+  });
 });
+
+// scroll
+
 const productContainers = [...document.querySelectorAll(".menu")];
 const nxtBtn = [...document.querySelectorAll(".next")];
 const prevBtn = [...document.querySelectorAll(".prev")];
@@ -26,6 +30,8 @@ productContainers.forEach((item, i) => {
     item.scrollLeft -= containerWidth;
   });
 });
+
+// user image showing
 
 let user_email = JSON.parse(localStorage.getItem("details"));
 

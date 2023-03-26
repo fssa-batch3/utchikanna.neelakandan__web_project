@@ -1,58 +1,58 @@
 let card = [
   {
-    image: "../assets/images/loki.jpg",
-    href: "#endgame",
-    rate: 9.5,
-    title: "Loki",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/moon.jpg",
-    href: "#war",
-    rate: 9,
-    title: "Moon Knight",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/wanda.jpg",
-    href: "#spider",
+    image: "../assets/images/asuran_.jpg",
+    href: "#asuran",
     rate: 8.5,
-    title: "Wanda Vision",
+    title: "Asuran",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
   },
   {
-    image: "../assets/images/ms.jpg",
-    href: "#doctor",
-    rate: 8.5,
-    title: "Ms Marvel",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/falcon.jpg",
-    href: "#civil",
+    image: "../assets/images/Nayakan.jpg",
+    href: "#nayakan",
     rate: 8,
-    title: "Falcon",
+    title: "Nayakan",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
   },
   {
-    image: "../assets/images/she.jpg",
-    href: "#thor",
-    rate: 7.5,
-    title: "She Hulk",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/hawkeye.jpg",
-    href: "#iron",
+    image: "../assets/images/thalapathy.jpg",
+    href: "#thalapathy",
     rate: 8.5,
-    title: "Hawkeye",
+    title: "Thalapathy",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
   },
   {
-    image: "../assets/images/what.jpg",
-    href: "#captain",
+    image: "../assets/images/mahaan.jpg",
+    href: "#mahaan",
     rate: 9,
-    title: "What If...?",
+    title: "Mahaan",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/soorarai.jpg",
+    href: "#soorarai",
+    rate: 9.5,
+    title: "Soorarai Potru",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/kgf2.jpg",
+    href: "#captain",
+    rate: 8.5,
+    title: "KGF-2",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/vikram.jpg",
+    href: "#vikram",
+    rate: 7.5,
+    title: "Vikram",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/vada.jpg",
+    href: "#vada",
+    rate: 8.5,
+    title: "Vada Chennai",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
   },
 ];
@@ -67,6 +67,16 @@ let title;
 let btn;
 let link;
 
+let create_card = JSON.parse(localStorage.getItem("new_card"));
+console.log(create_card);
+function movieType(type) {
+  const movietype = create_card.filter((h) => h.movietype == type);
+  return movietype;
+}
+for (let i = 0; i < movieType("kollywood").length; i++) {
+  card.push(movieType("kollywood")[i]);
+  console.log(card);
+}
 for (let i = 0; i < card.length; i++) {
   // box
   card_div = document.createElement("div");
@@ -75,7 +85,10 @@ for (let i = 0; i < card.length; i++) {
   // a tag
 
   a_tag = document.createElement("a");
-  a_tag.setAttribute("href", card[i]["href"]);
+  a_tag.setAttribute(
+    "href",
+    "../after-login/productDetails.html?id=" + card[i]["id"]
+  );
   card_div.append(a_tag);
 
   // image

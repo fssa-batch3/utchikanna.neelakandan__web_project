@@ -75,9 +75,13 @@ let link;
 
 let create_card = JSON.parse(localStorage.getItem("new_card"));
 console.log(create_card);
+function movieType(type) {
+  const movietype = create_card.filter((h) => h.movietype == type);
+  return movietype;
+}
 
-for (let i = 0; i < create_card.length; i++) {
-  card.push(create_card[i]);
+for (let i = 0; i < movieType("hollywood").length; i++) {
+  card.push(movieType("hollywood")[i]);
   console.log(card);
 }
 

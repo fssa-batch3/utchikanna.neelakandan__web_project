@@ -1,6 +1,6 @@
-// comment send
+// feedback send
 let commenter;
-let showComment = document.getElementById("showComment");
+let showComment = document.getElementById("showFeedback");
 showComment.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -15,66 +15,57 @@ showComment.addEventListener("click", function (event) {
     }
   });
   console.log(get_obj);
-  let input = document.getElementById("comment-input").value;
+  let feedback = document.getElementById("feed").value;
   let commenter_name = get_obj["userName"];
   let comment_img = get_obj["image"];
 
-  let comment_id = Date.now();
+  let feedback_id = Date.now();
 
   let commenter = {
-    input,
-    comment_id,
+    feedback,
+    feedback_id,
     user_email,
-    get_movie_id,
     commenter_name,
     comment_img,
-    current_time: moment().format("DD-MMM-YYYY hh:mm A"),
+    // current_time: moment().format("DD-MMM-YYYY hh:mm A"),
   };
-  let comments = [];
+  let feedbacks = [];
 
-  if (localStorage.getItem("comments") != null) {
-    comments = JSON.parse(localStorage.getItem("comments"));
-    console.log(comments);
+  if (localStorage.getItem("feedbacks") != null) {
+    feedbacks = JSON.parse(localStorage.getItem("feedbacks"));
+    console.log(feedbacks);
   }
 
-  comments.push(commenter);
+  feedbacks.push(commenter);
 
-  localStorage.setItem("comments", JSON.stringify(comments));
+  localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
 
   location.reload();
 });
 
-// show comments
+// show feedbacks
 
-let set = [];
-let comm = JSON.parse(localStorage.getItem("comments"));
-for (let i = 0; i < comm.length; i++) {
-  let chech_m = comm[i]["get_movie_id"];
-  if (chech_m == get_movie_id) {
-    set.push(comm[i]);
-  }
-}
-console.log(set);
+let feed = JSON.parse(localStorage.getItem("feedbacks"));
 
 user_email = JSON.parse(localStorage.getItem("details"));
 
 let count = 0;
 
-const todayDate = moment();
-console.log(todayDate);
+// const todayDate = moment();
+// console.log(todayDate);
 
-let times = moment("10032023", "DDMMYYYY").fromNow();
+// let times = moment("10032023", "DDMMYYYY").fromNow();
 
-for (let i = 0; i < set.length; i++) {
-  const momentTime = moment(set[i]["current_time"]);
+for (let i = 0; i < feed.length; i++) {
+  //   const momentTime = moment(feed[i]["current_time"]);
 
-  const diffInDays = moment().diff(momentTime, "days");
-  let formattedDateTime;
-  if (diffInDays > 1) {
-    formattedDateTime = momentTime.format("DD-MMM-YYYY h:mm A");
-  } else {
-    formattedDateTime = momentTime.fromNow();
-  }
+  //   const diffInDays = moment().diff(momentTime, "days");
+  //   let formattedDateTime;
+  //   if (diffInDays > 1) {
+  //     formattedDateTime = momentTime.format("DD-MMM-YYYY h:mm A");
+  //   } else {
+  //     formattedDateTime = momentTime.fromNow();
+  //   }
   count++;
 
   let final = document.createElement("div");
@@ -84,42 +75,42 @@ for (let i = 0; i < set.length; i++) {
   whole.setAttribute("class", "comment_div");
   final.append(whole);
 
-  let span1 = document.createElement("span");
-  span1.setAttribute("class", "times");
-  span1.innerText = formattedDateTime;
-  final.append(span1);
+  //   let span1 = document.createElement("span");
+  //   span1.setAttribute("class", "times");
+  //   span1.innerText = formattedDateTime;
+  //   final.append(span1);
 
   let image = document.createElement("img");
   image.setAttribute("class", "commenter_img");
-  image.src = set[i]["comment_img"];
+  image.src = feed[i]["comment_img"];
   whole.append(image);
 
   let name = document.createElement("h2");
   name.setAttribute("class", "commenter_name");
-  name.innerText = set[i]["commenter_name"];
+  name.innerText = feed[i]["commenter_name"];
   whole.append(name);
 
-  let span = document.createElement("span");
-  whole.append(span);
+  //   let span = document.createElement("span");
+  //   whole.append(span);
 
-  let iTag = document.createElement("i");
-  iTag.setAttribute("id", "icon");
-  iTag.setAttribute("onclick", "likeBtn(this)");
-  iTag.setAttribute("class", "fa fa-thumbs-o-up");
-  span.append(iTag);
+  //   let iTag = document.createElement("i");
+  //   iTag.setAttribute("id", "icon");
+  //   iTag.setAttribute("onclick", "likeBtn(this)");
+  //   iTag.setAttribute("class", "fa fa-thumbs-o-up");
+  //   span.append(iTag);
 
-  if (user_email == set[i]["user_email"]) {
+  if (user_email == feed[i]["user_email"]) {
     let edit = document.createElement("a");
     edit.setAttribute("id", "comment_edit");
     edit.setAttribute("class", "comments_edit");
-    edit.setAttribute("onclick", "edit(" + set[i]["comment_id"] + ")");
+    edit.setAttribute("onclick", "edit(" + feed[i]["feedback_id"] + ")");
     edit.innerText = "Edit";
     whole.append(edit);
 
     let dele = document.createElement("a");
     dele.setAttribute("id", "comment_delete");
     dele.setAttribute("class", "comments_delete");
-    dele.setAttribute("onclick", "dele(" + set[i]["comment_id"] + ")");
+    dele.setAttribute("onclick", "dele(" + feed[i]["feedback_id"] + ")");
     dele.innerText = "Delete";
     whole.append(dele);
   }
@@ -131,20 +122,20 @@ for (let i = 0; i < set.length; i++) {
 
   let div3 = document.createElement("div");
   div3.setAttribute("class", "comment_input");
-  div3.setAttribute("id", set[i]["comment_id"]);
+  div3.setAttribute("id", feed[i]["feedback_id"]);
   final.append(div3);
 
   let input = document.createElement("input");
   input.setAttribute("class", "new_input");
   input.setAttribute("id", count);
   input.setAttribute("type", "text");
-  input.value = set[i]["input"];
+  input.value = feed[i]["feedback"];
   div3.append(input);
 
   let btn2 = document.createElement("button");
   btn2.setAttribute(
     "onclick",
-    "input(" + count + "," + set[i]["comment_id"] + ")"
+    "input(" + count + "," + feed[i]["feedback_id"] + ")"
   );
   btn2.setAttribute("class", "input_btn");
   btn2.innerText = "Submit";
@@ -152,7 +143,7 @@ for (let i = 0; i < set.length; i++) {
 
   let inpu = document.createElement("span");
   inpu.setAttribute("class", "comment_input1");
-  inpu.innerText = set[i]["input"];
+  inpu.innerText = feed[i]["feedback"];
   comments.append(inpu);
 
   document.querySelector(".comment_con").prepend(final);
@@ -160,11 +151,11 @@ for (let i = 0; i < set.length; i++) {
 
 // like button
 
-function likeBtn(x) {
-  x.classList.toggle("fa-thumbs-up");
-}
+// function likeBtn(x) {
+//   x.classList.toggle("fa-thumbs-up");
+// }
 
-console.log(rate_count);
+// console.log(rate_count);
 
 // edit comment
 
@@ -180,33 +171,35 @@ function edit(x) {
 // get comment from data base
 
 function input(x, id) {
-  let input = document.getElementById(x).value;
+  let feedback = document.getElementById(x).value;
 
-  console.log(input);
-  let newObj = { input };
+  console.log(feedback);
+  let newObj = { feedback };
 
-  let arr = JSON.parse(localStorage.getItem("comments"));
+  let arr = JSON.parse(localStorage.getItem("feedbacks"));
   let up = arr.find(function (e) {
-    if (id === e["comment_id"]) {
+    if (id === e["feedback_id"]) {
       return true;
     }
   });
+  console.log(up);
   let update = Object.assign(up, newObj);
+  console.log(update);
   let ind = arr.indexOf(up);
   arr[ind] = update;
-  localStorage.setItem("comments", JSON.stringify(arr));
+  localStorage.setItem("feedbacks", JSON.stringify(arr));
   location.reload();
 }
 
 function dele(id) {
-  let arr = JSON.parse(localStorage.getItem("comments"));
+  let arr = JSON.parse(localStorage.getItem("feedbacks"));
   let up = arr.find(function (e) {
-    if (id === e["comment_id"]) {
+    if (id === e["feedback_id"]) {
       return true;
     }
   });
   let ind = arr.indexOf(up);
   arr.splice(ind, 1);
-  localStorage.setItem("comments", JSON.stringify(arr));
+  localStorage.setItem("feedbacks", JSON.stringify(arr));
   location.reload();
 }

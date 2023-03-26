@@ -1,114 +1,58 @@
 let card = [
   {
-    image: "../assets/images/end.jpg",
-    href: "#endgame",
-    rate: 9,
-    title: "End Game",
+    image: "../assets/images/dragon.jpg",
+    href: "#dragon",
+    rate: 8.5,
+    title: "House of the Dragon",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
   },
   {
-    image: "../assets/images/war.jpg",
-    href: "#war",
+    image: "../assets/images/squid.jpg",
+    href: "#squid",
+    rate: 8,
+    title: "Squid Game",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/game.jpg",
+    href: "#game",
+    rate: 9,
+    title: "Game of Throne",
+    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+  },
+  {
+    image: "../assets/images/bad.jpg",
+    href: "#bad",
     rate: 9.5,
-    title: "Infinity War",
+    title: "Breaking Bad",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
   },
   {
-    image: "../assets/images/spider.jpg",
-    href: "#spider",
-    rate: 8.5,
-    title: "No Way Home",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/doctor.jpg",
-    href: "#doctor",
+    image: "../assets/images/money.jpg",
+    href: "#money",
     rate: 8,
-    title: "Doctor Strange",
+    title: "Money Heist",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
   },
   {
-    image: "../assets/images/civil.jpg",
-    href: "#civil",
-    rate: 9,
-    title: "Civil War",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/loki.jpg",
-    href: "#endgame",
-    rate: 9.5,
-    title: "Loki",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/moon.jpg",
-    href: "#war",
-    rate: 9,
-    title: "Moon Knight",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/wanda.jpg",
-    href: "#spider",
+    image: "../assets/images/prison.jpg",
+    href: "#prison",
     rate: 8.5,
-    title: "Wanda Vision",
+    title: "Prison Break",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
   },
   {
-    image: "../assets/images/ms.jpg",
-    href: "#doctor",
-    rate: 8.5,
-    title: "Ms Marvel",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/falcon.jpg",
-    href: "#civil",
+    image: "../assets/images/peaky.jpg",
+    href: "#peaky",
     rate: 8,
-    title: "Falcon",
+    title: "Peaky Blinders",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
   },
   {
-    image: "../assets/images/she.jpg",
-    href: "#thor",
-    rate: 7.5,
-    title: "She Hulk",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/hawkeye.jpg",
-    href: "#iron",
+    image: "../assets/images/scam.jpg",
+    href: "#scam",
     rate: 8.5,
-    title: "Hawkeye",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/what.jpg",
-    href: "#captain",
-    rate: 9,
-    title: "What If...?",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/thor.jpg",
-    href: "#thor",
-    rate: 8,
-    title: "Thor Rangnarok",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/iron.jpg",
-    href: "#iron",
-    rate: 8.5,
-    title: "Iron Man",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/captain.jpg",
-    href: "#captain",
-    rate: 9,
-    title: "The First Avenger",
+    title: "Scam 1992",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
   },
 ];
@@ -129,8 +73,8 @@ function movieType(type) {
   const movietype = create_card.filter((h) => h.movietype == type);
   return movietype;
 }
-for (let i = 0; i < movieType("superhero movies").length; i++) {
-  card.push(movieType("superhero movies")[i]);
+for (let i = 0; i < movieType("web series").length; i++) {
+  card.push(movieType("web series")[i]);
   console.log(card);
 }
 

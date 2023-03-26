@@ -73,8 +73,8 @@ function movieType(type) {
   const movietype = create_card.filter((h) => h.movietype == type);
   return movietype;
 }
-for (let i = 0; i < movieType("Web Series").length; i++) {
-  card.push(movieType("Web Series")[i]);
+for (let i = 0; i < movieType("web series").length; i++) {
+  card.push(movieType("web series")[i]);
   console.log(card);
 }
 
@@ -86,7 +86,10 @@ for (let i = 0; i < card.length; i++) {
   // a tag
 
   a_tag = document.createElement("a");
-  a_tag.setAttribute("href", card[i]["href"]);
+  a_tag.setAttribute(
+    "href",
+    "../pages/productDetails.html?id=" + card[i]["id"]
+  );
   card_div.append(a_tag);
 
   // image

@@ -19,7 +19,7 @@ h1:hover {
   font-size: 40px;
   color: #333;
   margin-left: 50px;
-  margin-top: 200px;
+  margin-top: 230px;
   margin-bottom: 50px;
   border-bottom: 1px solid white;
   width: 1px;
@@ -696,8 +696,8 @@ textarea:invalid {
 .form {
   border: 1px solid black;
   border-radius: 15px;
-  padding: 50px;
-  height: 350px;
+  padding: 40px;
+  height: 280px;
   position: relative;
   left: 680px;
   bottom: 550px;

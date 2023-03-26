@@ -157,5 +157,5 @@ form.addEventListener("submit", function (event) {
   all.push(updates);
 
   localStorage.setItem("new_card", JSON.stringify(all));
-  location.href = "../pages/hollywood_admin (1).html";
+  location.href = "../pages/admin_page.html";
 });

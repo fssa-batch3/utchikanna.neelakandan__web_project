@@ -20,6 +20,7 @@
       type="text/css"
       href="../after-login/assets/css/movie.css"
     />
+    <link rel="stylesheet" href="../after-login/assets/css/feedback.css" />
   </head>
   <body class="home">
     <!-- nav bar -->
@@ -50,7 +51,7 @@
             <a href="../after-login/webSerise.html">Web Series</a>
           </li>
           <li class="dropdown-list">
-            <a href="../after-login/marvel.html">Marvel Series</a>
+            <a href="../after-login/anime.html">Anime Series</a>
           </li>
         </ul>
       </li>
@@ -93,19 +94,8 @@
         src="../after-login/assets/images/man-giving-online-feedback.gif"
         alt="image"
       />
-      <h2 class="log">Send Message</h2>
+      <h2 class="log">Send Feedback</h2>
       <form class="form">
-        <div class="inputBox">
-          <input
-            id="name"
-            type="text"
-            name=""
-            required="true"
-            pattern="[A-Za-z]{1,32}"
-            autocomplete="off"
-          />
-          <span>User Name</span>
-        </div>
         <div class="inputBox">
           <input
             id="email"
@@ -118,11 +108,13 @@
         </div>
         <div class="inputBox">
           <textarea id="feed" required="required"></textarea>
-          <span>Type your Message...</span>
+          <span>Type your Feedback...</span>
         </div>
-        <button type="button" class="btn5">Send</button>
+        <button type="button" id="showFeedback" class="btn5">Send</button>
       </form>
     </div>
+    <span class="feed">User Feedbacks about Our Service</span>
+    <div class="comment_con"></div>
     <div class="footer">
       <ol class="social">
         <a class="icons" href="#"><i id="itag" class="fa fa-facebook"></i></a>
@@ -138,7 +130,7 @@
         <a class="last" href="../after-login/holly.html">Hollywood</a>
         <a class="last" href="../after-login/super.html">Superhero Movies</a>
         <a class="last" href="../after-login/web.html">Web Series</a>
-        <a class="last" href="../after-login/marvel.html">Marvel Series</a>
+        <a class="last" href="../after-login/anime.html">Anime Series</a>
       </ol>
       <ol class="policy">
         <a class="last-one" href="#">Help</a>
@@ -151,23 +143,8 @@
         <a class="last-one" href="#">Interest-Based Ads</a>
       </div>
     </div>
-    <script>
-      // function feedback() {
-      //   const userName = document.getElementById("name").value;
-      //   const email = document.getElementById("email").value;
-      //   const feed = document.getElementById("feed").value;
-
-      //   console.log(userName);
-      //   console.log(email);
-      //   console.log(feed);
-
-      //   localStorage.setItem("user_name", userName);
-      //   localStorage.setItem("user_email", email);
-      //   localStorage.setItem("user_feedback", feed);
-
-      //   window.location.href = "";
-      // }
-    </script>
+    <!-- <script src="https://momentjs.com/downloads/moment.min.js"></script> -->
+    <script src="../after-login/assets/js/feedback.js"></script>
     <script src="../after-login/assets/js/star.js"></script>
   </body>
 </html>
