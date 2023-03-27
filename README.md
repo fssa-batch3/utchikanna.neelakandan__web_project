@@ -28,4 +28,11 @@ CRUD For User Comments Feature
 => Edit comment [completed]
 => Delete comment [completed]
 
+CRUD For User Feedbacks Feature
+
+=> Create Feedback [completed]
+=> Read Feedback [completed]
+=> Edit Feedback [completed]
+=> Delete Feedback [completed]
+
 
