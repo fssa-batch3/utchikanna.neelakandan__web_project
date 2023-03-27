@@ -112,7 +112,7 @@ VIEW MOVIE DETAILS
 
 
 
-Scenario 1: Successfully view product/item details
+Scenario 1: Successfully view movie details
 
 
 Steps: Log in as a buyer.
@@ -128,4 +128,7 @@ The user can view the details of the selected movie.
 
 
 USER CAN COMMENT ABOUT THE MOVIE
+
+
+
 
