@@ -70,7 +70,7 @@ CRUD For User Feedbacks Feature
          
          
 
-Create an account
+CREATE AN ACCOUNT
 
 
 
@@ -90,7 +90,7 @@ The user is redirected to the login page.
 
 
 
-Create an account
+CREATE AN ACCOUNT
 
 
 
@@ -108,7 +108,7 @@ The user is redirected to the user profile page.
 
 
 
-View product/item details
+VIEW MOVIE DETAILS
 
 
 
@@ -124,4 +124,8 @@ Expected Result:
 
 
 The user can view the details of the selected movie.
+
+
+
+USER CAN COMMENT ABOUT THE MOVIE
 
