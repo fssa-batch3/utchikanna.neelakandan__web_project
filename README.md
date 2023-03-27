@@ -74,7 +74,7 @@ Create an account
 Scenario 1: Successfully create an account
 
 
-Steps:Navigate to the registration page.
+Steps: Navigate to the registration page.
 Enter the required information such as name, email, and password.
 Click the "Create Account" button.
 
@@ -85,12 +85,13 @@ Expected Result:
 The user is redirected to the login page.
 
 
+
 Create an account
 
 
 Scenario 1: Successfully login in to account
 
-Steps:Navigate to the login page.
+Steps: Navigate to the login page.
 Enter the required information such as email, and password.
 Click the "login" button.
 
@@ -101,4 +102,19 @@ The user is redirected to the user profile page.
 
 
 
+View product/item details
+
+
+Scenario 1: Successfully view product/item details
+
+
+Steps: Log in as a buyer.
+Navigate to the movies listing page.
+Select a movie to view its details.
+
+
+Expected Result:
+
+
+The user can view the details of the selected movie.
 
