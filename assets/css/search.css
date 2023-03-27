@@ -31,7 +31,7 @@
 .input:focus,
 .input:not(:placeholder-shown) {
   background-color: #fff;
-  border: 1px solid #333;
+  border: 2px solid #333;
   width: 290px;
   cursor: none;
   padding: 18px 16px 18px 40px;
