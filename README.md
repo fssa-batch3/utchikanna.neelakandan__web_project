@@ -67,8 +67,11 @@ CRUD For User Feedbacks Feature
 
          User story 
          
+         
+         
 
 Create an account
+
 
 
 Scenario 1: Successfully create an account
@@ -86,7 +89,9 @@ The user is redirected to the login page.
 
 
 
+
 Create an account
+
 
 
 Scenario 1: Successfully login in to account
@@ -102,7 +107,9 @@ The user is redirected to the user profile page.
 
 
 
+
 View product/item details
+
 
 
 Scenario 1: Successfully view product/item details
