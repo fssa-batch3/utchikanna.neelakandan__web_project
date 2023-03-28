@@ -138,5 +138,20 @@ Type your comment about the movie.
 Expected Result: The user can comment about movie.
 
 
+USER CAN GIVE FEEDBACK ABOUT OUR SITE
+
+
+
+Scenario 1: Successfully give feedback about our site 
+
+
+Steps: Log in as a user.
+Navigate to the about page.
+Type your feedback about our site.
+
+
+Expected Result: The user can give feedback about our site.
+
+
 
 
