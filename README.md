@@ -101,9 +101,7 @@ Enter the required information such as email, and password.
 Click the "login" button.
 
 
-Expected Result:
-
-The user is redirected to the user profile page.
+Expected Result: The user is redirected to the user profile page.
 
 
 
@@ -120,10 +118,7 @@ Navigate to the movies listing page.
 Select a movie to view its details.
 
 
-Expected Result:
-
-
-The user can view the details of the selected movie.
+Expected Result: The user can view the details of the selected movie.
 
 
 
@@ -140,10 +135,7 @@ select your movie and
 Type your comment about the movie.
 
 
-Expected Result:
-
-
-The user can comment about movie.
+Expected Result: The user can comment about movie.
 
 
 
