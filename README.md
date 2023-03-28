@@ -115,7 +115,7 @@ VIEW MOVIE DETAILS
 Scenario 1: Successfully view movie details
 
 
-Steps: Log in as a buyer.
+Steps: Log in as a user.
 Navigate to the movies listing page.
 Select a movie to view its details.
 
@@ -128,6 +128,22 @@ The user can view the details of the selected movie.
 
 
 USER CAN COMMENT ABOUT THE MOVIE
+
+
+
+Scenario 1: Successfully comment about movie 
+
+
+Steps: Log in as a user.
+Navigate to the movie details page.
+select your movie and
+Type your comment about the movie.
+
+
+Expected Result:
+
+
+The user can comment about movie.
 
 
 
