@@ -164,8 +164,6 @@ function likeBtn(x) {
   x.classList.toggle("fa-thumbs-up");
 }
 
-console.log(rate_count);
-
 // edit comment
 
 function edit(x) {
