@@ -16,6 +16,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" type="text/css" href="../assets/css/movie.css" />
+    
     <title>Document</title>
   </head>
   <body>
@@ -175,6 +176,25 @@
         return true;
       }
     });
+
+    // average of the star rating
+
+    let ratingArray = JSON.parse(localStorage.getItem("ratings"));
+
+    let countRating = 0;
+
+    let noOfUser = 0;
+
+    for (let i = 0; i < ratingArray.length; i++) {
+      if (get_movie_id == ratingArray[i]["get_movie_id"]) {
+        noOfUser++;
+        countRating += ratingArray[i]["rating"];
+      }
+    }
+
+    let sumRating = countRating / noOfUser;
+
+    console.log(sumRating);
     console.log(movieDetails);
 
     let movieTitle = document.getElementById("movie_title");
@@ -231,7 +251,7 @@
     actor_img7.setAttribute("src", movieDetails["actorImg7"]);
     award_wiki.setAttribute("href", movieDetails["awardWiki"]);
     movie_link.setAttribute("href", movieDetails["movieLink"]);
-    rateOfTheMovie.innerText = movieDetails["rate"];
+    rateOfTheMovie.innerText = sumRating;
     contentOfMovie.innerText = movieDetails["story"];
     releaseDate.innerText = movieDetails["releaseDate"];
     directorName.innerText = movieDetails["directorName"];

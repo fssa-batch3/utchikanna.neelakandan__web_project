@@ -1,17 +1,41 @@
 //  URL params
 
-const cardarray = JSON.parse(localStorage.getItem("new_card"));
+const movieArray = JSON.parse(localStorage.getItem("new_card"));
 
-let movieDetails = cardarray.find(function (event) {
+let movieDetails = movieArray.find(function (event) {
   let id = event["id"];
   if (get_movie_id == id) {
     return true;
   }
 });
 
+// average of the star rating
+
+let ratingArray = JSON.parse(localStorage.getItem("ratings"));
+
+let countRating = 0;
+
+let noOfUser = 0;
+
+for (let i = 0; i < ratingArray.length; i++) {
+  if (get_movie_id == ratingArray[i]["get_movie_id"]) {
+    noOfUser++;
+    countRating += ratingArray[i]["rating"];
+  }
+}
+
+let sumRating = countRating / noOfUser;
+
+let rate = sumRating.toFixed(1);
+
+console.log(rate);
+
+let newObj = { rate };
+
 console.log(movieDetails);
 
 let movieTitle = document.getElementById("movie_title");
+let tapTitle = document.getElementById("title");
 let trailer = document.getElementById("trailer");
 let rateOfTheMovie = document.getElementById("rateOfTheMovie");
 let contentOfMovie = document.getElementById("contentOfMovie");
@@ -46,6 +70,7 @@ let award_name = document.getElementById("awardName");
 let movie_link = document.getElementById("movie_link");
 
 movieTitle.innerText = movieDetails["title"];
+tapTitle.innerText = movieDetails["title"];
 trailer.setAttribute("src", movieDetails["link"]);
 directorLink.setAttribute("href", movieDetails["directorLink"]);
 mDirectorLink.setAttribute("href", movieDetails["mDirectorLink"]);
@@ -65,7 +90,7 @@ actor_wiki7.setAttribute("href", movieDetails["actorWiki7"]);
 actor_img7.setAttribute("src", movieDetails["actorImg7"]);
 award_wiki.setAttribute("href", movieDetails["awardWiki"]);
 movie_link.setAttribute("href", movieDetails["movieLink"]);
-rateOfTheMovie.innerText = movieDetails["rate"];
+rateOfTheMovie.innerText = rate;
 contentOfMovie.innerText = movieDetails["story"];
 releaseDate.innerText = movieDetails["releaseDate"];
 directorName.innerText = movieDetails["directorName"];
@@ -78,3 +103,7 @@ actor_name4.innerText = movieDetails["actorName4"];
 actor_name5.innerText = movieDetails["actorName5"];
 actor_name6.innerText = movieDetails["actorName6"];
 actor_name7.innerText = movieDetails["actorName7"];
+
+movieDetails["rate"] = rate;
+
+localStorage.setItem("new_card", JSON.stringify(movieArray));

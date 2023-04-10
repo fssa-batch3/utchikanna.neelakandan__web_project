@@ -14,15 +14,32 @@ allStars.forEach((star, index) => {
     });
   });
   // Now you can use the selectedStarValue variable wherever you need to access the selected star's value
-  console.log(selectedStarValue); // will log the selected star's value to the console
 });
+console.log(selectedStarValue); // will log the selected star's value to the console
 let get_email = JSON.parse(localStorage.getItem("details"));
 
-function ratingFor() {
-  let all = [];
+// check already rating give or not
 
+function ratingFor() {
+  let arr = JSON.parse(localStorage.getItem("ratings")) || [];
+  let one_obj = arr.find(
+    (e) => e.get_email == get_email && e.get_movie_id == get_movie_id
+  );
+  let all = [];
   let rating_id = Date.now();
   let rating = selectedStarValue;
+  if (one_obj) {
+    one_obj["rating"] = selectedStarValue;
+    console.log(one_obj);
+    let ind = arr.indexOf(one_obj);
+    arr[ind] = one_obj;
+    console.log(arr);
+    localStorage.setItem("ratings", JSON.stringify(arr));
+    return;
+  }
+  console.log(arr);
+  console.log(get_movie_id);
+  console.log(one_obj);
   console.log(rating);
   let rating_obj = {
     get_email,
@@ -31,28 +48,13 @@ function ratingFor() {
     get_movie_id,
   };
 
-  const arr = JSON.parse(localStorage.getItem("ratings"));
-  let up = arr.find(function (event) {
-    let id = event["get_email"];
-    let movie_id = event["get_movie_id"];
-    if (get_email == id && get_movie_id == movie_id) {
-      let newObj = { rating };
-      let update = Object.assign(up, newObj);
-      let ind = arr.indexOf(up);
-      arr[ind] = update;
-      localStorage.setItem("ratings", JSON.stringify(arr));
-      location.reload();
-    }
-  });
-
   if (localStorage.getItem("ratings") != null) {
     all = JSON.parse(localStorage.getItem("ratings"));
     console.log(all);
-  } else {
-    all.push(rating_obj);
-    localStorage.setItem("ratings", JSON.stringify(all));
-    location.reload();
   }
+  all.push(rating_obj);
+  localStorage.setItem("ratings", JSON.stringify(all));
+  location.reload();
 }
 
 // scroll
@@ -75,17 +77,17 @@ productContainers.forEach((item, i) => {
 
 // user image showing
 
-let user_email = JSON.parse(localStorage.getItem("details"));
+// let get_email = JSON.parse(localStorage.getItem("details"));
 
 let user_details = JSON.parse(localStorage.getItem("user"));
 console.log(user_details);
 let get_obj = user_details.find(function (user_obj) {
   let check_email = user_obj["email"];
-  if (user_email === check_email) {
+  if (get_email === check_email) {
     return true;
   }
 });
 console.log(get_obj);
 
 let viewImage = document.getElementById("view_image");
-viewImage.src = get_obj["image"];
+viewImage.setAttribute("src", get_obj["image"]);

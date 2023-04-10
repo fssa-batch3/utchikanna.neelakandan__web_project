@@ -56,8 +56,6 @@ for (let i = 0; i < comm.length; i++) {
 }
 console.log(set);
 
-user_email = JSON.parse(localStorage.getItem("details"));
-
 let count = 0;
 
 const todayDate = moment();

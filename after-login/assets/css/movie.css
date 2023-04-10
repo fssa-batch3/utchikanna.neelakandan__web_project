@@ -302,7 +302,12 @@ p {
 .menu::-webkit-scrollbar {
   display: none;
 }
-
+.showMore {
+  margin-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
 .gif {
   width: 40%;
   height: 500px;
@@ -736,6 +741,40 @@ textarea:invalid {
 /* comment css */
 .input-group {
   margin-left: 800px;
+}
+.view {
+  padding: 18px;
+  font-size: 20px;
+  height: 80px;
+  margin-top: 50px;
+  margin-left: 670px;
+  background-color: #f5c518;
+  border: none;
+  border-radius: 10px;
+  transition: 0.4s;
+  font-weight: bold;
+}
+.view:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  cursor: pointer;
+}
+.less {
+  padding: 18px;
+  font-size: 20px;
+  height: 80px;
+  margin-top: 50px;
+  margin-left: 650px;
+  background-color: #f5c518;
+  border: none;
+  border-radius: 10px;
+  transition: 0.4s;
+  font-weight: bold;
+}
+.less:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  cursor: pointer;
 }
 /* responsive width 900px*/
 @media screen and (max-width: 900px) {

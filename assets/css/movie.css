@@ -508,7 +508,7 @@ a {
   transition: 0.4s;
   position: relative;
   left: 550px;
-  top: 50px;
+  top: 125px;
   background-color: white;
 }
 
@@ -653,11 +653,30 @@ input:invalid {
   font-size: 18px;
   position: relative;
   left: 210px;
-  bottom: 168px;
+  bottom: 186px;
   opacity: 1;
   transition: 1.5s;
 }
 .btn6:hover {
+  background-color: black;
+  transition: 1.5s;
+}
+.btn8 {
+  width: 30%;
+  background: #666;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  position: relative;
+  left: 210px;
+  bottom: 42px;
+  opacity: 1;
+  transition: 1.5s;
+}
+.btn8:hover {
   background-color: black;
   transition: 1.5s;
 }
@@ -711,7 +730,53 @@ input:invalid {
   transition: 0.4s;
   cursor: pointer;
 }
-/* responsive width 900px*/
+.view {
+  padding: 18px;
+  font-size: 20px;
+  height: 80px;
+  margin-top: 50px;
+  margin-left: 670px;
+  background-color: #f5c518;
+  border: none;
+  border-radius: 10px;
+  transition: 0.4s;
+  font-weight: bold;
+}
+.view:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  cursor: pointer;
+}
+.less {
+  padding: 18px;
+  font-size: 20px;
+  height: 80px;
+  margin-top: 50px;
+  margin-left: 650px;
+  background-color: #f5c518;
+  border: none;
+  border-radius: 10px;
+  transition: 0.4s;
+  font-weight: bold;
+}
+.less:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  cursor: pointer;
+}
+.showMore {
+  margin-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+#forget {
+  font-size: 15px;
+  position: relative;
+  bottom: 150px;
+}
+
+/* responsive width 900px */
 @media screen and (max-width: 900px) {
   h1 {
     font-size: 30px;
