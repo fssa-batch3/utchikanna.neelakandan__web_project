@@ -486,12 +486,16 @@ function view() {
   let showMore = JSON.parse(localStorage.getItem("new_card"));
   console.log(showMore);
 
-  for (let i = 0; i < showMore.length; i++) {
-    card.push(showMore[i]);
-    console.log(card);
-  }
+  let mixedArr = [];
 
   for (let i = 0; i < card.length; i++) {
+    mixedArr.push(card[i]);
+  }
+  for (let i = 0; i < showMore.length; i++) {
+    mixedArr.push(showMore[i]);
+  }
+
+  for (let i = 0; i < mixedArr.length; i++) {
     // box
     card_div = document.createElement("div");
     card_div.setAttribute("class", "box");
@@ -501,7 +505,7 @@ function view() {
     a_tag = document.createElement("a");
     a_tag.setAttribute(
       "href",
-      "../pages/productDetails.html?id=" + card[i]["id"]
+      "../pages/productDetails.html?id=" + mixedArr[i]["id"]
     );
     card_div.append(a_tag);
 
@@ -509,7 +513,7 @@ function view() {
 
     image = document.createElement("img");
     image.setAttribute("id", "image-1");
-    image.setAttribute("src", card[i]["image"]);
+    image.setAttribute("src", mixedArr[i]["image"]);
     image.setAttribute("alt", "image");
     a_tag.append(image);
 
@@ -524,27 +528,27 @@ function view() {
 
     rating = document.createElement("h3");
     rating.setAttribute("class", "rate");
-    rating.innerText = card[i]["rate"];
+    rating.innerText = mixedArr[i]["rate"];
     a_tag.append(rating);
 
     // title
 
     title = document.createElement("h2");
     title.setAttribute("class", "title");
-    title.innerText = card[i]["title"];
+    title.innerText = mixedArr[i]["title"];
     rating.append(title);
 
     // a tag
 
     link = document.createElement("a");
     link.setAttribute("class", "try");
-    link.setAttribute("href", card[i]["link"]);
+    link.setAttribute("href", mixedArr[i]["link"]);
     a_tag.append(link);
 
     // button
 
     btn = document.createElement("button");
-    btn.setAttribute("href", card[i]["link"]);
+    btn.setAttribute("href", mixedArr[i]["link"]);
     btn.setAttribute("class", "btn");
     btn.innerText = "Watch Now";
     link.append(btn);
