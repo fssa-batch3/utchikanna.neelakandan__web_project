@@ -1,6 +1,5 @@
 /* Input container */
 .input-container {
-  position: relative;
   margin: 20px;
   margin-left: 950px;
   position: relative;
@@ -41,7 +40,6 @@
   left: 0;
   height: 2px;
   width: 0;
-  background-color: #007bff;
   transition: all 0.3s ease;
 }
 

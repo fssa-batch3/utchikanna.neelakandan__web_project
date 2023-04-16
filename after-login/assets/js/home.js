@@ -474,27 +474,16 @@ function view() {
   let btn;
   let link;
 
-  let showMore = JSON.parse(localStorage.getItem("new_card"));
-  console.log(showMore);
+  // let showMore = JSON.parse(localStorage.getItem("new_card"));
+  // console.log(showMore);
 
-  for (let i = 0; i < showMore.length; i++) {
-    card.push(showMore[i]);
-    console.log(card);
-  }
+  // for (let i = 0; i < showMore.length; i++) {
+  //   card.push(showMore[i]);
+  //   console.log(card);
+  // }
 
   for (let i = 0; i < card.length; i++) {
-    // box
-    card_div = document.createElement("div");
-    card_div.setAttribute("class", "box");
-
-    // a tag
-
-    a_tag = document.createElement("a");
-    a_tag.setAttribute(
-      "href",
-      "../after-login/productDetails.html?id=" + card[i]["id"]
-    );
-    card_div.append(a_tag);
+  
 
     // box
     card_div = document.createElement("div");

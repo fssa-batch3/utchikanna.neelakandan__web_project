@@ -93,7 +93,7 @@
       Show More
     </button>
 
-    <h2 class="up">Upcoming theaters</h2>
+    <h2 class="up">Upcoming Movies</h2>
     <!-- youtube embed -->
     <div class="embed">
       <iframe
@@ -203,6 +203,26 @@
       </div>
     </div>
   </body>
-  <script src="./assets/js/json.js"></script>
+  <script>
+    //search filter
+    let searchbar = document.getElementById("searchbar");
+    const cards = document.getElementsByClassName("box");
+
+    searchbar.addEventListener("input", () => {
+      for (let i = 0; i < cards.length; i++) {
+        const element = cards[i];
+        if (
+          element.innerHTML
+            .toLowerCase()
+            .includes(searchbar.value.toLowerCase())
+        ) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      }
+    });
+  </script>
   <script src="./assets/js/home.js"></script>
+  <script src="./assets/js/json.js"></script>
 </html>

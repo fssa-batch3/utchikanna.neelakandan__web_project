@@ -75,9 +75,9 @@ iframe {
   width: auto;
   padding: 16px;
   margin-top: 155px;
-  margin-left: 10px;
+  margin-left: -45px;
   margin-right: 10px;
-  color: #333;
+  color: black;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -94,7 +94,7 @@ iframe {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: #666;
+  background-color: #333;
 }
 
 @keyframes box {
@@ -237,7 +237,7 @@ p {
 }
 
 .box {
-  margin-left: 80px;
+  margin-right: 80px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: white;
@@ -289,7 +289,7 @@ p {
   color: gray;
 }
 .menu {
-  margin-right: 20px;
+  padding-left: 70px;
   display: flex;
   overflow-x: auto;
   background-color: #efefef;
@@ -385,7 +385,7 @@ p {
   transition: 0.4s;
 }
 .home {
-  max-width: 1440px;
+  width: 100%;
 }
 .cast {
   font-size: 40px;
@@ -437,7 +437,6 @@ p {
 }
 .btn3 {
   padding: 16px;
-  padding-left: 60px;
   font-size: 20px;
   font-weight: bold;
   background-color: #f5c518;
@@ -501,7 +500,7 @@ a {
 }
 .conForm {
   width: 20%;
-  max-height: 650px;
+  max-height: 620px;
   padding: 80px;
   border: 1px solid black;
   border-radius: 15px;
@@ -653,7 +652,7 @@ input:invalid {
   font-size: 18px;
   position: relative;
   left: 210px;
-  bottom: 186px;
+  bottom: 170px;
   opacity: 1;
   transition: 1.5s;
 }
@@ -765,17 +764,21 @@ input:invalid {
   cursor: pointer;
 }
 .showMore {
-  margin-right: 20px;
+  padding-left: 70px;
   display: flex;
   flex-wrap: wrap;
   height: auto;
+  width: 100%;
 }
 #forget {
   font-size: 15px;
   position: relative;
   bottom: 150px;
+  color: black;
 }
-
+#forget:hover {
+  border-bottom: 2px solid black;
+}
 /* responsive width 900px */
 @media screen and (max-width: 900px) {
   h1 {
@@ -2194,9 +2197,7 @@ input:invalid {
     margin-left: 130px;
     font-weight: bold;
   }
-  .menu {
-    margin-top: -50px;
-  }
+
   .box {
     margin-left: 60px;
     border: 2px solid black;

@@ -35,8 +35,10 @@ function ratingFor() {
     arr[ind] = one_obj;
     console.log(arr);
     localStorage.setItem("ratings", JSON.stringify(arr));
+    location.reload();
     return;
   }
+  location.reload();
   console.log(arr);
   console.log(get_movie_id);
   console.log(one_obj);
@@ -67,17 +69,15 @@ productContainers.forEach((item, i) => {
   let containerDimensions = item.getBoundingClientRect();
   let containerWidth = containerDimensions.width;
 
-  nxtBtn[i].addEventListener("click", () => {
+  nxtBtn[i]?.addEventListener("click", () => {
     item.scrollLeft += containerWidth;
   });
-  prevBtn[i].addEventListener("click", () => {
+  prevBtn[i]?.addEventListener("click", () => {
     item.scrollLeft -= containerWidth;
   });
 });
 
 // user image showing
-
-// let get_email = JSON.parse(localStorage.getItem("details"));
 
 let user_details = JSON.parse(localStorage.getItem("user"));
 console.log(user_details);

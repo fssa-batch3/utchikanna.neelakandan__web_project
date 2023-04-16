@@ -65,9 +65,9 @@ h1:hover {
   width: auto;
   padding: 16px;
   margin-top: 155px;
-  margin-left: 10px;
+  margin-left: -45px;
   margin-right: 10px;
-  color: #333;
+  color: black;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -84,7 +84,7 @@ h1:hover {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: #666;
+  background-color: #333;
 }
 
 @keyframes box {
@@ -111,9 +111,10 @@ h1:hover {
   width: 40%;
   height: 350px;
   border-radius: 25px;
-  padding: 80px;
+  padding: 60px;
   line-height: 35px;
   margin-right: 10px;
+  margin-left: 10px;
   margin-bottom: 200px;
 }
 .left:hover {
@@ -240,7 +241,7 @@ p {
 }
 /* slider card */
 .box {
-  margin-left: 80px;
+  margin-right: 80px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: white;
@@ -258,6 +259,7 @@ p {
   transform: scale(1.1);
   transition: 0.4s;
 }
+
 .title {
   font-size: 25px;
   margin-left: -20px;
@@ -293,7 +295,7 @@ p {
 }
 /* slider */
 .menu {
-  margin-right: 20px;
+  padding-left: 70px;
   display: flex;
   overflow-x: auto;
   background-color: #efefef;
@@ -303,10 +305,11 @@ p {
   display: none;
 }
 .showMore {
-  margin-right: 20px;
+  padding-left: 70px;
   display: flex;
   flex-wrap: wrap;
   height: auto;
+  width: 100%;
 }
 .gif {
   width: 40%;
@@ -378,9 +381,6 @@ p {
   left: 600px;
 }
 
-.home {
-  max-width: 1440px;
-}
 .cast {
   font-size: 40px;
   margin-top: 60px;
@@ -436,7 +436,6 @@ p {
 }
 .btn3 {
   padding: 16px;
-  padding-left: 60px;
   font-size: 20px;
   font-weight: bold;
   background-color: #f5c518;
@@ -581,6 +580,22 @@ a {
 }
 .star:hover {
   cursor: pointer;
+}
+.star1 {
+  color: #f5c518;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-left: 60px;
+  background-color: unset;
+  border: none;
+}
+.star1:hover {
+  cursor: pointer;
+}
+#showRating {
+  margin-left: 110px;
+  position: relative;
+  bottom: 46px;
 }
 .current_rate {
   margin-left: 80px;

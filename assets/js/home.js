@@ -72,15 +72,6 @@ for (let i = 0; i < card.length; i++) {
   card_div = document.createElement("div");
   card_div.setAttribute("class", "box");
 
-  // a tag
-
-  a_tag = document.createElement("a");
-  a_tag.setAttribute(
-    "href",
-    "../pages/productDetails.html?id=" + card[i]["id"]
-  );
-  card_div.append(a_tag);
-
   // image
 
   image = document.createElement("img");
@@ -128,11 +119,13 @@ for (let i = 0; i < card.length; i++) {
 }
 
 function view() {
-  let card = [
+  // let cardHid = document.getElementById("cardhid");
+  // cardHid.style.display = "none";
+  let card1 = [
     {
       image: "https://upload.wikimedia.org/wikipedia/en/2/24/Chainsawman.jpg",
       href: "#triangle",
-      rate: 3.5,
+      rate: 4.5,
       title: "Chainsaw Man",
       link: "https://www.netflix.com/in/title/81215627?source=35",
     },
@@ -140,7 +133,7 @@ function view() {
       image:
         "https://m.media-amazon.com/images/M/MV5BOGZmYjdjN2UtNjAwZi00YmEyLWFhNTEtNjM1OTc5ODg0MGEyXkEyXkFqcGdeQXVyMTA1NjQyNjkw._V1_FMjpg_UX1000_.jpg",
       href: "#triangle",
-      rate: 3,
+      rate: 4,
       title: "My Hero Academia",
       link: "https://www.netflix.com/in/title/80135674?source=35",
     },
@@ -148,7 +141,7 @@ function view() {
       image:
         "https://m.media-amazon.com/images/M/MV5BNTVkMzRlYmMtYzc1Ny00YTQ5LWI5ZTAtNTk3YmYxOWYwZGVlXkEyXkFqcGdeQXVyOTc4OTAwMjU@._V1_FMjpg_UX1000_.jpg",
       href: "#triangle",
-      rate: 3,
+      rate: 3.5,
       title: "Tokyo Revengers",
       link: "https://www.netflix.com/in/title/81442520?source=35",
     },
@@ -156,7 +149,7 @@ function view() {
       image:
         "https://m.media-amazon.com/images/M/MV5BMWM4Njg2MjUtODU3OS00MGNmLWIyNTctZGZkNTdjN2JhNmU2XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_FMjpg_UX1000_.jpg",
       href: "#triangle",
-      rate: 3.5,
+      rate: 4.5,
       title: "SPY×FAMILY",
       link: "https://www.netflix.com/in/title/81511410?source=35",
     },
@@ -169,6 +162,33 @@ function view() {
       link: "https://www.netflix.com/in/title/80000603?source=35",
     },
     {
+      image:
+        "https://m.media-amazon.com/images/M/MV5BYWIwZjhkMzgtOWExYi00ZGIwLTg1ZTktNjQyZWIxYWFmZTc0XkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
+      href: "#triangle",
+      rate: 3.5,
+      title: "Mob Psycho 100",
+      link: "https://www.netflix.com/in/title/80179798?source=35",
+    },
+    {
+      image:
+        "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
+      href: "#triangle",
+      rate: 4,
+      title: "Death Note",
+      link: "https://www.netflix.com/in/title/70204970?source=35",
+    },
+    {
+      image:
+        "https://m.media-amazon.com/images/M/MV5BMmE1ODVhMGYtODYyYS00Mjc4LWIzN2EtYWZkZDg1MTUyNDkxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+      href: "#triangle",
+      rate: 4,
+      title: "Invincible",
+      link: "https://www.primevideo.com/dp/amzn1.dv.gti.92bc0a58-183a-7326-e470-31742586c852?autoplay=0&ref_=atv_cf_strg_wb",
+    },
+  ];
+
+  let card2 = [
+    {
       image: "../assets/images/triangle.jpg",
       href: "#triangle",
       rate: 3.5,
@@ -178,7 +198,7 @@ function view() {
     {
       image: "../assets/images/top.jpg",
       href: "#top",
-      rate: 3,
+      rate: 4,
       title: "Top Gun:Maverick",
       link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
     },
@@ -189,6 +209,44 @@ function view() {
       title: "Intersteller",
       link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
     },
+    {
+      image: "../assets/images/ince.jpg",
+      href: "#inception",
+      rate: 4.5,
+      title: "Inception",
+      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+    },
+    {
+      image: "../assets/images/pre.jpg",
+      href: "#prestige",
+      rate: 4,
+      title: "The Prestige",
+      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+    },
+    {
+      image: "../assets/images/pass.jpg",
+      href: "#pass",
+      rate: 3,
+      title: "Passengers",
+      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+    },
+    {
+      image: "../assets/images/john.jpg",
+      href: "#john",
+      rate: 4,
+      title: "John Wick",
+      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+    },
+    {
+      image: "../assets/images/dont.jpg",
+      href: "#carter",
+      rate: 3.5,
+      title: "Don't Breathe",
+      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+    },
+  ];
+
+  let card3 = [
     {
       image: "../assets/images/asuran_.jpg",
       href: "#asuran",
@@ -239,6 +297,16 @@ function view() {
       link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
     },
     {
+      image: "../assets/images/vada.jpg",
+      href: "#vada",
+      rate: 4.5,
+      title: "Vada Chennai",
+      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+    },
+  ];
+
+  let card4 = [
+    {
       image: "../assets/images/end.jpg",
       href: "#endgame",
       rate: 4,
@@ -272,64 +340,6 @@ function view() {
       rate: 4,
       title: "Civil War",
       link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-    },
-    {
-      image: "../assets/images/vada.jpg",
-      href: "#vada",
-      rate: 4.5,
-      title: "Vada Chennai",
-      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-    },
-    {
-      image: "../assets/images/ince.jpg",
-      href: "#inception",
-      rate: 4.5,
-      title: "Inception",
-      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-    },
-    {
-      image: "../assets/images/pre.jpg",
-      href: "#prestige",
-      rate: 4,
-      title: "The Prestige",
-      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-    },
-    {
-      image: "../assets/images/pass.jpg",
-      href: "#pass",
-      rate: 3,
-      title: "Passengers",
-      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-    },
-    {
-      image: "../assets/images/john.jpg",
-      href: "#john",
-      rate: 4,
-      title: "John Wick",
-      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-    },
-    {
-      image: "../assets/images/dont.jpg",
-      href: "#carter",
-      rate: 3.5,
-      title: "Don't Breathe",
-      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-    },
-    {
-      image:
-        "https://m.media-amazon.com/images/M/MV5BYWIwZjhkMzgtOWExYi00ZGIwLTg1ZTktNjQyZWIxYWFmZTc0XkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
-      href: "#triangle",
-      rate: 3.5,
-      title: "Mob Psycho 100",
-      link: "https://www.netflix.com/in/title/80179798?source=35",
-    },
-    {
-      image:
-        "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
-      href: "#triangle",
-      rate: 4,
-      title: "Death Note",
-      link: "https://www.netflix.com/in/title/70204970?source=35",
     },
     {
       image: "../assets/images/loki.jpg",
@@ -388,6 +398,30 @@ function view() {
       link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
     },
     {
+      image: "../assets/images/thor.jpg",
+      href: "#thor",
+      rate: 3,
+      title: "Thor Rangnarok",
+      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+    },
+    {
+      image: "../assets/images/iron.jpg",
+      href: "#iron",
+      rate: 3.5,
+      title: "Iron Man",
+      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+    },
+    {
+      image: "../assets/images/captain.jpg",
+      href: "#captain",
+      rate: 4,
+      title: "The First Avenger",
+      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
+    },
+  ];
+
+  let card5 = [
+    {
       image: "../assets/images/dragon.jpg",
       href: "#dragon",
       rate: 3.5,
@@ -397,7 +431,7 @@ function view() {
     {
       image: "../assets/images/squid.jpg",
       href: "#squid",
-      rate: 4,
+      rate: 3,
       title: "Squid Game",
       link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
     },
@@ -432,7 +466,7 @@ function view() {
     {
       image: "../assets/images/peaky.jpg",
       href: "#peaky",
-      rate: 4,
+      rate: 3,
       title: "Peaky Blinders",
       link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
     },
@@ -443,37 +477,11 @@ function view() {
       title: "Scam 1992",
       link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
     },
-    {
-      image: "../assets/images/thor.jpg",
-      href: "#thor",
-      rate: 3,
-      title: "Thor Rangnarok",
-      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-    },
-    {
-      image: "../assets/images/iron.jpg",
-      href: "#iron",
-      rate: 3.5,
-      title: "Iron Man",
-      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-    },
-    {
-      image: "../assets/images/captain.jpg",
-      href: "#captain",
-      rate: 4,
-      title: "The First Avenger",
-      link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-    },
-    {
-      image:
-        "https://m.media-amazon.com/images/M/MV5BMmE1ODVhMGYtODYyYS00Mjc4LWIzN2EtYWZkZDg1MTUyNDkxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-      href: "#triangle",
-      rate: 4,
-      title: "Invincible",
-      link: "https://www.primevideo.com/dp/amzn1.dv.gti.92bc0a58-183a-7326-e470-31742586c852?autoplay=0&ref_=atv_cf_strg_wb",
-    },
   ];
 
+  let card = card1.concat(card2, card3, card4, card5);
+
+  console.log(card);
   // card
   let card_div;
   let image;
@@ -483,19 +491,14 @@ function view() {
   let btn;
   let link;
 
-  let showMore = JSON.parse(localStorage.getItem("new_card"));
-  console.log(showMore);
+  // let showMore = JSON.parse(localStorage.getItem("new_card"));
+  // console.log(showMore);
 
-  let mixedArr = [];
+  // for (let i = 0; i < showMore.length; i++) {
+  //   card.push(showMore[i]);
+  // }
 
   for (let i = 0; i < card.length; i++) {
-    mixedArr.push(card[i]);
-  }
-  for (let i = 0; i < showMore.length; i++) {
-    mixedArr.push(showMore[i]);
-  }
-
-  for (let i = 0; i < mixedArr.length; i++) {
     // box
     card_div = document.createElement("div");
     card_div.setAttribute("class", "box");
@@ -505,7 +508,7 @@ function view() {
     a_tag = document.createElement("a");
     a_tag.setAttribute(
       "href",
-      "../pages/productDetails.html?id=" + mixedArr[i]["id"]
+      "../after-login/productDetails.html?id=" + card[i]["id"]
     );
     card_div.append(a_tag);
 
@@ -513,7 +516,7 @@ function view() {
 
     image = document.createElement("img");
     image.setAttribute("id", "image-1");
-    image.setAttribute("src", mixedArr[i]["image"]);
+    image.setAttribute("src", card[i]["image"]);
     image.setAttribute("alt", "image");
     a_tag.append(image);
 
@@ -528,32 +531,33 @@ function view() {
 
     rating = document.createElement("h3");
     rating.setAttribute("class", "rate");
-    rating.innerText = mixedArr[i]["rate"];
+    rating.innerText = card[i]["rate"];
     a_tag.append(rating);
 
     // title
 
     title = document.createElement("h2");
     title.setAttribute("class", "title");
-    title.innerText = mixedArr[i]["title"];
+    title.innerText = card[i]["title"];
     rating.append(title);
 
     // a tag
 
     link = document.createElement("a");
     link.setAttribute("class", "try");
-    link.setAttribute("href", mixedArr[i]["link"]);
+    link.setAttribute("href", card[i]["link"]);
     a_tag.append(link);
 
     // button
 
     btn = document.createElement("button");
-    btn.setAttribute("href", mixedArr[i]["link"]);
+    btn.setAttribute("href", card[i]["link"]);
     btn.setAttribute("class", "btn");
     btn.innerText = "Watch Now";
     link.append(btn);
     document.querySelector(".showMore").append(card_div);
   }
+
   let non = document.getElementById("less");
   non.style.display = "none";
   let less = document.createElement("button");

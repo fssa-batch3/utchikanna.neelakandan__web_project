@@ -4,48 +4,23 @@ const movieArray = JSON.parse(localStorage.getItem("new_card"));
 
 let movieDetails = movieArray.find(function (event) {
   let id = event["id"];
-  if (get_movie_id == id) {
+  if (get_details == id) {
     return true;
   }
 });
 
-// average of the star rating and show the prevouise rating
+// average of the star rating
 
 let ratingArray = JSON.parse(localStorage.getItem("ratings"));
-
-let oneUser = JSON.parse(localStorage.getItem("details"));
 
 let countRating = 0;
 
 let noOfUser = 0;
 
 for (let i = 0; i < ratingArray.length; i++) {
-  if (get_movie_id == ratingArray[i]["get_movie_id"]) {
+  if (get_details == ratingArray[i]["get_movie_id"]) {
     noOfUser++;
     countRating += ratingArray[i]["rating"];
-  }
-  if (
-    get_movie_id == ratingArray[i]["get_movie_id"] &&
-    oneUser == ratingArray[i]["get_email"]
-  ) {
-    showRating = ratingArray[i]["rating"];
-    let rating = showRating.toString();
-
-    let info = document.getElementById("showRating");
-
-    info.innerText = rating + "/5";
-
-    let yourRating = document.createElement("h2");
-    yourRating.setAttribute("class", "rating");
-    yourRating.innerText = "Your Rating";
-
-    document.querySelector(".star_rating").prepend(yourRating);
-
-    let btnRating = document.createElement("button");
-    btnRating.setAttribute("class", "star1");
-    btnRating.innerHTML = "&#9733;";
-
-    document.querySelector(".userRating").prepend(btnRating);
   }
 }
 
@@ -54,6 +29,8 @@ let sumRating = countRating / noOfUser;
 let rate = sumRating.toFixed(1);
 
 console.log(rate);
+
+console.log(movieDetails);
 
 let movieTitle = document.getElementById("movie_title");
 let tapTitle = document.getElementById("title");

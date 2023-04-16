@@ -45,7 +45,6 @@ showComment.addEventListener("click", function (event) {
 });
 
 // show comments
-
 let set = [];
 let comm = JSON.parse(localStorage.getItem("comments"));
 for (let i = 0; i < comm.length; i++) {
@@ -106,7 +105,9 @@ for (let i = 0; i < set.length; i++) {
   iTag.setAttribute("class", "fa fa-thumbs-o-up");
   span.append(iTag);
 
-  if (user_email == set[i]["user_email"]) {
+  let emailCheck = JSON.parse(localStorage.getItem("details"));
+
+  if (emailCheck == set[i]["user_email"]) {
     let edit = document.createElement("a");
     edit.setAttribute("id", "comment_edit");
     edit.setAttribute("class", "comments_edit");
