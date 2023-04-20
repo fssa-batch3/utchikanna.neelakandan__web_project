@@ -17,6 +17,9 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/movie.css" />
     <script src="./assets/js/backupData.js"></script>
     <script src="./assets/js/addfav.js"></script>
+    <script src="./assets/js/commentData.js"></script>
+    <script src="./assets/js/feedbackData.js"></script>
+    <script src="./assets/js/userData.js"></script>
   </head>
   <body class="home">
     <ul>
@@ -259,6 +262,24 @@
 
     if (allcards === null) {
       localStorage.setItem("new_card", JSON.stringify(backupData));
+    }
+
+    let comment = JSON.parse(localStorage.getItem("comments"));
+
+    if (comment === null) {
+      localStorage.setItem("comments", JSON.stringify(commentData));
+    }
+
+    let feedback = JSON.parse(localStorage.getItem("feedbacks"));
+
+    if (feedback === null) {
+      localStorage.setItem("feedbacks", JSON.stringify(feedbackData));
+    }
+
+    let user = JSON.parse(localStorage.getItem("user"));
+
+    if (user === null) {
+      localStorage.setItem("user", JSON.stringify(userData));
     }
   </script>
   <script src="./assets/js/home.js"></script>
