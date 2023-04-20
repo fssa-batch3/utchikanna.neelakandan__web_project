@@ -18,7 +18,6 @@ function movieType(type) {
 }
 for (let i = 0; i < movieType("web series").length; i++) {
   card6.push(movieType("web series")[i]);
-  console.log(card6);
 }
 
 for (let i = 0; i < card6.length; i++) {
@@ -76,7 +75,7 @@ for (let i = 0; i < card6.length; i++) {
   btn6 = document.createElement("button");
   btn6.setAttribute("href", card6[i]["link"]);
   btn6.setAttribute("class", "btn");
-  btn6.innerText = "Watch Now";
+  btn6.innerText = "Trailer";
   link6.append(btn6);
 
   document.querySelector(".web").append(card_div6);

@@ -18,7 +18,6 @@ function movieType(type) {
 }
 for (let i = 0; i < movieType("superhero movies").length; i++) {
   card5.push(movieType("superhero movies")[i]);
-  console.log(card5);
 }
 
 for (let i = 0; i < card5.length; i++) {
@@ -76,7 +75,7 @@ for (let i = 0; i < card5.length; i++) {
   btn5 = document.createElement("button");
   btn5.setAttribute("href", card5[i]["link"]);
   btn5.setAttribute("class", "btn");
-  btn5.innerText = "Watch Now";
+  btn5.innerText = "Trailer";
   link5.append(btn5);
 
   document.querySelector(".Superhero").append(card_div5);

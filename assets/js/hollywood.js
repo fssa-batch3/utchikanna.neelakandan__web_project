@@ -78,7 +78,7 @@ for (let i = 0; i < card2.length; i++) {
   btn2 = document.createElement("button");
   btn2.setAttribute("href", card2[i]["link"]);
   btn2.setAttribute("class", "btn");
-  btn2.innerText = "Watch Now";
+  btn2.innerText = "Trailer";
   link2.append(btn2);
 
   document.querySelector(".hollywood").append(card_div2);

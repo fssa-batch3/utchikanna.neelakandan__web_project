@@ -18,7 +18,6 @@ function movieType(type) {
 }
 for (let i = 0; i < movieType("anime Series").length; i++) {
   card4.push(movieType("anime Series")[i]);
-  console.log(card4);
 }
 
 for (let i = 0; i < card4.length; i++) {
@@ -76,7 +75,7 @@ for (let i = 0; i < card4.length; i++) {
   btn4 = document.createElement("button");
   btn4.setAttribute("href", card4[i]["link"]);
   btn4.setAttribute("class", "btn");
-  btn4.innerText = "Watch Now";
+  btn4.innerText = "Trailer";
   link4.append(btn4);
 
   document.querySelector(".anime").append(card_div4);

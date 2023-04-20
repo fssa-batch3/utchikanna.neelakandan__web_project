@@ -18,7 +18,6 @@ function movieType(type) {
 }
 for (let i = 0; i < movieType("kollywood").length; i++) {
   card3.push(movieType("kollywood")[i]);
-  console.log(card3);
 }
 for (let i = 0; i < card3.length; i++) {
   // box
@@ -75,7 +74,7 @@ for (let i = 0; i < card3.length; i++) {
   btn3 = document.createElement("button");
   btn3.setAttribute("href", card3[i]["link"]);
   btn3.setAttribute("class", "btn");
-  btn3.innerText = "Watch Now";
+  btn3.innerText = "Trailer";
   link3.append(btn3);
 
   document.querySelector(".kollywood").append(card_div3);
