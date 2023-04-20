@@ -26,7 +26,7 @@ for (let i = 0; i < 10; i++) {
   a_tag = document.createElement("a");
   a_tag.setAttribute(
     "href",
-    "../after-login/productDetails.html?id=" + card[i]["id"]
+    "../pages/productDetails.html?id=" + card[i]["id"]
   );
   card_div.append(a_tag);
 
@@ -107,10 +107,7 @@ function view() {
     // a tag
 
     a_tag = document.createElement("a");
-    a_tag.setAttribute(
-      "href",
-      "../after-login/productDetails.html?id=" + card[i]["id"]
-    );
+    a_tag.setAttribute("href", "../?id=" + card[i]["id"]);
     card_div.append(a_tag);
 
     // image

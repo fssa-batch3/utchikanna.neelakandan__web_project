@@ -29,7 +29,7 @@ for (let i = 0; i < card3.length; i++) {
   a_tag3 = document.createElement("a");
   a_tag3.setAttribute(
     "href",
-    "../after-login/productDetails.html?id=" + card3[i]["id"]
+    "../pages/productDetails.html?id=" + card3[i]["id"]
   );
   card_div3.append(a_tag3);
 

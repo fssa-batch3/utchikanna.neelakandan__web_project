@@ -90,4 +90,4 @@ let get_obj = user_details.find(function (user_obj) {
 console.log(get_obj);
 
 let viewImage = document.getElementById("view_image");
-viewImage.setAttribute("src", get_obj["image"]);
+viewImage.src = get_obj["image"];

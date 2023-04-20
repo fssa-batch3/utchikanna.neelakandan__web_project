@@ -20,6 +20,7 @@
     <script src="./assets/js/commentData.js"></script>
     <script src="./assets/js/feedbackData.js"></script>
     <script src="./assets/js/userData.js"></script>
+    <script src="./assets/js/ratingData.js"></script>
   </head>
   <body class="home">
     <ul>
@@ -280,6 +281,12 @@
 
     if (user === null) {
       localStorage.setItem("user", JSON.stringify(userData));
+    }
+
+    let dataRating = JSON.parse(localStorage.getItem("ratings"));
+
+    if (dataRating === null) {
+      localStorage.setItem("ratings", JSON.stringify(ratingData));
     }
   </script>
   <script src="./assets/js/home.js"></script>
