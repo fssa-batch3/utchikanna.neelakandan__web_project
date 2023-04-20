@@ -9,11 +9,53 @@ let movieDetails = movieArray.find(function (event) {
   }
 });
 
+let oneUser = JSON.parse(localStorage.getItem("details"));
+
+let favList = JSON.parse(localStorage.getItem("favMovie"));
+
+for (let i = 0; i < favList.length; i++) {
+  if (
+    oneUser == favList[i]["get_email"] &&
+    get_movie_id == favList[i]["get_movie_id"]
+  ) {
+    let favBtn = document.getElementById("Favbtn");
+    favBtn.innerText = "Added";
+    let heart = document.createElement("i");
+    heart.setAttribute("class", "fa fa-heart");
+    heart.style.color = "red";
+    heart.setAttribute("id", "heart");
+    document.querySelector(".btn3").prepend(heart);
+  } else {
+    function addFav() {
+      let addFav = [];
+      let favBtn = document.getElementById("Favbtn");
+      favBtn.innerText = "Added";
+      let heart = document.createElement("i");
+      heart.setAttribute("class", "fa fa-heart");
+      heart.style.color = "red";
+      heart.setAttribute("id", "heart");
+      document.querySelector(".btn3").prepend(heart);
+
+      let add = {
+        get_movie_id,
+        get_email,
+      };
+
+      if (localStorage.getItem("favMovie") != null) {
+        addFav = JSON.parse(localStorage.getItem("favMovie"));
+        console.log(addFav);
+      }
+
+      addFav.push(add);
+
+      localStorage.setItem("favMovie", JSON.stringify(addFav));
+    }
+  }
+}
+
 // average of the star rating and show the prevouise rating
 
 let ratingArray = JSON.parse(localStorage.getItem("ratings"));
-
-let oneUser = JSON.parse(localStorage.getItem("details"));
 
 let countRating = 0;
 

@@ -149,7 +149,7 @@ ul {
 .nav-list {
   display: inline-block;
   position: relative;
-  left: 800px;
+  left: 950px;
   bottom: 95px;
 }
 ul li a {
@@ -294,14 +294,39 @@ p {
   color: gray;
 }
 /* slider */
-.menu {
+.menu,
+.favlist,
+.hollywood,
+.kollywood,
+.anime,
+.web,
+.Superhero {
   padding-left: 70px;
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   background-color: #efefef;
   scroll-behavior: smooth;
 }
 .menu::-webkit-scrollbar {
+  display: none;
+}
+.favlist::-webkit-scrollbar {
+  display: none;
+}
+.hollywood::-webkit-scrollbar {
+  display: none;
+}
+.kollywood::-webkit-scrollbar {
+  display: none;
+}
+.Superhero::-webkit-scrollbar {
+  display: none;
+}
+.anime::-webkit-scrollbar {
+  display: none;
+}
+.web::-webkit-scrollbar {
   display: none;
 }
 .showMore {
@@ -436,6 +461,7 @@ p {
 }
 .btn3 {
   padding: 16px;
+  padding-right: 22px;
   font-size: 20px;
   font-weight: bold;
   background-color: #f5c518;
@@ -791,6 +817,19 @@ textarea:invalid {
   transition: 0.4s;
   cursor: pointer;
 }
+.btnGroup {
+  position: relative;
+  top: 300px;
+  right: 25px;
+  margin-bottom: 100px;
+}
+#noFound {
+  color: red;
+  margin-top: 200px;
+  margin-left: 500px;
+  margin-bottom: 300px;
+}
+
 /* responsive width 900px*/
 @media screen and (max-width: 900px) {
   h1 {

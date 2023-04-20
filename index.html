@@ -15,6 +15,8 @@
     />
     <link rel="stylesheet" href="./assets/css/search.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/movie.css" />
+    <script src="./assets/js/addfav.js"></script>
+    <script src="./assets/js/backupData.js"></script>
   </head>
   <body class="home">
     <ul>
@@ -24,7 +26,7 @@
       </h1>
 
       <li class="nav-list"><a href="#home">Home</a></li>
-      <li class="nav-list">
+      <!-- <li class="nav-list">
         <a class="width" href="#">Movies</a>
         <ul class="dropdown">
           <li class="dropdown-list">
@@ -37,8 +39,8 @@
             <a href="./pages/superHero.html">Superhero Movies </a>
           </li>
         </ul>
-      </li>
-      <li class="nav-list">
+      </li> -->
+      <!-- <li class="nav-list">
         <a href="#">Series</a>
         <ul class="dropdown">
           <li class="dropdown-list">
@@ -48,7 +50,7 @@
             <a href="./pages/anime.html">Anime Series</a>
           </li>
         </ul>
-      </li>
+      </li> -->
 
       <li class="nav-list"><a href="./pages/about.html">About</a></li>
       <li class="nav-list">
@@ -92,6 +94,32 @@
     <button type="submit" class="view" id="less" onclick="view()">
       Show More
     </button>
+    <div class="favlist" id="favList"></div>
+    <h2 class="up">Hollywood</h2>
+    <div class="hollywood" id="favList">
+      <!-- <a class="prev">❮</a>
+      <a class="next">❯</a> -->
+    </div>
+    <h2 class="up">Kollywood</h2>
+    <div class="kollywood" id="favList">
+      <!-- <a class="prev">❮</a>
+      <a class="next">❯</a> -->
+    </div>
+    <h2 class="up">Superhero Movies</h2>
+    <div class="Superhero" id="favList">
+      <!-- <a class="prev">❮</a>
+      <a class="next">❯</a> -->
+    </div>
+    <h2 class="up">Anime Series</h2>
+    <div class="anime" id="favList">
+      <!-- <a class="prev">❮</a>
+      <a class="next">❯</a> -->
+    </div>
+    <h2 class="up">Web Serise</h2>
+    <div class="web" id="favList">
+      <!-- <a class="prev">❮</a>
+      <a class="next">❯</a> -->
+    </div>
 
     <h2 class="up">Upcoming Movies</h2>
     <!-- youtube embed -->
@@ -185,11 +213,9 @@
       <ol class="quick">
         <h3 class="links">Quick Links</h3>
         <a class="last" href="./index.html">Home</a>
-        <a class="last" href="./pages/tamil.html">Kollywood</a>
-        <a class="last" href="./pages/holly.html">Hollywood</a>
-        <a class="last" href="./pages/super.html">Superhero Movies</a>
-        <a class="last" href="./pages/web.html">Web Series</a>
-        <a class="last" href="./pages/anime.html">Anime Series</a>
+        <a class="last" href="./pages/about.html">About</a>
+        <a class="last" href="./pages/logIn.html">Log in</a>
+        <a class="last" href="./pages/signUp.html">Sign up</a>
       </ol>
       <ol class="policy">
         <a class="last-one" href="#">Help</a>
@@ -222,7 +248,23 @@
         }
       }
     });
+
+    let favlis = JSON.parse(localStorage.getItem("favMovie"));
+
+    if (favlis === null) {
+      localStorage.setItem("favMovie", JSON.stringify(fav));
+    }
+    let allcards = JSON.parse(localStorage.getItem("new_card"));
+
+    if (allcards === null) {
+      localStorage.setItem("new_card", JSON.stringify(backupData));
+    }
   </script>
   <script src="./assets/js/home.js"></script>
+  <script src="./assets/js/hollywood.js"></script>
+  <script src="./assets/js/kollywood.js"></script>
+  <script src="./assets/js/superHero.js"></script>
+  <script src="./assets/js/webSerise.js"></script>
+  <script src="./assets/js/anime.js"></script>
   <script src="./assets/js/json.js"></script>
 </html>

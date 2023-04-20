@@ -1,139 +1,82 @@
-let card = [
-  {
-    image: "../assets/images/asuran_.jpg",
-    href: "#asuran",
-    rate: 4.5,
-    title: "Asuran",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/Nayakan.jpg",
-    href: "#nayakan",
-    rate: 4,
-    title: "Nayakan",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/thalapathy.jpg",
-    href: "#thalapathy",
-    rate: 3.5,
-    title: "Thalapathy",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/mahaan.jpg",
-    href: "#mahaan",
-    rate: 4,
-    title: "Mahaan",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/soorarai.jpg",
-    href: "#soorarai",
-    rate: 4.5,
-    title: "Soorarai Potru",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/kgf2.jpg",
-    href: "#captain",
-    rate: 3.5,
-    title: "KGF-2",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/vikram.jpg",
-    href: "#vikram",
-    rate: 3.5,
-    title: "Vikram",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/vada.jpg",
-    href: "#vada",
-    rate: 4.5,
-    title: "Vada Chennai",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-];
+let card3 = [];
 
 // card
-let card_div;
-let a_tag;
-let image;
-let rate;
-let rating;
-let title;
-let btn;
-let link;
+let card_div3;
+let a_tag3;
+let image3;
+let rate3;
+let rating3;
+let title3;
+let btn3;
+let link3;
 
-let create_card = JSON.parse(localStorage.getItem("new_card"));
+let create_card3 = JSON.parse(localStorage.getItem("new_card"));
 console.log(create_card);
 function movieType(type) {
-  const movietype = create_card.filter((h) => h.movietype == type);
+  const movietype = create_card3.filter((h) => h.movietype == type);
   return movietype;
 }
 for (let i = 0; i < movieType("kollywood").length; i++) {
-  card.push(movieType("kollywood")[i]);
-  console.log(card);
+  card3.push(movieType("kollywood")[i]);
+  console.log(card3);
 }
-for (let i = 0; i < card.length; i++) {
+for (let i = 0; i < card3.length; i++) {
   // box
-  card_div = document.createElement("div");
-  card_div.setAttribute("class", "box");
+  card_div3 = document.createElement("div");
+  card_div3.setAttribute("class", "box");
 
   // a tag
 
-  a_tag = document.createElement("a");
-  a_tag.setAttribute(
+  a_tag3 = document.createElement("a");
+  a_tag3.setAttribute(
     "href",
-    "../after-login/productDetails.html?id=" + card[i]["id"]
+    "../after-login/productDetails.html?id=" + card3[i]["id"]
   );
-  card_div.append(a_tag);
+  card_div3.append(a_tag3);
 
   // image
 
-  image = document.createElement("img");
-  image.setAttribute("id", "image-1");
-  image.setAttribute("src", card[i]["image"]);
-  image.setAttribute("alt", "image");
-  a_tag.append(image);
+  image3 = document.createElement("img");
+  image3.setAttribute("id", "image-1");
+  image3.setAttribute("src", card3[i]["image"]);
+  image3.setAttribute("alt", "image");
+  a_tag3.append(image3);
 
   // star
 
-  rate = document.createElement("i");
-  rate.setAttribute("id", "star");
-  rate.setAttribute("class", "fa fa-star");
-  a_tag.append(rate);
+  rate3 = document.createElement("i");
+  rate3.setAttribute("id", "star");
+  rate3.setAttribute("class", "fa fa-star");
+  a_tag3.append(rate3);
 
   // rating
 
-  rating = document.createElement("h3");
-  rating.setAttribute("class", "rate");
-  rating.innerText = card[i]["rate"];
-  a_tag.append(rating);
+  rating3 = document.createElement("h3");
+  rating3.setAttribute("class", "rate");
+  rating3.innerText = card3[i]["rate"];
+  a_tag3.append(rating3);
 
   // title
 
-  title = document.createElement("h2");
-  title.setAttribute("class", "title");
-  title.innerText = card[i]["title"];
-  rating.append(title);
+  title3 = document.createElement("h2");
+  title3.setAttribute("class", "title");
+  title3.innerText = card3[i]["title"];
+  rating3.append(title3);
 
   // a tag
 
-  link = document.createElement("a");
-  link.setAttribute("class", "try");
-  link.setAttribute("href", card[i]["link"]);
-  a_tag.append(link);
+  link3 = document.createElement("a");
+  link3.setAttribute("class", "try");
+  link3.setAttribute("href", card3[i]["link"]);
+  a_tag3.append(link3);
 
   // button
 
-  btn = document.createElement("button");
-  btn.setAttribute("href", card[i]["link"]);
-  btn.setAttribute("class", "btn");
-  btn.innerText = "Watch Now";
-  link.append(btn);
+  btn3 = document.createElement("button");
+  btn3.setAttribute("href", card3[i]["link"]);
+  btn3.setAttribute("class", "btn");
+  btn3.innerText = "Watch Now";
+  link3.append(btn3);
 
-  document.querySelector(".menu").append(card_div);
+  document.querySelector(".kollywood").append(card_div3);
 }

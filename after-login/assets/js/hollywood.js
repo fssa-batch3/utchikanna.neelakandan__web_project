@@ -1,77 +1,16 @@
-let card = [
-  {
-    image: "../assets/images/triangle.jpg",
-    href: "#triangle",
-    rate: 3.5,
-    title: "Triangle",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/top.jpg",
-    href: "#top",
-    rate: 4,
-    title: "Top Gun:Maverick",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/inter.jpg",
-    href: "#inter",
-    rate: 4,
-    title: "Intersteller",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/ince.jpg",
-    href: "#inception",
-    rate: 4.5,
-    title: "Inception",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/pre.jpg",
-    href: "#prestige",
-    rate: 4,
-    title: "The Prestige",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/pass.jpg",
-    href: "#pass",
-    rate: 3,
-    title: "Passengers",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/john.jpg",
-    href: "#john",
-    rate: 4,
-    title: "John Wick",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/dont.jpg",
-    href: "#carter",
-    rate: 3.5,
-    title: "Don't Breathe",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-];
-
-// const url = window.location.search; // ?datas={}
-// const urlParams = new URLSearchParams(url); // converting string into key value pair
-// const datas = urlParams.get("datas"); // return value of the "name" key
+let card2 = [];
 
 // card
-let card_div;
-let a_tag;
-let image;
-let rate;
-let rating;
-let title;
-let btn;
+let card_div2;
+let a_tag2;
+let image2;
+let rate2;
+let rating2;
+let title2;
+let btn2;
 let delete_btn;
 let edit_btn;
-let link;
+let link2;
 
 let create_card = JSON.parse(localStorage.getItem("new_card"));
 console.log(create_card);
@@ -81,69 +20,66 @@ function movieType(type) {
 }
 
 for (let i = 0; i < movieType("hollywood").length; i++) {
-  card.push(movieType("hollywood")[i]);
-  console.log(card);
+  card2.push(movieType("hollywood")[i]);
 }
 
-for (let i = 0; i < card.length; i++) {
+for (let i = 0; i < card2.length; i++) {
   // box
-  card_div = document.createElement("div");
-  card_div.setAttribute("class", "box");
+  card_div2 = document.createElement("div");
+  card_div2.setAttribute("class", "box");
 
   // a tag
 
-  a_tag = document.createElement("a");
-  a_tag.setAttribute(
+  a_tag2 = document.createElement("a");
+  a_tag2.setAttribute(
     "href",
-    "../after-login/productDetails.html?id=" + card[i]["id"]
+    "../after-login/productDetails.html?id=" + card2[i]["id"]
   );
-  card_div.append(a_tag);
+  card_div2.append(a_tag2);
 
   // image
 
-  image = document.createElement("img");
-  image.setAttribute("id", "image-1");
-  image.setAttribute("src", card[i]["image"]);
-  image.setAttribute("alt", "image");
-  a_tag.append(image);
+  image2 = document.createElement("img");
+  image2.setAttribute("id", "image-1");
+  image2.setAttribute("src", card2[i]["image"]);
+  image2.setAttribute("alt", "image");
+  a_tag2.append(image2);
 
   // star
 
-  rate = document.createElement("i");
-  rate.setAttribute("id", "star");
-  rate.setAttribute("class", "fa fa-star");
-  a_tag.append(rate);
+  rate2 = document.createElement("i");
+  rate2.setAttribute("id", "star");
+  rate2.setAttribute("class", "fa fa-star");
+  a_tag2.append(rate2);
 
   // rating
 
-  rating = document.createElement("h3");
-  rating.setAttribute("class", "rate");
-  rating.innerText = card[i]["rate"];
-  a_tag.append(rating);
+  rating2 = document.createElement("h3");
+  rating2.setAttribute("class", "rate");
+  rating2.innerText = card2[i]["rate"];
+  a_tag2.append(rating2);
 
   // title
 
-  title = document.createElement("h2");
-  title.setAttribute("class", "title");
-  title.innerText = card[i]["title"];
-  rating.append(title);
+  title2 = document.createElement("h2");
+  title2.setAttribute("class", "title");
+  title2.innerText = card2[i]["title"];
+  rating2.append(title2);
 
   // a tag
 
-  link = document.createElement("a");
-  link.setAttribute("class", "try");
-  link.setAttribute("href", card[i]["link"]);
-  a_tag.append(link);
+  link2 = document.createElement("a");
+  link2.setAttribute("class", "try");
+  link2.setAttribute("href", card2[i]["link"]);
+  a_tag2.append(link2);
 
   // button
 
-  btn = document.createElement("button");
-  btn.setAttribute("href", card[i]["link"]);
-  btn.setAttribute("class", "btn");
-  btn.innerText = "Watch Now";
-  link.append(btn);
+  btn2 = document.createElement("button");
+  btn2.setAttribute("href", card2[i]["link"]);
+  btn2.setAttribute("class", "btn");
+  btn2.innerText = "Watch Now";
+  link2.append(btn2);
 
-  document.querySelector(".menu").append(card_div);
+  document.querySelector(".hollywood").append(card_div2);
 }
-
-// let newCard = localStorage.setItem("new_card", JSON.stringify(card));
