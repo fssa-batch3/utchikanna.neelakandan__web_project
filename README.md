@@ -153,5 +153,36 @@ Type your feedback about our site.
 Expected Result: The user can give feedback about our site.
 
 
+USER CAN GIVE RATING FOR ANY MOVIE
+
+
+
+Scenario 1: Successfully give rating for a movie
+
+
+Steps: Log in as a user.
+Navigate to the home page.
+select your movie and give rating for this.
+
+
+Expected Result: The user can give rating for a movie.
+
+
+
+USER CAN ADD THEIR FAVOURITE MOVIE TO THEIR WATCHLIST
+
+
+
+Scenario 1: Successfully add the movie to the watchlist
+
+
+Steps: Log in as a user.
+Navigate to the home page.
+select your movie and add to the watchlist.
+
+
+Expected Result: The user can add watchlist to their favourtie movie.
+
+
 
 
