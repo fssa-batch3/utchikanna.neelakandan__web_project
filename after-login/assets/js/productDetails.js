@@ -19,6 +19,7 @@ for (let i = 0; i < favList.length; i++) {
     get_movie_id == favList[i]["get_movie_id"]
   ) {
     let favBtn = document.getElementById("Favbtn");
+    favBtn.setAttribute("onclick", "remove()");
     favBtn.innerText = "Added";
     let heart = document.createElement("i");
     heart.setAttribute("class", "fa fa-heart");
@@ -29,16 +30,18 @@ for (let i = 0; i < favList.length; i++) {
     function addFav() {
       let addFav = [];
       let favBtn = document.getElementById("Favbtn");
+      favBtn.setAttribute("onclick", "remove()");
       favBtn.innerText = "Added";
       let heart = document.createElement("i");
       heart.setAttribute("class", "fa fa-heart");
       heart.style.color = "red";
       heart.setAttribute("id", "heart");
       document.querySelector(".btn3").prepend(heart);
-
+      let favId = Date.now();
       let add = {
         get_movie_id,
         get_email,
+        favId,
       };
 
       if (localStorage.getItem("favMovie") != null) {
@@ -49,6 +52,22 @@ for (let i = 0; i < favList.length; i++) {
       addFav.push(add);
 
       localStorage.setItem("favMovie", JSON.stringify(addFav));
+    }
+  }
+}
+
+function remove() {
+  for (let i = 0; i < favList.length; i++) {
+    if (
+      oneUser == favList[i]["get_email"] &&
+      get_movie_id == favList[i]["get_movie_id"]
+    ) {
+      let index = favList.indexOf(favList[i]);
+      favList.splice(index, 1);
+      console.log(favList[i]);
+      localStorage.setItem("favMovie", JSON.stringify(favList));
+      location.reload();
+      return;
     }
   }
 }

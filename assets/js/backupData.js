@@ -49,7 +49,7 @@ const backupData = [
   {
     image:
       "https://upload.wikimedia.org/wikipedia/en/e/e1/MissionImpossiblePoster.jpg",
-    rate: "4.4",
+    rate: "4.0",
     title: "Mission Impossible 1",
     link: "https://www.youtube.com/embed/VI-PobQLr1M",
     story:

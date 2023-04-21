@@ -17,18 +17,12 @@ for (let j = 0; j < favMovie.length; j++) {
       }
     });
     fav.push(findMovie);
-  } else {
-    let nofound = document.createElement("h2");
-    nofound.setAttribute("id", "noFound");
-    nofound.innerText = "Nothing in your watchlist";
-    document.querySelector(".favlist").append(nofound);
-    let pre = document.querySelector(".prev");
-    pre.style.display = "none";
-    let next = document.querySelector(".next");
-    next.style.display = "none";
-    break;
+    let empty = document.getElementById("noFound");
+    empty.style.display = "none";
   }
 }
+
+console.log(fav);
 
 // card
 let card_div1;
@@ -60,21 +54,21 @@ for (let i = 0; i < fav.length; i++) {
   image1.setAttribute("id", "image-1");
   image1.setAttribute("src", fav[i]["image"]);
   image1.setAttribute("alt", fav[i]["alt"]);
-  card_div1.append(image1);
+  a_tag1.append(image1);
 
   // icon
 
   rate1 = document.createElement("i");
   rate1.setAttribute("id", "star");
   rate1.setAttribute("class", "fa fa-star");
-  card_div1.append(rate1);
+  a_tag1.append(rate1);
 
   // rating
 
   rating1 = document.createElement("h3");
   rating1.setAttribute("class", "rate");
   rating1.innerText = fav[i]["rate"];
-  card_div1.append(rating1);
+  a_tag1.append(rating1);
 
   // title
 
@@ -88,7 +82,7 @@ for (let i = 0; i < fav.length; i++) {
   link1 = document.createElement("a");
   link1.setAttribute("class", "try");
   link1.setAttribute("href", fav[i]["link"]);
-  card_div1.append(link1);
+  a_tag1.append(link1);
 
   // button
 

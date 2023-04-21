@@ -16,7 +16,7 @@ showComment.addEventListener("click", function (event) {
   });
   console.log(get_obj);
   let input = document.getElementById("comment-input").value;
-  let commenter_name = get_obj["userName"];
+  let commenter_name = get_obj["fname"] + " " + get_obj["lname"];
   let comment_img = get_obj["image"];
 
   let comment_id = Date.now();

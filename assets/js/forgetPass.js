@@ -9,6 +9,7 @@ function conf() {
       return true;
     }
   });
+
   console.log(get_obj);
 
   get_obj["password"] = Password;
@@ -16,4 +17,5 @@ function conf() {
   localStorage.setItem("user", JSON.stringify(user_details));
 
   alert("Successfully change your password");
+  location.href = "./logIn.html";
 }
