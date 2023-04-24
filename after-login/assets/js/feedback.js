@@ -1,4 +1,5 @@
 // feedback send
+
 let commenter;
 let showComment = document.getElementById("showFeedback");
 showComment.addEventListener("click", function (event) {
@@ -8,39 +9,45 @@ showComment.addEventListener("click", function (event) {
 
   let user_details = JSON.parse(localStorage.getItem("user"));
   console.log(user_details);
+  let emailId = document.getElementById("email").value;
+
   let get_obj = user_details.find(function (user_obj) {
     let check_email = user_obj["email"];
     if (user_email === check_email) {
       return true;
     }
   });
-  console.log(get_obj);
-  let feedback = document.getElementById("feed").value;
-  let commenter_name = get_obj["userName"];
-  let comment_img = get_obj["image"];
+  console.log(emailId);
+  if (emailId === user_email) {
+    let feedback = document.getElementById("feed").value;
+    let commenter_name = get_obj["fname"] + " " + get_obj["lname"];
+    let comment_img = get_obj["image"];
 
-  let feedback_id = Date.now();
+    let feedback_id = Date.now();
 
-  let commenter = {
-    feedback,
-    feedback_id,
-    user_email,
-    commenter_name,
-    comment_img,
-    // current_time: moment().format("DD-MMM-YYYY hh:mm A"),
-  };
-  let feedbacks = [];
+    let commenter = {
+      feedback,
+      feedback_id,
+      user_email,
+      commenter_name,
+      comment_img,
+      // current_time: moment().format("DD-MMM-YYYY hh:mm A"),
+    };
+    let feedbacks = [];
 
-  if (localStorage.getItem("feedbacks") != null) {
-    feedbacks = JSON.parse(localStorage.getItem("feedbacks"));
-    console.log(feedbacks);
+    if (localStorage.getItem("feedbacks") != null) {
+      feedbacks = JSON.parse(localStorage.getItem("feedbacks"));
+      console.log(feedbacks);
+    }
+
+    feedbacks.push(commenter);
+
+    localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+
+    location.reload();
+  } else {
+    alert("Your email id is miss match");
   }
-
-  feedbacks.push(commenter);
-
-  localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
-
-  location.reload();
 });
 
 // show feedbacks
