@@ -2,7 +2,7 @@ const backupData = [
   {
     image:
       "data:image/jpeg;base64,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",
-    rate: "3.4",
+    rate: "3.6",
     title: "Dunkirk",
     link: "https://www.youtube.com/embed/F-eMt3SrfFU",
     story:
@@ -49,7 +49,7 @@ const backupData = [
   {
     image:
       "https://upload.wikimedia.org/wikipedia/en/e/e1/MissionImpossiblePoster.jpg",
-    rate: "4.0",
+    rate: "4.2",
     title: "Mission Impossible 1",
     link: "https://www.youtube.com/embed/VI-PobQLr1M",
     story:
@@ -288,7 +288,7 @@ const backupData = [
   {
     image: "https://upload.wikimedia.org/wikipedia/en/2/24/Chainsawman.jpg",
     href: "#triangle",
-    rate: 4.5,
+    rate: "NaN",
     title: "Chainsaw Man",
     link: "https://www.netflix.com/in/title/81215627?source=35",
     movietype: "anime Series",
@@ -675,5 +675,197 @@ const backupData = [
     title: "The First Avenger",
     link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
     movietype: "superhero movies",
+  },
+  {
+    image:
+      "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-250,h-390/et00351731-btdcuuvshx-portrait.jpg",
+    rate: "4.0",
+    title: "Leo",
+    link: "https://www.youtube.com/embed/qN3wfuPYTI4",
+    story:
+      "Leo is an upcoming Indian Tamil-language action film directed by Lokesh Kanagaraj, who co-wrote the script with Rathna Kumar and Deeraj Vaidy. It is produced by S. S. Lalit Kumar, under Seven Screen Studio, and co-produced by Jagadish Palanisamy.",
+    releaseDate: "19 October 2023",
+    directorName: "Lokesh Kanagaraj",
+    mDirectorName: "Anirudh Ravichander",
+    directorLink: "https://en.wikipedia.org/wiki/Lokesh_Kanagaraj",
+    mDirectorLink: "https://en.wikipedia.org/wiki/Anirudh_Ravichander",
+    actorWiki1: "https://en.wikipedia.org/wiki/Vijay_(actor)",
+    actorImg1:
+      "https://m.media-amazon.com/images/M/MV5BZWJlODhlMzctOTU0Yi00MTUwLTkxODYtMDNjNTQxYTI2YTE1XkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg",
+    actorName1: "Vijay",
+    actorWiki2: "https://en.wikipedia.org/wiki/Trisha_(actress)",
+    actorImg2:
+      "https://m.media-amazon.com/images/M/MV5BNGZjMGM1MTgtZTAwMy00NmEwLTg5NTMtOGJlYjI3Y2UzMzVlXkEyXkFqcGdeQXVyMjYwMDk5NjE@._V1_.jpg",
+    actorName2: "Trisha",
+    actorWiki3: "https://en.wikipedia.org/wiki/Sanjay_Dutt",
+    actorImg3:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Sanjay_Dutt_at_Mumbai_Airport%2C_2018_%28cropped%29.jpg/220px-Sanjay_Dutt_at_Mumbai_Airport%2C_2018_%28cropped%29.jpg",
+    actorName3: "Sanjay Dutt",
+    actorWiki4: "https://en.wikipedia.org/wiki/Prithviraj_Sukumaran",
+    actorImg4:
+      "https://upload.wikimedia.org/wikipedia/commons/3/3b/Prithviraj_oil_paint_2019.jpg",
+    actorName4: "Prithviraj Sukumaran",
+    actorWiki5: "https://en.wikipedia.org/wiki/Mysskin",
+    actorImg5:
+      "https://upload.wikimedia.org/wikipedia/commons/6/6e/Mysskin%2C_Tamil_filmmaker.jpg",
+    actorName5: "Mysskin",
+    actorWiki6: "https://en.wikipedia.org/wiki/Gautham_Vasudev_Menon",
+    actorImg6:
+      "https://upload.wikimedia.org/wikipedia/commons/1/1e/Gautham_Menon_at_Dhuruvangal_Pathinaaru_Success_Meet_%28cropped%29.jpg",
+    actorName6: "Gautham Vasudev Menon",
+    actorWiki7: "https://en.wikipedia.org/wiki/Priya_Anand",
+    actorImg7:
+      "https://m.media-amazon.com/images/M/MV5BZDE5OTAzYTQtZTEyYi00ZGQyLTg3NWEtZGFlYzU2OTgxYTU1XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
+    actorName7: "Priya Anand",
+    awardName: "Best Achievement in Visual Effects",
+    awardWiki: "knfsfnf",
+    movieLink:
+      "https://www.primevideo.com/dp/amzn1.dv.gti.70b19688-bdde-8d47-b36e-850aded7f2fa?autoplay=0&ref_=atv_cf_strg_wb",
+    movietype: "upcoming movie",
+    id: 1682507551472,
+  },
+  {
+    image:
+      "https://m.media-amazon.com/images/M/MV5BODMzNzhkMzUtZDRkMy00MzVjLWJmYzgtZjBhZTJhY2I4M2Y1XkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg",
+    rate: "3",
+    title: "Jailer",
+    link: "https://www.youtube.com/embed/DObwdl3xB7U",
+    story:
+      "Jailer is an upcoming Indian Tamil-language action comedy film written and directed by Nelson and produced by Kalanithi Maran of Sun Pictures. It stars Rajinikanth, Shiva Rajkumar, Tamannaah and Ramya Krishnan.",
+    releaseDate: "It's will Announce",
+    directorName: "Nelson",
+    mDirectorName: "Anirudh Ravichander",
+    directorLink: "https://en.wikipedia.org/wiki/Nelson_(director)",
+    mDirectorLink: "https://en.wikipedia.org/wiki/Anirudh_Ravichander",
+    actorWiki1: "https://en.wikipedia.org/wiki/Rajinikanth",
+    actorImg1:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Rajinikanth_at_the_Inauguration_of_MGR_Statue_%28cropped%29.jpg/800px-Rajinikanth_at_the_Inauguration_of_MGR_Statue_%28cropped%29.jpg",
+    actorName1: "Rajinikanth",
+    actorWiki2: "https://en.wikipedia.org/wiki/Shiva_Rajkumar_filmography",
+    actorImg2:
+      "https://m.media-amazon.com/images/M/MV5BMDM2ZTE0MzgtOGY0Ny00YjljLWE3MzYtOTUzZDc2NDYyY2EzXkEyXkFqcGdeQXVyNzY3MTExNTA@._V1_.jpg",
+    actorName2: "Shiva Rajkumar",
+    actorWiki3: "https://en.wikipedia.org/wiki/Trisha_(actress)",
+    actorImg3:
+      "https://m.media-amazon.com/images/M/MV5BNGZjMGM1MTgtZTAwMy00NmEwLTg5NTMtOGJlYjI3Y2UzMzVlXkEyXkFqcGdeQXVyMjYwMDk5NjE@._V1_.jpg",
+    actorName3: "Trisha",
+    actorWiki4: "https://en.wikipedia.org/wiki/Aishwarya_Rai_Bachchan",
+    actorImg4:
+      "https://cdn.britannica.com/75/124975-050-32A8692C/Aishwarya-Bachchan-Rai.jpg",
+    actorName4: "Aishwarya Rai Bachchan",
+    actorWiki5: "https://en.wikipedia.org/wiki/Priyanka_Arul_Mohan",
+    actorImg5:
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Priyanka_Arul_Mohan_at_Etharkkum_Thunindhavan_pre_release_event.jpg",
+    actorName5: "Priyanka Arul Mohan",
+    actorWiki6: "https://en.wikipedia.org/wiki/Tamannaah",
+    actorImg6:
+      "https://upload.wikimedia.org/wikipedia/commons/d/db/Tamannaah_Bhatia_attends_the_screening_of_Do_Baaraa_at_the_Indian_Film_Festival_of_Melbourne_%28cropped%29.jpg",
+    actorName6: "Tamannaah",
+    actorWiki7: "https://en.wikipedia.org/wiki/Yogi_Babu",
+    actorImg7:
+      "https://upload.wikimedia.org/wikipedia/commons/7/7d/Yogi_Babu_at_the_Sema_Press_Meet.jpg",
+    actorName7: "Yogi Babu",
+    awardName: "Best Achievement in Cinematography",
+    awardWiki: "https://www.imdb.com/title/tt0816692/awards/?ref_=tt_awd",
+    movieLink:
+      "https://www.primevideo.com/dp/amzn1.dv.gti.34b17cec-bc76-719d-001b-38f5c7cabde9?autoplay=0&ref_=atv_cf_strg_wb",
+    movietype: "upcoming movie",
+    id: 1682585808400,
+  },
+  {
+    image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/Indian_2_poster.jpg/220px-Indian_2_poster.jpg",
+    rate: "4.0",
+    title: "Indian 2",
+    link: "https://www.youtube.com/embed/mpsgJvteznQ",
+    story:
+      "Indian 2 is an upcoming Indian Tamil-language vigilante action film written and directed by S. Shankar.",
+    releaseDate: "It's will Announce",
+    directorName: "Shankar",
+    mDirectorName: "Anirudh Ravichander",
+    directorLink: "https://en.wikipedia.org/wiki/S._Shankar",
+    mDirectorLink: "https://en.wikipedia.org/wiki/Anirudh_Ravichander",
+    actorWiki1: "https://en.wikipedia.org/wiki/Kamal_Haasan",
+    actorImg1:
+      "https://m.media-amazon.com/images/M/MV5BYmUxNTY0MWItODQ2My00YWMyLWFmODgtNTY1MTQ2ZjEwYzdlXkEyXkFqcGdeQXVyMjYwMDk5NjE@._V1_.jpg",
+    actorName1: "Kamal Haasan",
+    actorWiki2: "https://en.wikipedia.org/wiki/Rakul_Preet_Singh",
+    actorImg2:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Rakul_Preet_Singh_snapped_promoting_Thank_God_%282%29.jpg",
+    actorName2: "Rakul Preet Singh",
+    actorWiki3: "https://en.wikipedia.org/wiki/Kajal_Aggarwal",
+    actorImg3:
+      "https://upload.wikimedia.org/wikipedia/commons/e/e2/Kajal_Aggarwal_on_the_sets_of_Queen_Kannada_remake.jpg",
+    actorName3: "Kajal Aggarwal ",
+    actorWiki4: "https://en.wikipedia.org/wiki/Priya_Bhavani_Shankar",
+    actorImg4:
+      "https://upload.wikimedia.org/wikipedia/commons/8/83/Priya_Bhavani_Shankar_PYTV.png",
+    actorName4: "Priya Bhavani Shankar",
+    actorWiki5: "https://en.wikipedia.org/wiki/Guru_Somasundaram",
+    actorImg5:
+      "https://upload.wikimedia.org/wikipedia/commons/4/49/Guru_Somasundaram_Image.jpg",
+    actorName5: "Guru Somasundaram",
+    actorWiki6: "https://en.wikipedia.org/wiki/Samuthirakani",
+    actorImg6:
+      "https://upload.wikimedia.org/wikipedia/commons/d/dc/Samuthirakani_at_Sandamarudham_Audio_Launch.jpg",
+    actorName6: "Samuthirakani",
+    actorWiki7: "https://en.wikipedia.org/wiki/Bobby_Simha",
+    actorImg7:
+      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Bobby_Simha_at_Urumeen_Audio_Launch_.jpg",
+    actorName7: "Bobby Simha",
+    awardName: "Best Debut Film of a Director",
+    awardWiki: "https://www.imdb.com/title/tt1496729/awards/?ref_=tt_awd",
+    movieLink:
+      "https://www.primevideo.com/dp/amzn1.dv.gti.34b17cec-bc76-719d-001b-38f5c7cabde9?autoplay=0&ref_=atv_cf_strg_wb",
+    movietype: "upcoming movie",
+    id: 1682586364327,
+  },
+  {
+    image:
+      "https://igimages.gumlet.io/tamil/home/jawan_250423_1.jpg?w=376&dpr=2.6",
+    rate: "3",
+    title: "Jawan",
+    link: "https://www.youtube.com/embed/fPX0C-g5xpU",
+    story:
+      "A man is driven by a personal vendetta to rectify the wrongs in society, while keeping a promise made years ago. He comes up against a monstrous outlaw with no fear, who's caused extreme suffering to many.",
+    releaseDate: "2 June 2023",
+    directorName: "Atlee",
+    mDirectorName: "Anirudh Ravichander",
+    directorLink: "https://en.wikipedia.org/wiki/Atlee_(director)",
+    mDirectorLink: "https://en.wikipedia.org/wiki/Anirudh_Ravichander",
+    actorWiki1: "https://en.wikipedia.org/wiki/Shah_Rukh_Khan",
+    actorImg1:
+      "https://m.media-amazon.com/images/M/MV5BZDk1ZmU0NGYtMzQ2Yi00N2NjLTkyNWEtZWE2NTU4NTJiZGUzXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_.jpg",
+    actorName1: "Shah Rukh Khan",
+    actorWiki2: "https://en.wikipedia.org/wiki/Nayanthara",
+    actorImg2:
+      "https://upload.wikimedia.org/wikipedia/commons/8/80/Nayanthara_at_Filmfare_Awards.jpg",
+    actorName2: "Nayanthara",
+    actorWiki3: "https://en.wikipedia.org/wiki/Vijay_Sethupathi",
+    actorImg3:
+      "https://m.media-amazon.com/images/M/MV5BZjVlOWJlYTctZjI4YS00NGE0LWIzNGYtOGNlZjliNTRiMDJhXkEyXkFqcGdeQXVyMjYwMDk5NjE@._V1_.jpg",
+    actorName3: "Vijay Sethupathi",
+    actorWiki4: "https://en.wikipedia.org/wiki/Sanya_Malhotra",
+    actorImg4:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sanya_Malhotra_spotted_during_an_ad_shoot_in_Mumbai_-_Close_view.jpg/220px-Sanya_Malhotra_spotted_during_an_ad_shoot_in_Mumbai_-_Close_view.jpg",
+    actorName4: "Sanya Malhotra",
+    actorWiki5: "https://en.wikipedia.org/wiki/Priyamani",
+    actorImg5:
+      "https://m.media-amazon.com/images/M/MV5BZGE5MjQwYjEtNGE0NC00YTQ3LTliYWQtMjQ0MTYxNTBkYWQ4XkEyXkFqcGdeQXVyMjYwMDk5NjE@._V1_.jpg",
+    actorName5: "Priyamani",
+    actorWiki6: "https://en.wikipedia.org/wiki/Yogi_Babu",
+    actorImg6:
+      "https://upload.wikimedia.org/wikipedia/commons/7/7d/Yogi_Babu_at_the_Sema_Press_Meet.jpg",
+    actorName6: "Yogi Babu",
+    actorWiki7: "https://en.wikipedia.org/wiki/Sunil_Grover",
+    actorImg7:
+      "https://upload.wikimedia.org/wikipedia/commons/8/8e/Sunil_Grover_at_Tassel_Fashion_%26_Lifestyle_Awards_2016.jpg",
+    actorName7: "Sunil Grover",
+    awardName: "Best Achievement in Film Editing",
+    awardWiki: "https://www.imdb.com/title/tt5013056/awards/?ref_=tt_awd",
+    movieLink:
+      "https://www.hotstar.com/in/movies/aaranya-kaandam/1000026688/watch?utm_source=gwa",
+    movietype: "upcoming movie",
+    id: 1682587090483,
   },
 ];
