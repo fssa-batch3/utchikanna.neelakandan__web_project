@@ -295,7 +295,8 @@ p {
 .kollywood,
 .anime,
 .web,
-.Superhero {
+.Superhero,
+.upcoming {
   padding-left: 70px;
   display: flex;
   overflow-x: auto;
@@ -322,6 +323,9 @@ p {
   display: none;
 }
 .web::-webkit-scrollbar {
+  display: none;
+}
+.upcoming::-webkit-scrollbar {
   display: none;
 }
 

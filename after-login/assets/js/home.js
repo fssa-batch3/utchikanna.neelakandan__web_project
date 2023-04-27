@@ -77,7 +77,6 @@ for (let i = 0; i < 10; i++) {
   document.querySelector(".menu").append(card_div);
 }
 
-
 //  show more
 
 function view() {
@@ -181,3 +180,5 @@ function less() {
   returnBtn.style.display = "block";
   location.reload();
 }
+
+

@@ -31,6 +31,7 @@ for (let i = 0; i < card3.length; i++) {
     "href",
     "../after-login/productDetails.html?id=" + card3[i]["id"]
   );
+  a_tag3.setAttribute("id", "recently");
   card_div3.append(a_tag3);
 
   // image

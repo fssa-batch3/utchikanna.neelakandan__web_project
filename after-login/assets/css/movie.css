@@ -300,7 +300,9 @@ p {
 .kollywood,
 .anime,
 .web,
-.Superhero {
+.Superhero,
+.recent,
+.upcoming {
   padding-left: 70px;
   display: flex;
   overflow-x: auto;
@@ -308,6 +310,7 @@ p {
   background-color: #efefef;
   scroll-behavior: smooth;
 }
+
 .menu::-webkit-scrollbar {
   display: none;
 }
@@ -327,6 +330,12 @@ p {
   display: none;
 }
 .web::-webkit-scrollbar {
+  display: none;
+}
+.recent::-webkit-scrollbar {
+  display: none;
+}
+.upcoming::-webkit-scrollbar {
   display: none;
 }
 .showMore {
@@ -828,6 +837,16 @@ textarea:invalid {
   margin-top: 200px;
   margin-left: 500px;
   margin-bottom: 300px;
+}
+#clearRecent {
+  color: #333;
+  margin-left: 1350px;
+  font-size: 25px;
+  display: none;
+}
+#clearRecent:hover {
+  cursor: pointer;
+  color: red;
 }
 
 /* responsive width 900px*/

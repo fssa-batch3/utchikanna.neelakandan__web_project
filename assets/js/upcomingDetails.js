@@ -9,113 +9,7 @@ let movieDetails = movieArray.find(function (event) {
   }
 });
 
-let oneUser = JSON.parse(localStorage.getItem("details"));
-
-// recent view
-let recent = [];
-if (JSON.parse(localStorage.getItem("recent")) != null) {
-  recent = JSON.parse(localStorage.getItem("recent"));
-}
-
-function userArray(email) {
-  const arr = recent.filter((h) => h.oneUser == email);
-  return arr;
-}
-let userCheck = false;
-
-let user = recent.find((e) => {
-  if (oneUser == e["oneUser"]) {
-    userCheck = true;
-    return true;
-  }
-});
-
-if (userCheck == true) {
-  let userArr = userArray(oneUser);
-  let check = false;
-  let userRecent = userArr.find((e) => {
-    if (e["id"] == get_movie_id) {
-      check = true;
-      return true;
-    }
-  });
-  if (check == false) {
-    let id = get_movie_id;
-    let date = new Date();
-    let obj = { id, oneUser, date };
-    recent.push(obj);
-    localStorage.setItem("recent", JSON.stringify(recent));
-  }
-} else {
-  let id = get_movie_id;
-  let date = new Date();
-  let obj = { id, oneUser, date };
-  recent.push(obj);
-  localStorage.setItem("recent", JSON.stringify(recent));
-}
-
-let favList = JSON.parse(localStorage.getItem("favMovie"));
-
-for (let i = 0; i < favList.length; i++) {
-  if (
-    oneUser == favList[i]["get_email"] &&
-    get_movie_id == favList[i]["get_movie_id"]
-  ) {
-    let favBtn = document.getElementById("Favbtn");
-    favBtn.setAttribute("onclick", "remove()");
-    favBtn.innerText = "In watchlist";
-    let heart = document.createElement("i");
-    heart.setAttribute("class", "fa fa-heart");
-    heart.style.color = "red";
-    heart.setAttribute("id", "heart");
-    document.querySelector(".btn3").prepend(heart);
-  } else {
-    function addFav() {
-      let addFav = [];
-      let favBtn = document.getElementById("Favbtn");
-      favBtn.setAttribute("onclick", "remove()");
-      favBtn.innerText = "In watchlist";
-      let heart = document.createElement("i");
-      heart.setAttribute("class", "fa fa-heart");
-      heart.style.color = "red";
-      heart.setAttribute("id", "heart");
-      document.querySelector(".btn3").prepend(heart);
-      let favId = Date.now();
-      let add = {
-        get_movie_id,
-        get_email,
-        favId,
-      };
-
-      if (localStorage.getItem("favMovie") != null) {
-        addFav = JSON.parse(localStorage.getItem("favMovie"));
-        console.log(addFav);
-      }
-
-      addFav.push(add);
-
-      localStorage.setItem("favMovie", JSON.stringify(addFav));
-    }
-  }
-}
-
-function remove() {
-  for (let i = 0; i < favList.length; i++) {
-    if (
-      oneUser == favList[i]["get_email"] &&
-      get_movie_id == favList[i]["get_movie_id"]
-    ) {
-      let index = favList.indexOf(favList[i]);
-      favList.splice(index, 1);
-      console.log(favList[i]);
-      localStorage.setItem("favMovie", JSON.stringify(favList));
-      location.reload();
-      return;
-    }
-  }
-}
-
-// average of the star rating and show the prevouise rating
+// average of the star rating
 
 let ratingArray = JSON.parse(localStorage.getItem("ratings"));
 
@@ -128,29 +22,6 @@ for (let i = 0; i < ratingArray.length; i++) {
     noOfUser++;
     countRating += ratingArray[i]["rating"];
   }
-  if (
-    get_movie_id == ratingArray[i]["get_movie_id"] &&
-    oneUser == ratingArray[i]["get_email"]
-  ) {
-    showRating = ratingArray[i]["rating"];
-    let rating = showRating.toString();
-
-    let info = document.getElementById("showRating");
-
-    info.innerText = rating + "/5";
-
-    let yourRating = document.createElement("h2");
-    yourRating.setAttribute("class", "rating");
-    yourRating.innerText = "Your Rating";
-
-    document.querySelector(".star_rating").prepend(yourRating);
-
-    let btnRating = document.createElement("button");
-    btnRating.setAttribute("class", "star1");
-    btnRating.innerHTML = "&#9733;";
-
-    document.querySelector(".userRating").prepend(btnRating);
-  }
 }
 
 let sumRating = countRating / noOfUser;
@@ -158,6 +29,8 @@ let sumRating = countRating / noOfUser;
 let rate = sumRating.toFixed(1);
 
 console.log(rate);
+
+console.log(movieDetails);
 
 let movieTitle = document.getElementById("movie_title");
 let tapTitle = document.getElementById("title");
@@ -190,9 +63,6 @@ let actor_name6 = document.getElementById("actor_name6");
 let actor_wiki7 = document.getElementById("actor_wiki7");
 let actor_img7 = document.getElementById("actor_img7");
 let actor_name7 = document.getElementById("actor_name7");
-let award_wiki = document.getElementById("award_wiki");
-let award_name = document.getElementById("awardName");
-let movie_link = document.getElementById("movie_link");
 
 movieTitle.innerText = movieDetails["title"];
 tapTitle.innerText = movieDetails["title"];
@@ -213,14 +83,12 @@ actor_wiki6.setAttribute("href", movieDetails["actorWiki6"]);
 actor_img6.setAttribute("src", movieDetails["actorImg6"]);
 actor_wiki7.setAttribute("href", movieDetails["actorWiki7"]);
 actor_img7.setAttribute("src", movieDetails["actorImg7"]);
-award_wiki.setAttribute("href", movieDetails["awardWiki"]);
-movie_link.setAttribute("href", movieDetails["movieLink"]);
+
 rateOfTheMovie.innerText = rate;
 contentOfMovie.innerText = movieDetails["story"];
 releaseDate.innerText = movieDetails["releaseDate"];
 directorName.innerText = movieDetails["directorName"];
 mDirectorName.innerText = movieDetails["mDirectorName"];
-award_name.innerText = movieDetails["awardName"];
 actor_name1.innerText = movieDetails["actorName1"];
 actor_name2.innerText = movieDetails["actorName2"];
 actor_name3.innerText = movieDetails["actorName3"];

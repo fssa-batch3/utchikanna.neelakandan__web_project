@@ -1,3 +1,7 @@
+let posit = document.getElementById("align");
+posit.style.marginLeft = "80px";
+posit.style.position = "relative";
+posit.style.bottom = "1050px";
 //  URL params
 
 const movieArray = JSON.parse(localStorage.getItem("new_card"));
@@ -141,7 +145,7 @@ for (let i = 0; i < ratingArray.length; i++) {
 
     let yourRating = document.createElement("h2");
     yourRating.setAttribute("class", "rating");
-    yourRating.innerText = "Your Rating";
+    yourRating.innerText = "Your Expection";
 
     document.querySelector(".star_rating").prepend(yourRating);
 
@@ -190,9 +194,6 @@ let actor_name6 = document.getElementById("actor_name6");
 let actor_wiki7 = document.getElementById("actor_wiki7");
 let actor_img7 = document.getElementById("actor_img7");
 let actor_name7 = document.getElementById("actor_name7");
-let award_wiki = document.getElementById("award_wiki");
-let award_name = document.getElementById("awardName");
-let movie_link = document.getElementById("movie_link");
 
 movieTitle.innerText = movieDetails["title"];
 tapTitle.innerText = movieDetails["title"];
@@ -213,14 +214,11 @@ actor_wiki6.setAttribute("href", movieDetails["actorWiki6"]);
 actor_img6.setAttribute("src", movieDetails["actorImg6"]);
 actor_wiki7.setAttribute("href", movieDetails["actorWiki7"]);
 actor_img7.setAttribute("src", movieDetails["actorImg7"]);
-award_wiki.setAttribute("href", movieDetails["awardWiki"]);
-movie_link.setAttribute("href", movieDetails["movieLink"]);
 rateOfTheMovie.innerText = rate;
 contentOfMovie.innerText = movieDetails["story"];
 releaseDate.innerText = movieDetails["releaseDate"];
 directorName.innerText = movieDetails["directorName"];
 mDirectorName.innerText = movieDetails["mDirectorName"];
-award_name.innerText = movieDetails["awardName"];
 actor_name1.innerText = movieDetails["actorName1"];
 actor_name2.innerText = movieDetails["actorName2"];
 actor_name3.innerText = movieDetails["actorName3"];
