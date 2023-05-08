@@ -809,6 +809,9 @@ input:invalid {
 #forget:hover {
   border-bottom: 2px solid black;
 }
+.alertbox {
+  display: none;
+}
 /* responsive width 900px */
 @media screen and (max-width: 900px) {
   h1 {

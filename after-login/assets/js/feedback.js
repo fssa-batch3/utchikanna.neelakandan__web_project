@@ -19,7 +19,12 @@ showComment.addEventListener("click", function (event) {
   });
   console.log(emailId);
   if (emailId === user_email) {
-    let feedback = document.getElementById("feed").value;
+    let feedback = document.getElementById("feed").value.trim();
+    console.log(feedback);
+    if (feedback == null || feedback == "") {
+      alert("Feedback can't be blank");
+      return;
+    }
     let commenter_name = get_obj["fname"] + " " + get_obj["lname"];
     let comment_img = get_obj["image"];
 

@@ -1,7 +1,8 @@
 // comment send
+
 let commenter;
-let showComment = document.getElementById("showComment");
-showComment.addEventListener("click", function (event) {
+let showComment = document.getElementById("comment-form");
+showComment.addEventListener("submit", function (event) {
   event.preventDefault();
 
   let user_email = JSON.parse(localStorage.getItem("details"));
@@ -15,7 +16,12 @@ showComment.addEventListener("click", function (event) {
     }
   });
   console.log(get_obj);
-  let input = document.getElementById("comment-input").value;
+  let input = document.getElementById("comment-input").value.trim();
+  console.log(input);
+  if (input == null || input == "") {
+    alert("comment can't be blank");
+    return;
+  }
   let commenter_name = get_obj["fname"] + " " + get_obj["lname"];
   let comment_img = get_obj["image"];
 

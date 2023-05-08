@@ -848,6 +848,11 @@ textarea:invalid {
   cursor: pointer;
   color: red;
 }
+#noViewed {
+  margin-bottom: 250px;
+  margin-top: 150px;
+  margin-left: 100px;
+}
 
 /* responsive width 900px*/
 @media screen and (max-width: 900px) {
