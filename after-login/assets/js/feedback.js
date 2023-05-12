@@ -36,7 +36,6 @@ showComment.addEventListener("click", function (event) {
       user_email,
       commenter_name,
       comment_img,
-      // current_time: moment().format("DD-MMM-YYYY hh:mm A"),
     };
     let feedbacks = [];
 
@@ -51,7 +50,7 @@ showComment.addEventListener("click", function (event) {
 
     location.reload();
   } else {
-    alert("Your email id is miss match");
+    alert("Your email id is not match");
   }
 });
 
@@ -59,25 +58,11 @@ showComment.addEventListener("click", function (event) {
 
 let feed = JSON.parse(localStorage.getItem("feedbacks"));
 
-user_email = JSON.parse(localStorage.getItem("details"));
+let user_email = JSON.parse(localStorage.getItem("details"));
 
 let count = 0;
 
-// const todayDate = moment();
-// console.log(todayDate);
-
-// let times = moment("10032023", "DDMMYYYY").fromNow();
-
 for (let i = 0; i < feed.length; i++) {
-  //   const momentTime = moment(feed[i]["current_time"]);
-
-  //   const diffInDays = moment().diff(momentTime, "days");
-  //   let formattedDateTime;
-  //   if (diffInDays > 1) {
-  //     formattedDateTime = momentTime.format("DD-MMM-YYYY h:mm A");
-  //   } else {
-  //     formattedDateTime = momentTime.fromNow();
-  //   }
   count++;
 
   let final = document.createElement("div");
@@ -86,11 +71,6 @@ for (let i = 0; i < feed.length; i++) {
   let whole = document.createElement("div");
   whole.setAttribute("class", "comment_div");
   final.append(whole);
-
-  //   let span1 = document.createElement("span");
-  //   span1.setAttribute("class", "times");
-  //   span1.innerText = formattedDateTime;
-  //   final.append(span1);
 
   let image = document.createElement("img");
   image.setAttribute("class", "commenter_img");
@@ -102,14 +82,8 @@ for (let i = 0; i < feed.length; i++) {
   name.innerText = feed[i]["commenter_name"];
   whole.append(name);
 
-  //   let span = document.createElement("span");
-  //   whole.append(span);
-
-  //   let iTag = document.createElement("i");
-  //   iTag.setAttribute("id", "icon");
-  //   iTag.setAttribute("onclick", "likeBtn(this)");
-  //   iTag.setAttribute("class", "fa fa-thumbs-o-up");
-  //   span.append(iTag);
+  let span = document.createElement("span");
+  whole.append(span);
 
   if (user_email == feed[i]["user_email"]) {
     let edit = document.createElement("a");
@@ -160,14 +134,6 @@ for (let i = 0; i < feed.length; i++) {
 
   document.querySelector(".comment_con").prepend(final);
 }
-
-// like button
-
-// function likeBtn(x) {
-//   x.classList.toggle("fa-thumbs-up");
-// }
-
-// console.log(rate_count);
 
 // edit comment
 

@@ -64,9 +64,6 @@
           />
         </a>
       </div>
-
-      <a href="../index.html"> </a>
-      <button class="btn6">Back</button>
     </div>
     <script>
       let logIn = document.getElementById("form");
@@ -79,9 +76,8 @@
 
         let Match = false;
         let admin = false;
-
+        // this code check user credentials
         for (let i = 0; i < checker.length; i++) {
-          // console.log(checker[i]);
           let specific_user = JSON.parse(window.localStorage.getItem("user"));
 
           if (email === checker[i].email && Password === checker[i].password) {
@@ -94,7 +90,7 @@
             admin = true;
           }
         }
-
+        //  its show alert
         if (Match === true) {
           window.alert("Log in Successfully!");
           window.location.href = "../after-login/index.html";

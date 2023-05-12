@@ -142,7 +142,8 @@ ul {
   background-color: white;
   position: fixed;
   max-height: 100px;
-  width: 1485px;
+  width: 100%;
+  margin-bottom: 200px;
   z-index: 10;
 }
 .nav-list {
@@ -342,7 +343,7 @@ p {
   bottom: 100px;
 }
 .about {
-  font-size: 40px;
+  font-size: 22px;
   color: #666;
   max-height: 300px;
 }
@@ -472,8 +473,8 @@ p {
   background-color: #f5c518;
   border: none;
   border-radius: 10px;
-  margin-top: 48px;
-  margin-left: 20px;
+  margin-top: 180px;
+  margin-left: 220px;
   transition: 0.4s;
 }
 .btn3:hover {
@@ -517,8 +518,11 @@ a {
   border: none;
   border-radius: 10px;
   transition: 0.4s;
-  margin-left: 80px;
+  margin-left: 20px;
   font-weight: bold;
+  position: fixed;
+  top: 120px;
+  z-index: 1;
 }
 .btn4:hover {
   transform: scale(1.1);
@@ -811,6 +815,14 @@ input:invalid {
 }
 .alertbox {
   display: none;
+}
+.firstBox {
+  position: relative;
+  top: 200px;
+}
+.secondBox {
+  position: relative;
+  top: 300px;
 }
 /* responsive width 900px */
 @media screen and (max-width: 900px) {
@@ -1148,6 +1160,7 @@ input:invalid {
     font-size: 15px;
     background-color: #f5c518;
     border: none;
+
     border-radius: 10px;
     transition: 0.4s;
     font-weight: bold;

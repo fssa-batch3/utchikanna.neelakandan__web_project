@@ -12,6 +12,8 @@ let delete_btn;
 let edit_btn;
 let link2;
 
+// its for filter specific one type
+
 let create_card = JSON.parse(localStorage.getItem("new_card"));
 console.log(create_card);
 function movieType(type) {

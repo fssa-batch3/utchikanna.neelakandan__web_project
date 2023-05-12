@@ -91,3 +91,6 @@ console.log(get_obj);
 
 let viewImage = document.getElementById("view_image");
 viewImage.src = get_obj["image"];
+
+let userImage = document.getElementById("user_image");
+userImage.src = get_obj["image"];

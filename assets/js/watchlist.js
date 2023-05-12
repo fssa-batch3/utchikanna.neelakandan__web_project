@@ -8,6 +8,8 @@ let iden = [];
 
 let fav = [];
 
+// find user's watchlist
+
 for (let j = 0; j < favMovie.length; j++) {
   if (get_email == favMovie[j]["get_email"]) {
     let findMovie = allMovie.find(function (one) {

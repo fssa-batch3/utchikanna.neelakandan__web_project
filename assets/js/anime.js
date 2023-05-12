@@ -10,6 +10,8 @@ let title4;
 let btn4;
 let link4;
 
+// its for filter specific one type
+
 let create_card4 = JSON.parse(localStorage.getItem("new_card"));
 console.log(create_card4);
 function movieType(type) {
@@ -18,7 +20,6 @@ function movieType(type) {
 }
 for (let i = 0; i < movieType("anime Series").length; i++) {
   card4.push(movieType("anime Series")[i]);
- 
 }
 
 for (let i = 0; i < card4.length; i++) {

@@ -1,7 +1,3 @@
-let posit = document.getElementById("align");
-posit.style.marginLeft = "80px";
-posit.style.position = "relative";
-posit.style.bottom = "1050px";
 //  URL params
 
 const movieArray = JSON.parse(localStorage.getItem("new_card"));
@@ -57,7 +53,7 @@ if (userCheck == true) {
   recent.push(obj);
   localStorage.setItem("recent", JSON.stringify(recent));
 }
-
+// added to watchlist
 let favList = JSON.parse(localStorage.getItem("favMovie"));
 
 for (let i = 0; i < favList.length; i++) {

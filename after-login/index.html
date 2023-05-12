@@ -36,32 +36,6 @@
       <li class="nav-list">
         <a href="../after-login/watchlist.html">Watchlist</a>
       </li>
-      <!-- <li class="nav-list">
-        <a class="width" href="#">Movies</a>
-        <ul class="dropdown">
-          <li class="dropdown-list">
-            <a href="../after-login/kollywood.html">Kollywood</a>
-          </li>
-          <li class="dropdown-list">
-            <a href="../after-login/hollywood.html">Hollywood</a>
-          </li>
-          <li class="dropdown-list">
-            <a href="../after-login/superHero.html">Superhero Movies </a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-list">
-        <a href="#">Series</a>
-        <ul class="dropdown">
-          <li class="dropdown-list">
-            <a href="../after-login/webSerise.html">Web Series</a>
-          </li>
-          <li class="dropdown-list">
-            <a href="../after-login/anime.html">Anime Series</a>
-          </li>
-        </ul>
-      </li> -->
-
       <li class="nav-list"><a href="../after-login/about.html">About</a></li>
       <li class="nav-list">
         <a href="#" class="adj"
@@ -70,7 +44,7 @@
         <ul class="dropdown">
           <li class="dropdown-list"><a href="../index.html">Log Out</a></li>
           <li class="dropdown-list">
-            <a href="../after-login/userprofile.html">Personal Details</a>
+            <a href="../after-login/user.html">Personal Details</a>
           </li>
         </ul>
       </li>
@@ -102,12 +76,35 @@
     </div>
     <br /><br />
     <br />
-    <h2 class="up">All Movies</h2>
+
+    <div class="filter">
+      <button type="submit" class="view" id="less" onclick="view()">
+        Show All
+      </button>
+      <button type="submit" class="view" id="Kollywood" onclick="Kollywood()">
+        Kollywood
+      </button>
+      <button type="submit" class="view" id="Hollywood" onclick="Hollywood()">
+        Hollywood
+      </button>
+      <button type="submit" class="view" id="WebSeries" onclick="WebSeries()">
+        Web Series
+      </button>
+      <button
+        type="submit"
+        class="view"
+        id="AnimeSeries"
+        onclick="AnimeSeries()"
+      >
+        Anime Series
+      </button>
+      <button type="submit" class="view" id="SuperHero" onclick="SuperHero()">
+        Super Hero Movies
+      </button>
+    </div>
+    <div class="sorting" id="cardhid"></div>
     <div class="menu" id="cardhid"></div>
     <div class="showMore" id="showMore1"></div>
-    <button type="submit" class="view" id="less" onclick="view()">
-      Show More
-    </button>
 
     <div class="favlist" id="favList"></div>
     <h2 class="up">Hollywood</h2>

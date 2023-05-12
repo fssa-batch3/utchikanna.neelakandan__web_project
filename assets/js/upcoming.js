@@ -9,7 +9,7 @@ let rating8;
 let title8;
 let btn8;
 let link8;
-
+// its for filter specific one type
 let create_card8 = JSON.parse(localStorage.getItem("new_card"));
 console.log(create_card8);
 function movieType(type) {

@@ -54,14 +54,21 @@ for (let i = 0; i < recentlyView.length; i++) {
   card_div7.setAttribute("class", "box");
 
   // a tag
-
-  a_tag7 = document.createElement("a");
-  a_tag7.setAttribute(
-    "href",
-    "../after-login/productDetails.html?id=" + recentlyView[i]["id"]
-  );
-  card_div7.append(a_tag7);
-
+  if (recentlyView[i]["movietype"] == "upcoming movie") {
+    a_tag7 = document.createElement("a");
+    a_tag7.setAttribute(
+      "href",
+      "../after-login/upcomingDetails.html?id=" + recentlyView[i]["id"]
+    );
+    card_div7.append(a_tag7);
+  } else {
+    a_tag7 = document.createElement("a");
+    a_tag7.setAttribute(
+      "href",
+      "../after-login/productDetails.html?id=" + recentlyView[i]["id"]
+    );
+    card_div7.append(a_tag7);
+  }
   // image
 
   image7 = document.createElement("img");

@@ -8,29 +8,17 @@ form.addEventListener("submit", function (event) {
   let image_url = document.getElementById("image_url").value;
   updates["image"] = image_url;
 
-  // let redirecting = document.getElementById("rediracting").value;
-  // // console.log(rediracting);
-  // updates["href"] = redirecting;
 
   let rating = document.getElementById("rating").value;
-  // console.log(rating);
+
   updates["rate"] = rating;
 
   let title = document.getElementById("title").value;
-  // console.log(title);
   updates["title"] = title;
 
   let link = document.getElementById("link").value;
   updates["link"] = link;
 
-  // let MovieTitle = document.getElementById("MovieTitle").value;
-  // updates["MovieTitle"] = MovieTitle;
-
-  // let TrailerLink = document.getElementById("TrailerLink").value;
-  // updates["TrailerLink"] = TrailerLink;
-
-  // let MovieRating = document.getElementById("MovieRating").value;
-  // updates["MovieRating"] = MovieRating;
 
   let story = document.getElementById("story").value;
   updates["story"] = story;
@@ -126,20 +114,7 @@ form.addEventListener("submit", function (event) {
   updates["movietype"] = movieCategory;
   console.log(movieCategory);
 
-  // let kollywood = document.getElementById("kollywood").value;
-  // updates["kollywood"] = kollywood;
-
-  // let hollywood = document.getElementById("hollywood").value;
-  // updates["hollywood"] = hollywood;
-
-  // let marvel = document.getElementById("marvel").value;
-  // updates["marvel"] = marvel;
-
-  // let web = document.getElementById("web").value;
-  // updates["web"] = web;
-
-  // let superhero = document.getElementById("superhero").value;
-  // updates["superhero"] = superhero;
+  
 
   let id = Date.now();
 

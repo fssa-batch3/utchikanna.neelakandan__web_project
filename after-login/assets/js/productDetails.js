@@ -54,6 +54,8 @@ if (userCheck == true) {
   localStorage.setItem("recent", JSON.stringify(recent));
 }
 
+// added to watchlist
+
 let favList = JSON.parse(localStorage.getItem("favMovie"));
 
 for (let i = 0; i < favList.length; i++) {
@@ -232,3 +234,7 @@ actor_name7.innerText = movieDetails["actorName7"];
 movieDetails["rate"] = rate;
 
 localStorage.setItem("new_card", JSON.stringify(movieArray));
+
+function backBtn() {
+  location.href = "../after-login/index.html";
+}

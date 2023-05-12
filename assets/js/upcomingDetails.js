@@ -32,6 +32,8 @@ console.log(rate);
 
 console.log(movieDetails);
 
+// assign the data with their repective obj
+
 let movieTitle = document.getElementById("movie_title");
 let tapTitle = document.getElementById("title");
 let trailer = document.getElementById("trailer");

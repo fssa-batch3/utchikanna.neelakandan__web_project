@@ -1,3 +1,5 @@
+// its for forget password
+
 function conf() {
   let gmail = document.getElementById("email1").value;
   let Password = document.getElementById("password").value;
@@ -13,6 +15,7 @@ function conf() {
   console.log(get_obj);
 
   get_obj["password"] = Password;
+  get_obj["rePassword"] = Password;
 
   localStorage.setItem("user", JSON.stringify(user_details));
 

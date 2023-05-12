@@ -53,7 +53,7 @@
           <label for="emailid">Email ID</label><br />
           <input
             autocomplete="off"
-            required="true"
+            disabled
             type="email"
             class="emailid"
             id="emailid"
@@ -122,11 +122,11 @@
           </div>  
         </div>
             <button type="submit"  class="btn6">Submit</button>
-            <button type="delete" id="delete"  class="btn6">Delete Details</button>
+            
           </form>
-          <a href="../after-login/index.html">
-          <button  class="submit" >Back</button>
-        </a>
+          <a href="../after-login/user.html">
+            <button  class="submit" >Back</button>
+          </a>
      
       
     <script>
@@ -152,19 +152,13 @@ datePicker.setAttribute("max", maxDate);
       const lname = document.getElementById("surname");
       const mail = document.getElementById("emailid");
       const phone = document.getElementById("mobilenumber");
-      // const dob = document.getElementById("dob");
-      // const state = document.getElementById("state");  
-      // const cocoacatuntry = document.getElementById("country"); 
-      // const gender  = document.getElementById("gender"); 
+     
 
       fname.value =  get_obj["fname"] ;
       lname.value =  get_obj["lname"] ;
       mail.value  =  user_email ;
       phone.value =  get_obj["phone_no"] ;
-      // dob.value =  get_obj[" _"] ;
-      // state.value = get_obj [" _"] ;
-      // country.value =  get_obj[" _"] ;
-      // gender.value =  get_obj[" _"] ;
+     
      
       const countryArr = document.getElementById("countries");
 const stateArr = document.getElementById("state");
@@ -248,8 +242,8 @@ stateArr.addEventListener("change", async () => {
       event.preventDefault()
       let fname = document.getElementById("name").value;
       let lname = document.getElementById("surname").value;
-      let mail = document.getElementById("emailid").value;
-      let phone = document.getElementById("mobilenumber").value;
+      let email = document.getElementById("emailid").value;
+      let phone_no = document.getElementById("mobilenumber").value;
       let dob = document.getElementById("dob").value;
       let state = document.getElementById("state").value;  
       let country = document.getElementById("countries").value; 
@@ -260,8 +254,8 @@ stateArr.addEventListener("change", async () => {
       let new_data = {
         fname,
         lname,
-        mail,
-        phone,
+        email,
+        phone_no, 
         dob,
         state,
         country,
@@ -321,21 +315,6 @@ stateArr.addEventListener("change", async () => {
      }    
       });
 
- 
-      let delete_user = document.getElementById("delete") 
-      delete_user.addEventListener("click" , function(event){   
-      event.preventDefault()
-      let index = user_details.indexOf(get_obj)
-      let msg =  confirm("Are you sure you want to delete this account")
-      if(msg !== true){
-        return   
-      } else{ 
-        user_details.splice(index,1)
-        console.log(user_details);
-        localStorage.setItem("user",JSON.stringify(user_details))
-        window.location.href ="../pages/signUp.html";
-      }
-    });
     </script>
   </body>
 </html>

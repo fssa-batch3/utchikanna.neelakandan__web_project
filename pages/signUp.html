@@ -106,31 +106,6 @@
     </div>
 
     <script>
-      let hashedpassword;
-      let password = document.getElementById("first_password");
-      password.addEventListener("input", function (event) {
-        // console.log(password.value);
-        let passwordval = document.getElementById("first_password").value;
-
-        // function encryptPassword(password) {
-        try {
-          // Generate a random salt value
-          const salt = CryptoJS.lib.WordArray.random(16);
-
-          // Hash the password using SHA-256 with salt
-          const hashedPassword = CryptoJS.SHA256(passwordval + salt);
-
-          console.log(salt.toString() + " " + hashedPassword.toString());
-
-          // Return the salt and hashed password as a string
-          return salt.toString() + " " + hashedPassword.toString();
-        } catch (error) {
-          console.error("Error encrypting password:", error);
-          throw error;
-        }
-        // }
-      });
-
       let arr = [];
       let form = document.getElementById("form");
       form.addEventListener("submit", function (event) {
@@ -140,29 +115,26 @@
         let lname = document.getElementById("last_name").value;
         let email = document.getElementById("first_email").value.trim();
         let phone_no = document.getElementById("phone_no").value.trim();
-        let password = hashedpassword;
-        let rePassword = hashedpassword;
+        let password = document.getElementById("first_password").value;
+        let rePassword = document.getElementById("first_re_password").value;
         let id = Date.now();
-
+        //This for Phone number checking
         if (phone_no.length < 10) {
           alert("Phone number must be 10 number");
           return;
         }
-        // if (isNaN(num)) {
-        //   alert("Phone number must be 10 number");
-        //   return;
-        // }
         if (phone_no.length > 10) {
           alert("Phone number must be 10 number");
           return;
         }
-
+        // This for checking local is empty or not . if local is empty if statement will run or else the else statement will run.
         if (localStorage.getItem("user") === null) {
           localStorage.setItem("user", JSON.stringify(arr));
         } else {
           let checking = JSON.parse(localStorage.getItem("user"));
           let match = false;
 
+          // this for checking email-id is already there or not
           for (let i = 0; i < checking.length; i++) {
             if (email == checking[i].email) {
               match = true;
@@ -184,6 +156,8 @@
               state: "Enter your State",
               country: "Enter your Country",
               userName: "Enter your User name",
+              dob: "Enter your Date of Birth",
+              gender: "Enter your gender",
             };
             arr.push(userdata);
             let new_data = localStorage.getItem("user");

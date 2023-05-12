@@ -1,68 +1,4 @@
-let card = [
-  // {
-  //   id: "",
-  //   image: "../assets/images/triangle.jpg",
-  //   href: "#triangle",
-  //   category: "hollywood",
-  //   genre: ["", ""],
-  //   rate: 8.5,
-  //   title: "Triangle",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/top.jpg",
-  //   href: "#top",
-  //   rate: 8,
-  //   title: "Top Gun:Maverick",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/inter.jpg",
-  //   href: "#inter",
-  //   rate: 9,
-  //   title: "Intersteller",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/ince.jpg",
-  //   href: "#inception",
-  //   rate: 9.5,
-  //   title: "Inception",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/pre.jpg",
-  //   href: "#prestige",
-  //   rate: 9,
-  //   title: "The Prestige",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/pass.jpg",
-  //   href: "#pass",
-  //   rate: 8,
-  //   title: "Passengers",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/john.jpg",
-  //   href: "#john",
-  //   rate: 9,
-  //   title: "John Wick",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/dont.jpg",
-  //   href: "#carter",
-  //   rate: 8.5,
-  //   title: "Don't Breathe",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-];
-
-// const url = window.location.search; // ?datas={}
-// const urlParams = new URLSearchParams(url); // converting string into key value pair
-// const datas = urlParams.get("datas"); // return value of the "name" key
+let card = [];
 
 // card
 let card_div;
@@ -145,7 +81,6 @@ for (let i = 0; i < card.length; i++) {
   // button
 
   edit_btn = document.createElement("a");
-  //   edit_btn.setAttribute("href", card[i][""]);
   edit_btn.setAttribute("class", "btn1");
   edit_btn.setAttribute("id", card[i]["id"]);
   edit_btn.setAttribute("href", "../pages/editForm.html?id=" + card[i]["id"]);
@@ -155,36 +90,3 @@ for (let i = 0; i < card.length; i++) {
   document.querySelector(".menu").append(card_div);
   console.log(edit_btn);
 }
-
-//
-
-// let movieTitle = document.getElementById("movie_title").value;
-// let trailer = document.getElementById("trailer").value;
-// let rateOfTheMovie = document.getElementById("rateOfTheMovie").value;
-// let contentOfMovie = document.getElementById("contentOfMovie").value;
-// let releaseDate = document.getElementById("releaseDate").value;
-// let directorLink = document.getElementById("directorLink").value;
-// let mDirectorLink = document.getElementById("mDirectorLink").value;
-// let actor_wiki1 = document.getElementById("actor_wiki1").value;
-// let actor_img1 = document.getElementById("actor_img1").value;
-// let actor_name1 = document.getElementById("actor_name1").value;
-// let actor_wiki2 = document.getElementById("actor_wiki2").value;
-// let actor_img2 = document.getElementById("actor_img2").value;
-// let actor_name2 = document.getElementById("actor_name2").value;
-// let actor_wiki3 = document.getElementById("actor_wiki3").value;
-// let actor_img3 = document.getElementById("actor_img3").value;
-// let actor_name3 = document.getElementById("actor_name3").value;
-// let actor_wiki4 = document.getElementById("actor_wiki4").value;
-// let actor_img4 = document.getElementById("actor_img4").value;
-// let actor_name4 = document.getElementById("actor_name4").value;
-// let actor_wiki5 = document.getElementById("actor_wiki5").value;
-// let actor_img5 = document.getElementById("actor_img5").value;
-// let actor_name5 = document.getElementById("actor_name5").value;
-// let actor_wiki6 = document.getElementById("actor_wiki6").value;
-// let actor_img6 = document.getElementById("actor_img6").value;
-// let actor_name6 = document.getElementById("actor_name6").value;
-// let actor_wiki7 = document.getElementById("actor_wiki7").value;
-// let actor_img7 = document.getElementById("actor_img7").value;
-// let actor_name7 = document.getElementById("actor_name7").value;
-// let award_wiki = document.getElementById("award_wiki").value;
-// let movie_link = document.getElementById("movie_link").value;
