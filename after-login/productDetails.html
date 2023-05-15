@@ -71,7 +71,7 @@
       <div class="left">
         <h2 id="movie_title"></h2>
         <hr />
-        <h2><b>Rating:</b> <span id="rateOfTheMovie"></span></h2>
+        <h2><b>Rating:</b> <span id="rateOfTheMovie"></span><span>/5</span><span id="count"></span></h2>
         <hr />
         <h2>About the Movie</h2>
         <p id="contentOfMovie">
@@ -241,16 +241,7 @@
       </div>
     </div>
     </body>
-    <script> 
-  
-    let c_id = window.location.search;
-    console.log(c_id);
-    let c_params = new URLSearchParams(c_id);
-    let get_movie_id = c_params.get("id");
-      console.log(get_movie_id);
-  
-  
-    </script>
+    
     <!-- <script src="https://momentjs.com/downloads/moment.min.js" integrity="sha384-gOSj2LFWbmP7B//dY84YCYFoC0zBmwop4gUhFdd+O3qNOefQjSx+uAF7dkeo6zJi" crossorigin="anonymous"></script> -->
     
    
@@ -258,4 +249,5 @@
     <script src="../after-login/assets/js/productDetails.js"></script>
     <script src="../after-login/assets/js/star.js"></script>
     <script src="../after-login/assets/js/comment.js"></script>
+    <script src="../after-login/assets/js/watchlist.js"></script>
 </html>

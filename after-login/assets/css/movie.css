@@ -248,7 +248,7 @@ p {
   max-width: 200px;
   height: 430px;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   cursor: pointer;
   box-shadow: 12px 15px 10px gray;
   transition: 0.4s;
@@ -908,6 +908,11 @@ textarea:invalid {
 .secondBox {
   position: relative;
   top: 300px;
+}
+#count {
+  font-size: 20px;
+  color: #666;
+  margin-left: 10px;
 }
 
 /* responsive width 900px*/

@@ -1,3 +1,23 @@
+// get data from URL
+
+let c_id = window.location.search;
+console.log(c_id);
+let c_params = new URLSearchParams(c_id);
+let get_movie_id = c_params.get("id");
+console.log(get_movie_id);
+
+// count of the rating
+
+let ratingArr = JSON.parse(localStorage.getItem("ratings"));
+let ratingCount = 0;
+for (let i = 0; i < ratingArr.length; i++) {
+  if (ratingArr[i]["get_movie_id"] == get_movie_id) {
+    ratingCount++;
+  }
+}
+console.log(ratingCount);
+let showCount = document.getElementById("count");
+showCount.innerText = ratingCount;
 //  URL params
 
 const movieArray = JSON.parse(localStorage.getItem("new_card"));

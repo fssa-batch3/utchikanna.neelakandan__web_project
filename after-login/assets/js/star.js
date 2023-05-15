@@ -16,7 +16,6 @@ allStars.forEach((star, index) => {
   // Now you can use the selectedStarValue variable wherever you need to access the selected star's value
 });
 console.log(selectedStarValue); // will log the selected star's value to the console
-let get_email = JSON.parse(localStorage.getItem("details"));
 
 // check already rating give or not
 
@@ -78,7 +77,7 @@ productContainers.forEach((item, i) => {
 });
 
 // user image showing
-
+let get_email = JSON.parse(localStorage.getItem("details"));
 let user_details = JSON.parse(localStorage.getItem("user"));
 console.log(user_details);
 let get_obj = user_details.find(function (user_obj) {
@@ -93,4 +92,4 @@ let viewImage = document.getElementById("view_image");
 viewImage.src = get_obj["image"];
 
 let userImage = document.getElementById("user_image");
-userImage.src = get_obj["image"];
+userImage.setAttribute("src", get_obj["image"]);
