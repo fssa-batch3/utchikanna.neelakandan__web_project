@@ -24,124 +24,106 @@ for (let j = 0; j < favMovie.length; j++) {
 
 console.log(fav);
 
-// card
-let card_div1;
-let image1;
-let rating1;
-let rate1;
-let title1;
-let a_tag1;
-let btn1;
-let link1;
+function createElement(tagName, attributes = {}, textContent = "") {
+  const element = document.createElement(tagName);
+  for (let attr in attributes) {
+    element.setAttribute(attr, attributes[attr]);
+  }
+  element.textContent = textContent;
+  return element;
+}
 
-for (let i = 0; i < fav.length; i++) {
-  // box
-  card_div1 = document.createElement("div");
-  card_div1.setAttribute("class", "box");
+try {
+  const favList = document.querySelector(".favlist");
+  const deleteDiv = document.querySelector(".favlist");
 
-  // a tag
+  for (let i = 0; i < fav.length; i++) {
+    const movie = fav[i];
 
-  a_tag1 = document.createElement("a");
-  a_tag1.setAttribute(
-    "href",
-    "../after-login/productDetails.html?id=" + fav[i]["id"]
-  );
-  card_div1.append(a_tag1);
+    const cardDiv = createElement("div", { class: "card" });
+    const aTag = createElement("a", {
+      href: `../after-login/productDetails.html?id=${movie.id}`,
+    });
+    cardDiv.appendChild(aTag);
 
-  // image
+    const image = createElement("img", {
+      id: "image-1",
+      src: movie.image,
+      alt: movie.alt,
+    });
+    aTag.appendChild(image);
 
-  image1 = document.createElement("img");
-  image1.setAttribute("id", "image-1");
-  image1.setAttribute("src", fav[i]["image"]);
-  image1.setAttribute("alt", fav[i]["alt"]);
-  a_tag1.append(image1);
+    const rate = createElement("i", { id: "star", class: "fa fa-star" });
+    aTag.appendChild(rate);
 
-  // icon
+    const rating = createElement("h3", { class: "rate" }, movie.rate);
+    aTag.appendChild(rating);
 
-  rate1 = document.createElement("i");
-  rate1.setAttribute("id", "star");
-  rate1.setAttribute("class", "fa fa-star");
-  a_tag1.append(rate1);
+    const title = createElement("h2", { class: "title" }, movie.title);
+    rating.appendChild(title);
 
-  // rating
+    const link = createElement("a", { class: "try", href: movie.link });
+    aTag.appendChild(link);
 
-  rating1 = document.createElement("h3");
-  rating1.setAttribute("class", "rate");
-  rating1.innerText = fav[i]["rate"];
-  a_tag1.append(rating1);
+    const btn = createElement("button", { class: "btn" }, "Trailer");
+    link.appendChild(btn);
 
-  // title
+    const deleteBtn = createElement("button", {
+      class: "deleteBtn",
+      onclick: `deleteList(${movie.id})`,
+    });
 
-  title1 = document.createElement("h2");
-  title1.setAttribute("class", "title");
-  title1.innerText = fav[i]["title"];
-  rating1.append(title1);
+    const deletePara = createElement("p", { class: "paragraph" }, "delete");
+    deleteBtn.appendChild(deletePara);
 
-  // a tag
+    const deleteSpan = createElement("span", { class: "delete-wrapper" });
+    deleteBtn.appendChild(deleteSpan);
 
-  link1 = document.createElement("a");
-  link1.setAttribute("class", "try");
-  link1.setAttribute("href", fav[i]["link"]);
-  a_tag1.append(link1);
+    const deleteSvg = createElement("img", {
+      src: "../after-login/assets/images/delete.svg",
+      class: "deleteIcon",
+      width: "30px",
+      height: "30px",
+    });
+    deleteSpan.appendChild(deleteSvg);
 
-  // button
+    const deletePath = createElement("path", {
+      d: "M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16",
+      stroke: "#000000",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    });
+    deleteSvg.appendChild(deletePath);
 
-  btn1 = document.createElement("button");
-  btn1.setAttribute("class", "btn");
-  btn1.innerText = "Trailer";
-  link1.append(btn1);
-
-  // delete btn
-  let deleteBtn = document.createElement("button");
-  deleteBtn.setAttribute("class", "deleteBtn");
-  deleteBtn.setAttribute("onclick", "deletList(" + fav[i]["id"] + ")");
-
-  let deletePara = document.createElement("p");
-  deletePara.setAttribute("class", "paragraph");
-  deletePara.innerText = "delete";
-  deleteBtn.append(deletePara);
-
-  let deleteSpan = document.createElement("span");
-  deleteSpan.setAttribute("class", "delete-wrapper");
-  deleteBtn.append(deleteSpan);
-
-  let deleteSvg = document.createElement("img");
-  deleteSvg.setAttribute("src", "../after-login/assets/images/delete.svg");
-  deleteSvg.setAttribute("class", "deleteIcon");
-  deleteSvg.setAttribute("width", "30px");
-  deleteSvg.setAttribute("height", "30px");
-  deleteSpan.append(deleteSvg);
-
-  let deletePath = document.createElement("path");
-  deletePath.setAttribute(
-    "d",
-    "M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16"
-  );
-  deletePath.setAttribute("stroke", "#000000");
-  deletePath.setAttribute("stroke-width", "2");
-  deletePath.setAttribute("stroke-linecap", "round");
-  deletePath.setAttribute("stroke-linejoin", "round");
-  deleteSvg.append(deletePath);
+    favList.appendChild(cardDiv);
+    deleteDiv.appendChild(deleteBtn);
+  }
 
   localStorage.setItem("oneWhoLogList", JSON.stringify(fav));
-  document.querySelector(".favlist").append(card_div1);
-  document.querySelector(".deleteDiv").append(deleteBtn);
+} catch (error) {
+  console.error(error);
 }
 
 // delete list
 
-function deletList(id) {
-  console.log(id);
-  let getEmail = JSON.parse(localStorage.getItem("details"));
-  let arr = JSON.parse(localStorage.getItem("favMovie"));
-  console.log(arr);
-  for (let i = 0; i < arr.length; i++) {
-    if (getEmail == arr[i]["get_email"] && id == arr[i]["get_movie_id"]) {
-      let ind = arr.indexOf(arr[i]);
-      arr.splice(ind, 1);
-      localStorage.setItem("favMovie", JSON.stringify(arr));
-      console.log(arr);
-      location.reload();
+function deleteList(id) {
+  try {
+    console.log(id);
+    const getEmail = JSON.parse(localStorage.getItem("details"));
+    let arr = JSON.parse(localStorage.getItem("favMovie"));
+    console.log(arr);
+
+    for (let i = 0; i < arr.length; i++) {
+      if (getEmail == arr[i]["get_email"] && id == arr[i]["get_movie_id"]) {
+        let ind = arr.indexOf(arr[i]);
+        arr.splice(ind, 1);
+        localStorage.setItem("favMovie", JSON.stringify(arr));
+        console.log(arr);
+        location.reload();
+      }
     }
+  } catch (error) {
+    console.error(error);
   }
 }

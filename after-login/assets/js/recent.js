@@ -50,6 +50,7 @@ clear.addEventListener("click", function (event) {
 
 for (let i = 0; i < recentlyView.length; i++) {
   // box
+  console.log(recentlyView);
   card_div7 = document.createElement("div");
   card_div7.setAttribute("class", "box");
 

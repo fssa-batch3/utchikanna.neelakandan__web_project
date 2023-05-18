@@ -9,69 +9,77 @@ let movieDetails = movieArray.find(function (event) {
   }
 });
 
+// count of the rating
+
+let ratingArr = JSON.parse(localStorage.getItem("ratings"));
+let ratingCount = 0;
+for (let i = 0; i < ratingArr.length; i++) {
+  if (ratingArr[i]["get_movie_id"] == get_movie_id) {
+    ratingCount++;
+  }
+}
+console.log(ratingCount);
+let showCount = document.getElementById("count");
+showCount.innerText = ratingCount;
+
 let oneUser = JSON.parse(localStorage.getItem("details"));
 
 // recent view
-let recent = [];
-if (JSON.parse(localStorage.getItem("recent")) != null) {
-  recent = JSON.parse(localStorage.getItem("recent"));
-}
-
-function userArray(email) {
-  const arr = recent.filter((h) => h.oneUser == email);
-  return arr;
-}
-let userCheck = false;
-
-let user = recent.find((e) => {
-  if (oneUser == e["oneUser"]) {
-    userCheck = true;
-    return true;
+try {
+  let recent = [];
+  if (JSON.parse(localStorage.getItem("recent")) != null) {
+    recent = JSON.parse(localStorage.getItem("recent"));
   }
-});
 
-if (userCheck == true) {
-  let userArr = userArray(oneUser);
-  let check = false;
-  let userRecent = userArr.find((e) => {
-    if (e["id"] == get_movie_id) {
-      check = true;
+  function userArray(email) {
+    const arr = recent.filter((h) => h.oneUser == email);
+    return arr;
+  }
+  let userCheck = false;
+
+  let user = recent.find((e) => {
+    if (oneUser == e["oneUser"]) {
+      userCheck = true;
       return true;
     }
   });
-  if (check == false) {
+
+  if (userCheck == true) {
+    let userArr = userArray(oneUser);
+    let check = false;
+    let userRecent = userArr.find((e) => {
+      if (e["id"] == get_movie_id) {
+        check = true;
+        return true;
+      }
+    });
+    if (check == false) {
+      let id = get_movie_id;
+      let date = new Date();
+      let obj = { id, oneUser, date };
+      recent.push(obj);
+      localStorage.setItem("recent", JSON.stringify(recent));
+    }
+  } else {
     let id = get_movie_id;
     let date = new Date();
     let obj = { id, oneUser, date };
     recent.push(obj);
     localStorage.setItem("recent", JSON.stringify(recent));
   }
-} else {
-  let id = get_movie_id;
-  let date = new Date();
-  let obj = { id, oneUser, date };
-  recent.push(obj);
-  localStorage.setItem("recent", JSON.stringify(recent));
+} catch (error) {
+  console.error("Error in recent functionality:", error);
 }
-// added to watchlist
-let favList = JSON.parse(localStorage.getItem("favMovie"));
 
-for (let i = 0; i < favList.length; i++) {
-  if (
-    oneUser == favList[i]["get_email"] &&
-    get_movie_id == favList[i]["get_movie_id"]
-  ) {
-    let favBtn = document.getElementById("Favbtn");
-    favBtn.setAttribute("onclick", "remove()");
-    favBtn.innerText = "In watchlist";
-    let heart = document.createElement("i");
-    heart.setAttribute("class", "fa fa-heart");
-    heart.style.color = "red";
-    heart.setAttribute("id", "heart");
-    document.querySelector(".btn3").prepend(heart);
-  } else {
-    function addFav() {
-      let addFav = [];
+// added to watchlist
+try {
+  let favList = JSON.parse(localStorage.getItem("favMovie"));
+
+  for (let i = 0; i < favList.length; i++) {
+    if (
+      oneUser == favList[i]["get_email"] &&
+      get_movie_id == favList[i]["get_movie_id"]
+    ) {
       let favBtn = document.getElementById("Favbtn");
       favBtn.setAttribute("onclick", "remove()");
       favBtn.innerText = "In watchlist";
@@ -80,23 +88,37 @@ for (let i = 0; i < favList.length; i++) {
       heart.style.color = "red";
       heart.setAttribute("id", "heart");
       document.querySelector(".btn3").prepend(heart);
-      let favId = Date.now();
-      let add = {
-        get_movie_id,
-        get_email,
-        favId,
-      };
+    } else {
+      function addFav() {
+        let addFav = [];
+        let favBtn = document.getElementById("Favbtn");
+        favBtn.setAttribute("onclick", "remove()");
+        favBtn.innerText = "In watchlist";
+        let heart = document.createElement("i");
+        heart.setAttribute("class", "fa fa-heart");
+        heart.style.color = "red";
+        heart.setAttribute("id", "heart");
+        document.querySelector(".btn3").prepend(heart);
+        let favId = Date.now();
+        let add = {
+          get_movie_id,
+          get_email,
+          favId,
+        };
 
-      if (localStorage.getItem("favMovie") != null) {
-        addFav = JSON.parse(localStorage.getItem("favMovie"));
-        console.log(addFav);
+        if (localStorage.getItem("favMovie") != null) {
+          addFav = JSON.parse(localStorage.getItem("favMovie"));
+          console.log(addFav);
+        }
+
+        addFav.push(add);
+
+        localStorage.setItem("favMovie", JSON.stringify(addFav));
       }
-
-      addFav.push(add);
-
-      localStorage.setItem("favMovie", JSON.stringify(addFav));
     }
   }
+} catch (error) {
+  console.error("Error in favorite functionality:", error);
 }
 
 function remove() {

@@ -20,42 +20,41 @@ console.log(selectedStarValue); // will log the selected star's value to the con
 // check already rating give or not
 
 function ratingFor() {
-  let arr = JSON.parse(localStorage.getItem("ratings")) || [];
-  let one_obj = arr.find(
-    (e) => e.get_email == get_email && e.get_movie_id == get_movie_id
-  );
-  let all = [];
-  let rating_id = Date.now();
-  let rating = selectedStarValue;
-  if (one_obj) {
-    one_obj["rating"] = selectedStarValue;
-    console.log(one_obj);
-    let ind = arr.indexOf(one_obj);
-    arr[ind] = one_obj;
-    console.log(arr);
-    localStorage.setItem("ratings", JSON.stringify(arr));
-    location.reload();
-    return;
-  }
-  location.reload();
-  console.log(arr);
-  console.log(get_movie_id);
-  console.log(one_obj);
-  console.log(rating);
-  let rating_obj = {
-    get_email,
-    rating_id,
-    rating,
-    get_movie_id,
-  };
+  try {
+    const arr = JSON.parse(localStorage.getItem("ratings")) || [];
+    const one_obj = arr.find(
+      (e) => e.get_email === get_email && e.get_movie_id === get_movie_id
+    );
+    const all = [];
+    const rating_id = Date.now();
+    const rating = selectedStarValue;
 
-  if (localStorage.getItem("ratings") != null) {
-    all = JSON.parse(localStorage.getItem("ratings"));
-    console.log(all);
+    if (one_obj) {
+      one_obj.rating = selectedStarValue;
+      const ind = arr.indexOf(one_obj);
+      arr[ind] = one_obj;
+      localStorage.setItem("ratings", JSON.stringify(arr));
+      location.reload();
+      return;
+    }
+
+    const rating_obj = {
+      get_email,
+      rating_id,
+      rating,
+      get_movie_id,
+    };
+    console.log(rating_obj);
+    if (localStorage.getItem("ratings")) {
+      const all = JSON.parse(localStorage.getItem("ratings"));
+    }
+
+    all.push(rating_obj);
+    localStorage.setItem("ratings", JSON.stringify(all));
+    location.reload();
+  } catch (error) {
+    console.error("Error in ratingFor:", error);
   }
-  all.push(rating_obj);
-  localStorage.setItem("ratings", JSON.stringify(all));
-  location.reload();
 }
 
 // scroll
@@ -77,19 +76,13 @@ productContainers.forEach((item, i) => {
 });
 
 // user image showing
-let get_email = JSON.parse(localStorage.getItem("details"));
-let user_details = JSON.parse(localStorage.getItem("user"));
+const get_email = JSON.parse(localStorage.getItem("details"));
+const user_details = JSON.parse(localStorage.getItem("user"));
 console.log(user_details);
-let get_obj = user_details.find(function (user_obj) {
-  let check_email = user_obj["email"];
-  if (get_email === check_email) {
-    return true;
-  }
-});
+const get_obj = user_details.find(
+  (user_obj) => user_obj["email"] === get_email
+);
 console.log(get_obj);
 
-let viewImage = document.getElementById("view_image");
-viewImage.src = get_obj["image"];
-
-let userImage = document.getElementById("user_image");
-userImage.setAttribute("src", get_obj["image"]);
+document.getElementById("view_image").src = get_obj["image"];
+document.getElementById("user_image").src = get_obj["image"];

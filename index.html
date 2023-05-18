@@ -68,38 +68,31 @@
     </div>
     <br /><br />
     <br />
-    <h2 class="up">All Movies</h2>
-    <div class="menu"></div>
+    <div class="filter">
+      <button class="view" id="less" onclick="view('less')">Show All</button>
+      <button class="view" id="Kollywood" onclick="showMoreMovie('Kollywood')">
+        Kollywood
+      </button>
+      <button class="view" id="Hollywood" onclick="showMoreMovie('Hollywood')">
+        Hollywood
+      </button>
+      <button class="view" id="WebSeries" onclick="showMoreMovie('WebSeries')">
+        Web Series
+      </button>
+      <button
+        class="view"
+        id="AnimeSeries"
+        onclick="showMoreMovie('AnimeSeries')"
+      >
+        Anime Series
+      </button>
+      <button class="view" id="SuperHero" onclick="showMoreMovie('SuperHero')">
+        Super Hero Movies
+      </button>
+    </div>
+
+    <div class="menu" id="cardhid"></div>
     <div class="showMore" id="showMore1"></div>
-    <button type="submit" class="view" id="less" onclick="view()">
-      Show More
-    </button>
-    <div class="favlist" id="favList"></div>
-    <h2 class="up">Hollywood</h2>
-    <div class="hollywood" id="favList">
-      <!-- <a class="prev">❮</a>
-      <a class="next">❯</a> -->
-    </div>
-    <h2 class="up">Kollywood</h2>
-    <div class="kollywood" id="favList">
-      <!-- <a class="prev">❮</a>
-      <a class="next">❯</a> -->
-    </div>
-    <h2 class="up">Superhero Movies</h2>
-    <div class="Superhero" id="favList">
-      <!-- <a class="prev">❮</a>
-      <a class="next">❯</a> -->
-    </div>
-    <h2 class="up">Anime Series</h2>
-    <div class="anime" id="favList">
-      <!-- <a class="prev">❮</a>
-      <a class="next">❯</a> -->
-    </div>
-    <h2 class="up">Web Serise</h2>
-    <div class="web" id="favList">
-      <!-- <a class="prev">❮</a>
-      <a class="next">❯</a> -->
-    </div>
 
     <h2 class="up">Upcoming Movies</h2>
     <div class="upcoming" id="favList">
@@ -139,6 +132,38 @@
     </div>
   </body>
   <script>
+    function showMoreMovie(id) {
+      let buttons = document.getElementsByClassName("view");
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].style.backgroundColor = "white";
+        buttons[i].style.color = "black";
+      }
+      let selectbutton = document.getElementById(id);
+      selectbutton.style.backgroundColor = "black";
+      selectbutton.style.color = "white";
+      if (id == "Kollywood") {
+        Kollywood();
+      }
+      if (id == "less1") {
+        less();
+      }
+      if (id == "view") {
+        view();
+      }
+      if (id == "Hollywood") {
+        Hollywood();
+      }
+      if (id == "WebSeries") {
+        WebSeries();
+      }
+      if (id == "AnimeSeries") {
+        AnimeSeries();
+      }
+      if (id == "SuperHero") {
+        SuperHero();
+      }
+    }
+
     console.log(backupData);
     //search filter
     let searchbar = document.getElementById("searchbar");

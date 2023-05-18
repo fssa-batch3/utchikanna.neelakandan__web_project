@@ -1,85 +1,74 @@
-let card4 = [];
+function AnimeSeries() {
+  document.querySelector(".menu").style.display = "none";
 
-// card
-let card_div4;
-let a_tag4;
-let image4;
-let rate4;
-let rating4;
-let title4;
-let btn4;
-let link4;
+  // Function to create an element with optional attributes and text content
+  function createElement(tagName, attributes = {}, textContent = "") {
+    const element = document.createElement(tagName);
+    for (let attr in attributes) {
+      element.setAttribute(attr, attributes[attr]);
+    }
+    element.textContent = textContent;
+    return element;
+  }
 
-// its for filter specific one type
+  function movieType(type) {
+    const create_card1 = JSON.parse(localStorage.getItem("new_card"));
+    const movietype = create_card1.filter((h) => h.movietype == type);
+    return movietype;
+  }
 
-let create_card4 = JSON.parse(localStorage.getItem("new_card"));
-console.log(create_card4);
-function movieType(type) {
-  const movietype = create_card4.filter((h) => h.movietype == type);
-  return movietype;
-}
-for (let i = 0; i < movieType("anime Series").length; i++) {
-  card4.push(movieType("anime Series")[i]);
-}
+  try {
+    let reMove = document.getElementById("showMore1");
+    while (reMove.hasChildNodes()) {
+      reMove.firstChild.remove();
+    }
+    document.querySelector(".menu").style.display = "none";
+    const AnimeSeries = movieType("anime Series");
 
-for (let i = 0; i < card4.length; i++) {
-  // box
-  card_div4 = document.createElement("div");
-  card_div4.setAttribute("class", "box");
+    for (let i = 0; i < AnimeSeries.length; i++) {
+      const movie = AnimeSeries[i];
 
-  // a tag
+      // Create the card container
+      const card_div1 = createElement("div", { class: "box" });
 
-  a_tag4 = document.createElement("a");
-  a_tag4.setAttribute(
-    "href",
-    "../after-login/productDetails.html?id=" + card4[i]["id"]
-  );
-  a_tag4.setAttribute("id", "recently");
-  card_div4.append(a_tag4);
+      // Create the link
+      const a_tag1 = createElement("a", {
+        href: `../after-login/productDetails.html?id=${movie.id}`,
+        id: "recently",
+      });
+      card_div1.appendChild(a_tag1);
 
-  // image
+      // Create the image
+      const image1 = createElement("img", {
+        id: "image-1",
+        src: movie.image,
+        alt: "image",
+      });
+      a_tag1.appendChild(image1);
 
-  image4 = document.createElement("img");
-  image4.setAttribute("id", "image-1");
-  image4.setAttribute("src", card4[i]["image"]);
-  image4.setAttribute("alt", "image");
-  a_tag4.append(image4);
+      // Create the star
+      const rate1 = createElement("i", { id: "star", class: "fa fa-star" });
+      a_tag1.appendChild(rate1);
 
-  // star
+      // Create the rating
+      const rating1 = createElement("h3", { class: "rate" }, movie.rate);
+      a_tag1.appendChild(rating1);
 
-  rate4 = document.createElement("i");
-  rate4.setAttribute("id", "star");
-  rate4.setAttribute("class", "fa fa-star");
-  a_tag4.append(rate4);
+      // Create the title
+      const title1 = createElement("h2", { class: "title" }, movie.title);
+      rating1.appendChild(title1);
 
-  // rating
+      // Create the link for the button
+      const link1 = createElement("a", { class: "try", href: movie.link });
+      a_tag1.appendChild(link1);
 
-  rating4 = document.createElement("h3");
-  rating4.setAttribute("class", "rate");
-  rating4.innerText = card4[i]["rate"];
-  a_tag4.append(rating4);
+      // Create the button
+      const btn1 = createElement("button", { class: "btn" }, "Trailer");
+      link1.appendChild(btn1);
 
-  // title
-
-  title4 = document.createElement("h2");
-  title4.setAttribute("class", "title");
-  title4.innerText = card4[i]["title"];
-  rating4.append(title4);
-
-  // a tag
-
-  link4 = document.createElement("a");
-  link4.setAttribute("class", "try");
-  link4.setAttribute("href", card4[i]["link"]);
-  a_tag4.append(link4);
-
-  // button
-
-  btn4 = document.createElement("button");
-  btn4.setAttribute("href", card4[i]["link"]);
-  btn4.setAttribute("class", "btn");
-  btn4.innerText = "Trailer";
-  link4.append(btn4);
-
-  document.querySelector(".anime").append(card_div4);
+      document.querySelector(".showMore").appendChild(card_div1);
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
 }

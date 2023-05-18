@@ -1,85 +1,72 @@
-let card5 = [];
+function SuperHero() {
+  // Function to create an element with optional attributes and text content
+  function createElement(tagName, attributes = {}, textContent = "") {
+    const element = document.createElement(tagName);
+    for (let attr in attributes) {
+      element.setAttribute(attr, attributes[attr]);
+    }
+    element.textContent = textContent;
+    return element;
+  }
 
-// card
-let card_div5;
-let a_tag5;
-let image5;
-let rate5;
-let rating5;
-let title5;
-let btn5;
-let link5;
+  function movieType(type) {
+    const create_card4 = JSON.parse(localStorage.getItem("new_card"));
+    const movietype = create_card4.filter((h) => h.movietype == type);
+    return movietype;
+  }
 
-// its for filter specific one type
+  try {
+    let reMove = document.getElementById("showMore1");
+    while (reMove.hasChildNodes()) {
+      reMove.firstChild.remove();
+    }
+    document.querySelector(".menu").style.display = "none";
+    const SuperHeroMovies = movieType("superhero movies");
 
-let create_card5 = JSON.parse(localStorage.getItem("new_card"));
-console.log(create_card5);
-function movieType(type) {
-  const movietype = create_card5.filter((h) => h.movietype == type);
-  return movietype;
-}
-for (let i = 0; i < movieType("superhero movies").length; i++) {
-  card5.push(movieType("superhero movies")[i]);
-}
+    for (let i = 0; i < SuperHeroMovies.length; i++) {
+      const movie = SuperHeroMovies[i];
 
-for (let i = 0; i < card5.length; i++) {
-  // box
-  card_div5 = document.createElement("div");
-  card_div5.setAttribute("class", "box");
+      // Create the card container
+      const card_div4 = createElement("div", { class: "box" });
 
-  // a tag
+      // Create the link
+      const a_tag4 = createElement("a", {
+        href: `../after-login/productDetails.html?id=${movie.id}`,
+        id: "recently",
+      });
+      card_div4.appendChild(a_tag4);
 
-  a_tag5 = document.createElement("a");
-  a_tag5.setAttribute(
-    "href",
-    "../after-login/productDetails.html?id=" + card5[i]["id"]
-  );
-  a_tag5.setAttribute("id", "recently");
-  card_div5.append(a_tag5);
+      // Create the image
+      const image4 = createElement("img", {
+        id: "image-1",
+        src: movie.image,
+        alt: "image",
+      });
+      a_tag4.appendChild(image4);
 
-  // image
+      // Create the star
+      const rate4 = createElement("i", { id: "star", class: "fa fa-star" });
+      a_tag4.appendChild(rate4);
 
-  image5 = document.createElement("img");
-  image5.setAttribute("id", "image-1");
-  image5.setAttribute("src", card5[i]["image"]);
-  image5.setAttribute("alt", "image");
-  a_tag5.append(image5);
+      // Create the rating
+      const rating4 = createElement("h3", { class: "rate" }, movie.rate);
+      a_tag4.appendChild(rating4);
 
-  // star
+      // Create the title
+      const title4 = createElement("h2", { class: "title" }, movie.title);
+      rating4.appendChild(title4);
 
-  rate5 = document.createElement("i");
-  rate5.setAttribute("id", "star");
-  rate5.setAttribute("class", "fa fa-star");
-  a_tag5.append(rate5);
+      // Create the link for the button
+      const link4 = createElement("a", { class: "try", href: movie.link });
+      a_tag4.appendChild(link4);
 
-  // rating
+      // Create the button
+      const btn4 = createElement("button", { class: "btn" }, "Trailer");
+      link4.appendChild(btn4);
 
-  rating5 = document.createElement("h3");
-  rating5.setAttribute("class", "rate");
-  rating5.innerText = card5[i]["rate"];
-  a_tag5.append(rating5);
-
-  // title
-
-  title5 = document.createElement("h2");
-  title5.setAttribute("class", "title");
-  title5.innerText = card5[i]["title"];
-  rating5.append(title5);
-
-  // a tag
-
-  link5 = document.createElement("a");
-  link5.setAttribute("class", "try");
-  link5.setAttribute("href", card5[i]["link"]);
-  a_tag5.append(link5);
-
-  // button
-
-  btn5 = document.createElement("button");
-  btn5.setAttribute("href", card5[i]["link"]);
-  btn5.setAttribute("class", "btn");
-  btn5.innerText = "Trailer";
-  link5.append(btn5);
-
-  document.querySelector(".Superhero").append(card_div5);
+      document.querySelector(".showMore").appendChild(card_div4);
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
 }

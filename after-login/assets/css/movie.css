@@ -241,7 +241,6 @@ p {
 }
 /* slider card */
 .box {
-  margin-right: 80px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: white;
@@ -260,6 +259,25 @@ p {
   transition: 0.4s;
 }
 
+.card {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  max-width: 200px;
+  height: 430px;
+  margin-top: 50px;
+  margin-left: 80px;
+  margin-bottom: 100px;
+  cursor: pointer;
+  box-shadow: 12px 15px 10px gray;
+  transition: 0.4s;
+  animation-name: box;
+  animation-duration: 1.5s;
+}
+.card:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+}
 .title {
   font-size: 25px;
   margin-left: -20px;
@@ -295,52 +313,31 @@ p {
 }
 /* slider */
 .menu,
-.favlist,
 .hollywood,
 .kollywood,
-.anime,
-.web,
-.Superhero,
+.animeSeries,
+.webSeries,
+.superHero,
 .recent,
-.upcoming,
-.sorting {
-  margin-top: 50px;
-  padding-left: 70px;
+.showMore,
+.upcoming {
+  margin-top: 100px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+  background-color: #efefef;
+}
+.favlist {
+  margin-top: 100px;
+  display: flex;
+  margin-left: 4px;
   overflow-x: auto;
   overflow-y: hidden;
   background-color: #efefef;
   scroll-behavior: smooth;
 }
-
-.menu::-webkit-scrollbar {
-  display: none;
-}
 .favlist::-webkit-scrollbar {
-  display: none;
-}
-.hollywood::-webkit-scrollbar {
-  display: none;
-}
-.kollywood::-webkit-scrollbar {
-  display: none;
-}
-.Superhero::-webkit-scrollbar {
-  display: none;
-}
-.anime::-webkit-scrollbar {
-  display: none;
-}
-.web::-webkit-scrollbar {
-  display: none;
-}
-.recent::-webkit-scrollbar {
-  display: none;
-}
-.upcoming::-webkit-scrollbar {
-  display: none;
-}
-.sorting::-webkit-scrollbar {
   display: none;
 }
 .filter {
@@ -349,13 +346,7 @@ p {
   display: flex;
   flex-direction: row;
 }
-.showMore {
-  padding-left: 70px;
-  display: flex;
-  flex-wrap: wrap;
-  height: auto;
-  width: 100%;
-}
+
 .gif {
   width: 40%;
   height: 500px;
@@ -836,45 +827,8 @@ textarea:invalid {
   transform: scale(1.1);
   transition: 0.4s;
   cursor: pointer;
-  /* background-color: #333;
-  color: #efefef; */
 }
-.less {
-  padding: 18px;
-  font-size: 20px;
-  margin-top: 50px;
-  margin-left: 50px;
-  background-color: #fff;
-  color: #333;
-  border: none;
-  border-radius: 10px;
-  transition: 0.4s;
-  font-weight: bold;
-}
-.less:hover {
-  transform: scale(1.1);
-  transition: 0.4s;
-  cursor: pointer;
-  background-color: #333;
-  color: #efefef;
-}
-#less1 {
-  padding: 18px;
-  font-size: 20px;
-  margin-top: 50px;
-  margin-left: 50px;
-  background-color: #333;
-  color: #efefef;
-  border: none;
-  border-radius: 10px;
-  transition: 0.4s;
-  font-weight: bold;
-}
-#less1:hover {
-  transform: scale(1.1);
-  transition: 0.4s;
-  cursor: pointer;
-}
+
 .btnGroup {
   margin-left: 120px;
   margin-top: 150px;

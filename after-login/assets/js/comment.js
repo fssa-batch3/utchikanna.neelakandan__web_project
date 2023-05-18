@@ -185,9 +185,9 @@ function edit(x) {
 function input(x, id) {
   let input = document.getElementById(x).value;
 
-  console.log(input);
   let newObj = { input };
 
+  console.log(newObj);
   let arr = JSON.parse(localStorage.getItem("comments"));
   let up = arr.find(function (e) {
     if (id === e["comment_id"]) {

@@ -1,82 +1,66 @@
 let card8 = [];
 
-// card
-let card_div8;
-let a_tag8;
-let image8;
-let rate8;
-let rating8;
-let title8;
-let btn8;
-let link8;
-
-let create_card8 = JSON.parse(localStorage.getItem("new_card"));
-console.log(create_card8);
-function movieType(type) {
-  const movietype = create_card8.filter((h) => h.movietype == type);
-  return movietype;
-}
-for (let i = 0; i < movieType("upcoming movie").length; i++) {
-  card8.push(movieType("upcoming movie")[i]);
+function createElement(tag, attributes = {}) {
+  const element = document.createElement(tag);
+  for (const key in attributes) {
+    element.setAttribute(key, attributes[key]);
+  }
+  return element;
 }
 
-for (let i = 0; i < card8.length; i++) {
-  // box
-  card_div8 = document.createElement("div");
-  card_div8.setAttribute("class", "box");
+function createCardElement(movie) {
+  const cardDiv = createElement("div", { class: "box" });
+  const link = createElement("a", {
+    href: `../after-login/upcomingDetails.html?id=${movie.id}`,
+  });
+  cardDiv.appendChild(link);
 
-  // a tag
+  const image = createElement("img", {
+    id: "image-1",
+    src: movie.image,
+    alt: "image",
+  });
+  link.appendChild(image);
 
-  a_tag8 = document.createElement("a");
-  a_tag8.setAttribute(
-    "href",
-    "../after-login/upcomingDetails.html?id=" + card8[i]["id"]
-  );
-  card_div8.append(a_tag8);
+  const rate = createElement("i", { id: "star", class: "fa fa-star" });
+  link.appendChild(rate);
 
-  // image
+  const rating = createElement("h3", { class: "rate" });
+  rating.innerText = movie.rate;
+  link.appendChild(rating);
 
-  image8 = document.createElement("img");
-  image8.setAttribute("id", "image-1");
-  image8.setAttribute("src", card8[i]["image"]);
-  image8.setAttribute("alt", "image");
-  a_tag8.append(image8);
+  const title = createElement("h2", { class: "title" });
+  title.innerText = movie.title;
+  rating.appendChild(title);
 
-  // star
+  const buttonLink = createElement("a", {
+    class: "try",
+    href: movie.link,
+  });
+  link.appendChild(buttonLink);
 
-  rate8 = document.createElement("i");
-  rate8.setAttribute("id", "star");
-  rate8.setAttribute("class", "fa fa-star");
-  a_tag8.append(rate8);
+  const button = createElement("button", { class: "btn", href: movie.link });
+  button.innerText = "Trailer";
+  buttonLink.appendChild(button);
 
-  // rating
+  return cardDiv;
+}
 
-  rating8 = document.createElement("h3");
-  rating8.setAttribute("class", "rate");
-  rating8.innerText = card8[i]["rate"];
-  a_tag8.append(rating8);
+try {
+  const create_card8 = JSON.parse(localStorage.getItem("new_card"));
+  console.log(create_card8);
 
-  // title
+  function movieType(type) {
+    return create_card8.filter((h) => h.movietype == type);
+  }
 
-  title8 = document.createElement("h2");
-  title8.setAttribute("class", "title");
-  title8.innerText = card8[i]["title"];
-  rating8.append(title8);
+  card8 = movieType("upcoming movie");
 
-  // a tag
-
-  link8 = document.createElement("a");
-  link8.setAttribute("class", "try");
-  link8.setAttribute("href", card8[i]["link"]);
-  a_tag8.append(link8);
-
-  // button
-
-  btn8 = document.createElement("button");
-  btn8.setAttribute("href", card8[i]["link"]);
-  btn8.setAttribute("class", "btn");
-  btn8.innerText = "Trailer";
-  link8.append(btn8);
-
-  document.querySelector(".upcoming").append(card_div8);
+  const upcomingContainer = document.querySelector(".upcoming");
+  for (let i = 0; i < card8.length; i++) {
+    const card = createCardElement(card8[i]);
+    upcomingContainer.appendChild(card);
+  }
+} catch (error) {
+  console.error(error);
 }
