@@ -154,7 +154,7 @@ for (let i = 0; i < ratingArray.length; i++) {
     get_movie_id == ratingArray[i]["get_movie_id"] &&
     oneUser == ratingArray[i]["get_email"]
   ) {
-    showRating = ratingArray[i]["rating"];
+    let showRating = ratingArray[i]["rating"];
     let rating = showRating.toString();
 
     let info = document.getElementById("showRating");

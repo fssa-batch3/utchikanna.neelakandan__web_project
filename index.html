@@ -95,10 +95,7 @@
     <div class="showMore" id="showMore1"></div>
 
     <h2 class="up">Upcoming Movies</h2>
-    <div class="upcoming" id="favList">
-      <!-- <a class="prev">❮</a>
-      <a class="next">❯</a> -->
-    </div>
+    <div class="upcoming" id="favList"></div>
     <button class="btn7">
       <a class="try1" href="./pages/login.html">Log in for more access </a>
     </button>
@@ -251,7 +248,7 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     let database = getDatabase();
-    // const analytics = getAnalytics(app);
+
     console.log(database);
 
     // get the reference data
