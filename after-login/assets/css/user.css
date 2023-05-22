@@ -44,11 +44,12 @@ body {
 .userSet {
   display: flex;
   flex-direction: row;
+  margin-left: 100px;
 }
 .userBtnGrp {
   width: 600px;
   position: relative;
-  right: 150px;
+  right: 50px;
   bottom: 340px;
 }
 
