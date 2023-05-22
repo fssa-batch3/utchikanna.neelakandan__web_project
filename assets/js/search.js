@@ -12,7 +12,7 @@ function holdMovie() {
     suggesAng.setAttribute("class", "suggesAng");
     suggesAng.setAttribute(
       "href",
-      "../after-login/productDetails.html?id=" + Movies[i]["id"]
+      "../pages/productDetails.html?id=" + Movies[i]["id"]
     );
     suggesDiv.append(suggesAng);
 
@@ -38,7 +38,6 @@ searchbar.addEventListener("focus", function () {
 });
 let backGround = document.querySelector(".backGround");
 backGround.addEventListener("click", function () {
-  console.log("hi");
   let activeCard = document.querySelector(".showSugg");
   activeCard.style.display = "none";
   backGround.remove();

@@ -48,6 +48,7 @@
         name="text"
         type="text"
         id="searchbar"
+        autocomplete="off"
       />
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
         <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
@@ -68,6 +69,8 @@
     </div>
     <br /><br />
     <br />
+    <div class="backGround"></div>
+    <div class="showSugg"></div>
     <div class="filter">
       <button class="view" id="less" onclick="view('less')">Show All</button>
       <button class="view" id="Kollywood" onclick="showMoreMovie('Kollywood')">
@@ -162,24 +165,6 @@
     }
 
     console.log(backupData);
-    //search filter
-    let searchbar = document.getElementById("searchbar");
-    const cards = document.getElementsByClassName("box");
-
-    searchbar.addEventListener("input", () => {
-      for (let i = 0; i < cards.length; i++) {
-        const element = cards[i];
-        if (
-          element.innerHTML
-            .toLowerCase()
-            .includes(searchbar.value.toLowerCase())
-        ) {
-          element.style.display = "block";
-        } else {
-          element.style.display = "none";
-        }
-      }
-    });
 
     let favlis = JSON.parse(localStorage.getItem("favMovie"));
 
@@ -222,11 +207,11 @@
     }
   </script>
   <script src="./assets/js/home.js"></script>
+  <script src="./assets/js/search.js"></script>
   <script src="./assets/js/hollywood.js"></script>
   <script src="./assets/js/kollywood.js"></script>
   <script src="./assets/js/superHero.js"></script>
   <script src="./assets/js/webSerise.js"></script>
   <script src="./assets/js/anime.js"></script>
   <script src="./assets/js/upcoming.js"></script>
-  <script src="./assets/js/json.js"></script>
 </html>
