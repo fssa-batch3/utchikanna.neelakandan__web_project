@@ -8,7 +8,7 @@ function holdMovie() {
     let suggesDiv = document.createElement("div");
     suggesDiv.setAttribute("class", "suggesDiv");
 
-    suggesAng = document.createElement("a");
+    let suggesAng = document.createElement("a");
     suggesAng.setAttribute("class", "suggesAng");
     suggesAng.setAttribute(
       "href",

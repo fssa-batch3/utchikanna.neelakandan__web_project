@@ -104,7 +104,13 @@ for (let i = 0; i < set.length; i++) {
 
   let span = document.createElement("span");
   whole.append(span);
-
+  if (set[i]["isEdited"]) {
+    let editComment = document.createElement("span");
+    editComment.setAttribute("class", "editComment");
+    editComment.setAttribute("id", "editComment");
+    editComment.innerText = "(edited)";
+    final.append(editComment);
+  }
   let iTag = document.createElement("i");
   iTag.setAttribute("id", "icon");
   iTag.setAttribute("onclick", "likeBtn(this)");
@@ -185,7 +191,7 @@ function edit(x) {
 function input(x, id) {
   let input = document.getElementById(x).value;
 
-  let newObj = { input };
+  let newObj = { input, isEdited: true };
 
   console.log(newObj);
   let arr = JSON.parse(localStorage.getItem("comments"));
@@ -194,10 +200,12 @@ function input(x, id) {
       return true;
     }
   });
+
   let update = Object.assign(up, newObj);
   let ind = arr.indexOf(up);
   arr[ind] = update;
   localStorage.setItem("comments", JSON.stringify(arr));
+
   location.reload();
 }
 
