@@ -10,8 +10,8 @@ console.log(get_movie_id);
 
 let ratingArr = JSON.parse(localStorage.getItem("ratings"));
 let ratingCount = 0;
-for (let i = 0; i < ratingArr.length; i++) {
-  if (ratingArr[i]["get_movie_id"] == get_movie_id) {
+for (const rating of ratingArr) {
+  if (rating["get_movie_id"] === get_movie_id) {
     ratingCount++;
   }
 }
@@ -78,11 +78,8 @@ if (userCheck == true) {
 
 let favList = JSON.parse(localStorage.getItem("favMovie"));
 
-for (let i = 0; i < favList.length; i++) {
-  if (
-    oneUser == favList[i]["get_email"] &&
-    get_movie_id == favList[i]["get_movie_id"]
-  ) {
+for (const fav of favList) {
+  if (oneUser === fav["get_email"] && get_movie_id === fav["get_movie_id"]) {
     let favBtn = document.getElementById("Favbtn");
     favBtn.setAttribute("onclick", "remove()");
     favBtn.innerText = "In watchlist";
@@ -109,7 +106,7 @@ for (let i = 0; i < favList.length; i++) {
         favId,
       };
 
-      if (localStorage.getItem("favMovie") != null) {
+      if (localStorage.getItem("favMovie") !== null) {
         addFav = JSON.parse(localStorage.getItem("favMovie"));
         console.log(addFav);
       }
@@ -122,14 +119,11 @@ for (let i = 0; i < favList.length; i++) {
 }
 
 function remove() {
-  for (let i = 0; i < favList.length; i++) {
-    if (
-      oneUser == favList[i]["get_email"] &&
-      get_movie_id == favList[i]["get_movie_id"]
-    ) {
-      let index = favList.indexOf(favList[i]);
+  for (const fav of favList) {
+    if (oneUser === fav["get_email"] && get_movie_id === fav["get_movie_id"]) {
+      let index = favList.indexOf(fav);
       favList.splice(index, 1);
-      console.log(favList[i]);
+      console.log(fav);
       localStorage.setItem("favMovie", JSON.stringify(favList));
       location.reload();
       return;
@@ -145,32 +139,29 @@ let countRating = 0;
 
 let noOfUser = 0;
 
-for (let i = 0; i < ratingArray.length; i++) {
-  if (get_movie_id == ratingArray[i]["get_movie_id"]) {
+for (const rating of ratingArray) {
+  if (get_movie_id === rating["get_movie_id"]) {
     noOfUser++;
-    countRating += ratingArray[i]["rating"];
+    countRating += rating["rating"];
   }
   if (
-    get_movie_id == ratingArray[i]["get_movie_id"] &&
-    oneUser == ratingArray[i]["get_email"]
+    get_movie_id === rating["get_movie_id"] &&
+    oneUser === rating["get_email"]
   ) {
-    let showRating = ratingArray[i]["rating"];
-    let rating = showRating.toString();
+    let showRating = rating["rating"];
+    let ratingValue = showRating.toString();
 
     let info = document.getElementById("showRating");
-
-    info.innerText = rating + "/5";
+    info.innerText = ratingValue + "/5";
 
     let yourRating = document.createElement("h2");
     yourRating.setAttribute("class", "rating");
     yourRating.innerText = "Your Rating";
-
     document.querySelector(".star_rating").prepend(yourRating);
 
     let btnRating = document.createElement("button");
     btnRating.setAttribute("class", "star1");
     btnRating.innerHTML = "&#9733;";
-
     document.querySelector(".userRating").prepend(btnRating);
   }
 }

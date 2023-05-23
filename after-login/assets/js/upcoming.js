@@ -57,9 +57,9 @@ try {
   card8 = movieType("upcoming movie");
 
   const upcomingContainer = document.querySelector(".upcoming");
-  for (let i = 0; i < card8.length; i++) {
-    const card = createCardElement(card8[i]);
-    upcomingContainer.appendChild(card);
+  for (const card of card8) {
+    const cardElement = createCardElement(card);
+    upcomingContainer.appendChild(cardElement);
   }
 } catch (error) {
   console.error(error);

@@ -1,90 +1,72 @@
 let card = [];
 
-// card
-let card_div;
-let a_tag;
-let image;
-let rate;
-let rating;
-let title;
-let btn;
-let delete_btn;
-let edit_btn;
-let link;
+// Function to create elements
+function createElement(tagName, attributes = {}, text = "") {
+  const element = document.createElement(tagName);
+  for (let attr in attributes) {
+    element.setAttribute(attr, attributes[attr]);
+  }
+  element.innerText = text;
+  return element;
+}
 
 let create_card = JSON.parse(localStorage.getItem("new_card"));
 console.log(create_card);
 
-for (let i = 0; i < create_card.length; i++) {
-  card.push(create_card[i]);
+for (let item of create_card) {
+  card.push(item);
   console.log(card);
 }
 
-for (let i = 0; i < card.length; i++) {
+for (let item of card) {
   // box
-  card_div = document.createElement("div");
-  card_div.setAttribute("class", "box");
+  let card_div = createElement("div", { class: "box" });
 
   // a tag
-
-  a_tag = document.createElement("a");
-  a_tag.setAttribute(
-    "href",
-    "../pages/productDetails.html?id=" + card[i]["id"]
-  );
+  let a_tag = createElement("a", {
+    href: `../pages/productDetails.html?id=${item.id}`,
+  });
   card_div.append(a_tag);
 
   // image
-
-  image = document.createElement("img");
-  image.setAttribute("id", "image-1");
-  image.setAttribute("src", card[i]["image"]);
-  image.setAttribute("alt", "image");
+  let image = createElement("img", {
+    id: "image-1",
+    src: item.image,
+    alt: "image",
+  });
   a_tag.append(image);
 
   // star
-
-  rate = document.createElement("i");
-  rate.setAttribute("id", "star");
-  rate.setAttribute("class", "fa fa-star");
+  let rate = createElement("i", { id: "star", class: "fa fa-star" });
   a_tag.append(rate);
 
   // rating
-
-  rating = document.createElement("h3");
-  rating.setAttribute("class", "rate");
-  rating.innerText = card[i]["rate"];
+  let rating = createElement("h3", { class: "rate" }, item.rate);
   a_tag.append(rating);
 
   // title
-
-  title = document.createElement("h2");
-  title.setAttribute("class", "title");
-  title.innerText = card[i]["title"];
+  let title = createElement("h2", { class: "title" }, item.title);
   rating.append(title);
 
   // a tag
-
-  link = document.createElement("a");
-  link.setAttribute("class", "try");
-  link.setAttribute("href", card[i]["link"]);
+  let link = createElement("a", { class: "try", href: item.link });
   a_tag.append(link);
 
   // button
-
-  btn = document.createElement("button");
-  btn.setAttribute("href", card[i]["link"]);
-  btn.setAttribute("class", "btn");
-  btn.innerText = "Watch Now";
+  let btn = createElement("button", { class: "btn" }, "Watch Now");
+  btn.setAttribute("href", item.link);
   link.append(btn);
 
   // button
-
-  edit_btn = document.createElement("a");
-  edit_btn.setAttribute("class", "btn1");
-  edit_btn.setAttribute("id", card[i]["id"]);
-  edit_btn.setAttribute("href", "../pages/editForm.html?id=" + card[i]["id"]);
-  edit_btn.innerText = "Edit";
+  let edit_btn = createElement(
+    "a",
+    {
+      class: "btn1",
+      id: item.id,
+      href: `../pages/editForm.html?id=${item.id}`,
+    },
+    "Edit"
+  );
   card_div.append(edit_btn);
 
   document.querySelector(".menu").append(card_div);

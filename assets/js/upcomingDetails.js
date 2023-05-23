@@ -17,10 +17,10 @@ let countRating = 0;
 
 let noOfUser = 0;
 
-for (let i = 0; i < ratingArray.length; i++) {
-  if (get_movie_id == ratingArray[i]["get_movie_id"]) {
+for (let rating of ratingArray) {
+  if (get_movie_id === rating["get_movie_id"]) {
     noOfUser++;
-    countRating += ratingArray[i]["rating"];
+    countRating += rating["rating"];
   }
 }
 

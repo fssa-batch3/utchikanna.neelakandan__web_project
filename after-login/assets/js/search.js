@@ -4,27 +4,34 @@ let Movies = JSON.parse(localStorage.getItem("new_card"));
 
 console.log(Movies);
 function holdMovie() {
-  for (let i = 0; i < Movies.length; i++) {
-    let suggesDiv = document.createElement("div");
-    suggesDiv.setAttribute("class", "suggesDiv");
+  function createElement(tagName, attributes = {}, textContent = "") {
+    const element = document.createElement(tagName);
+    for (const [attr, value] of Object.entries(attributes)) {
+      element.setAttribute(attr, value);
+    }
+    element.textContent = textContent;
+    return element;
+  }
 
-    let suggesAng = document.createElement("a");
-    suggesAng.setAttribute("class", "suggesAng");
-    suggesAng.setAttribute(
-      "href",
-      "../after-login/productDetails.html?id=" + Movies[i]["id"]
-    );
+  for (const movie of Movies) {
+    const suggesDiv = createElement("div", { class: "suggesDiv" });
+    const suggesAng = createElement("a", {
+      class: "suggesAng",
+      href: `../after-login/productDetails.html?id=${movie["id"]}`,
+    });
     suggesDiv.append(suggesAng);
 
-    let suggesImg = document.createElement("img");
-    suggesImg.setAttribute("class", "suggesImg");
-    suggesImg.setAttribute("src", Movies[i]["image"]);
+    const suggesImg = createElement("img", {
+      class: "suggesImg",
+      src: movie["image"],
+    });
     suggesAng.append(suggesImg);
 
-    let suggesTitle = document.createElement("h2");
-    suggesTitle.setAttribute("class", "suggesTitle");
-    suggesTitle.innerText = Movies[i]["title"];
-
+    const suggesTitle = createElement(
+      "h2",
+      { class: "suggesTitle" },
+      movie["title"]
+    );
     suggesAng.append(suggesTitle);
 
     document.querySelector(".showSugg").append(suggesDiv);
@@ -49,8 +56,7 @@ try {
   const cards = document.getElementsByClassName("suggesDiv");
 
   searchbar.addEventListener("input", () => {
-    for (let i = 0; i < cards.length; i++) {
-      const element = cards[i];
+    for (const element of cards) {
       if (
         element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())
       ) {

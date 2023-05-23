@@ -19,8 +19,7 @@ let searchbar = document.getElementById("searchbar");
 const cards = document.getElementsByClassName("box");
 
 searchbar.addEventListener("input", () => {
-  for (let i = 0; i < cards.length; i++) {
-    const element = cards[i];
+  for (let element of cards) {
     if (
       element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())
     ) {

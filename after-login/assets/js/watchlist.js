@@ -8,11 +8,11 @@ let iden = [];
 
 let fav = [];
 
-for (let j = 0; j < favMovie.length; j++) {
-  if (get_email == favMovie[j]["get_email"]) {
-    let findMovie = allMovie.find(function (one) {
-      let movie = one["id"];
-      if (movie == favMovie[j]["get_movie_id"]) {
+for (const favItem of favMovie) {
+  if (get_email === favItem.get_email) {
+    let findMovie = allMovie.find((one) => {
+      let movie = one.id;
+      if (movie === favItem.get_movie_id) {
         return true;
       }
     });
@@ -37,9 +37,7 @@ try {
   const favList = document.querySelector(".favlist");
   const deleteDiv = document.querySelector(".favlist");
 
-  for (let i = 0; i < fav.length; i++) {
-    const movie = fav[i];
-
+  for (const movie of fav) {
     const cardDiv = createElement("div", { class: "card" });
     const aTag = createElement("a", {
       href: `../after-login/productDetails.html?id=${movie.id}`,
@@ -114,15 +112,16 @@ function deleteList(id) {
     let arr = JSON.parse(localStorage.getItem("favMovie"));
     console.log(arr);
 
-    for (let i = 0; i < arr.length; i++) {
-      if (getEmail == arr[i]["get_email"] && id == arr[i]["get_movie_id"]) {
-        let ind = arr.indexOf(arr[i]);
+    for (const item of arr) {
+      if (getEmail === item.get_email && id === item.get_movie_id) {
+        let ind = arr.indexOf(item);
         arr.splice(ind, 1);
         localStorage.setItem("favMovie", JSON.stringify(arr));
         console.log(arr);
         location.reload();
       }
     }
+    
   } catch (error) {
     console.error(error);
   }

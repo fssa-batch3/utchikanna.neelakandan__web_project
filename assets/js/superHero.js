@@ -23,9 +23,7 @@ function SuperHero() {
     document.querySelector(".menu").style.display = "none";
     const SuperHeroMovies = movieType("superhero movies");
 
-    for (let i = 0; i < SuperHeroMovies.length; i++) {
-      const movie = SuperHeroMovies[i];
-
+    for (let movie of SuperHeroMovies) {
       // Create the card container
       const card_div4 = createElement("div", { class: "box" });
 

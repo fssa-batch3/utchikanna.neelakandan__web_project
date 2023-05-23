@@ -25,9 +25,7 @@ function AnimeSeries() {
     document.querySelector(".menu").style.display = "none";
     const AnimeSeries = movieType("anime Series");
 
-    for (let i = 0; i < AnimeSeries.length; i++) {
-      const movie = AnimeSeries[i];
-
+    for (const movie of AnimeSeries) {
       // Create the card container
       const card_div1 = createElement("div", { class: "box" });
 

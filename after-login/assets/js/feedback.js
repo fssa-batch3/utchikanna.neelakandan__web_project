@@ -62,74 +62,74 @@ let user_email = JSON.parse(localStorage.getItem("details"));
 
 let count = 0;
 
-for (let i = 0; i < feed.length; i++) {
+for (const item of feed) {
   count++;
 
-  let final = document.createElement("div");
+  const final = document.createElement("div");
   final.setAttribute("class", "comment_fin");
 
-  let whole = document.createElement("div");
+  const whole = document.createElement("div");
   whole.setAttribute("class", "comment_div");
   final.append(whole);
 
-  let image = document.createElement("img");
+  const image = document.createElement("img");
   image.setAttribute("class", "commenter_img");
-  image.src = feed[i]["comment_img"];
+  image.src = item["comment_img"];
   whole.append(image);
 
-  let name = document.createElement("h2");
+  const name = document.createElement("h2");
   name.setAttribute("class", "commenter_name");
-  name.innerText = feed[i]["commenter_name"];
+  name.innerText = item["commenter_name"];
   whole.append(name);
 
-  let span = document.createElement("span");
+  const span = document.createElement("span");
   whole.append(span);
 
-  if (user_email == feed[i]["user_email"]) {
-    let edit = document.createElement("a");
+  if (user_email == item["user_email"]) {
+    const edit = document.createElement("a");
     edit.setAttribute("id", "comment_edit");
     edit.setAttribute("class", "comments_edit");
-    edit.setAttribute("onclick", "edit(" + feed[i]["feedback_id"] + ")");
+    edit.setAttribute("onclick", "edit(" + item["feedback_id"] + ")");
     edit.innerText = "Edit";
     whole.append(edit);
 
-    let dele = document.createElement("a");
+    const dele = document.createElement("a");
     dele.setAttribute("id", "comment_delete");
     dele.setAttribute("class", "comments_delete");
-    dele.setAttribute("onclick", "dele(" + feed[i]["feedback_id"] + ")");
+    dele.setAttribute("onclick", "dele(" + item["feedback_id"] + ")");
     dele.innerText = "Delete";
     whole.append(dele);
   }
 
-  let comments = document.createElement("div");
+  const comments = document.createElement("div");
   comments.setAttribute("class", "comment_one");
 
   final.append(comments);
 
-  let div3 = document.createElement("div");
+  const div3 = document.createElement("div");
   div3.setAttribute("class", "comment_input");
-  div3.setAttribute("id", feed[i]["feedback_id"]);
+  div3.setAttribute("id", item["feedback_id"]);
   final.append(div3);
 
-  let input = document.createElement("input");
+  const input = document.createElement("input");
   input.setAttribute("class", "new_input");
   input.setAttribute("id", count);
   input.setAttribute("type", "text");
-  input.value = feed[i]["feedback"];
+  input.value = item["feedback"];
   div3.append(input);
 
-  let btn2 = document.createElement("button");
+  const btn2 = document.createElement("button");
   btn2.setAttribute(
     "onclick",
-    "input(" + count + "," + feed[i]["feedback_id"] + ")"
+    "input(" + count + "," + item["feedback_id"] + ")"
   );
   btn2.setAttribute("class", "input_btn");
   btn2.innerText = "Submit";
   div3.append(btn2);
 
-  let inpu = document.createElement("span");
+  const inpu = document.createElement("span");
   inpu.setAttribute("class", "comment_input1");
-  inpu.innerText = feed[i]["feedback"];
+  inpu.innerText = item["feedback"];
   comments.append(inpu);
 
   document.querySelector(".comment_con").prepend(final);
@@ -139,8 +139,8 @@ for (let i = 0; i < feed.length; i++) {
 
 function edit(x) {
   let get_class = document.getElementsByClassName("comment_input");
-  for (let i = 0; i < get_class.length; i++) {
-    get_class[i].style.display = "none";
+  for (const element of get_class) {
+    element.style.display = "none";
   }
   let single_input = document.getElementById(x);
   single_input.style.display = "block";

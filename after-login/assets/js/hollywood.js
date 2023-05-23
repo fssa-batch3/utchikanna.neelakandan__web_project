@@ -25,9 +25,7 @@ function Hollywood() {
     document.querySelector(".menu").style.display = "none";
     const hollywoodMovies = movieType("hollywood");
 
-    for (let i = 0; i < hollywoodMovies.length; i++) {
-      const movie = hollywoodMovies[i];
-
+    for (const movie of hollywoodMovies) {
       // Create the card container
       const card_div3 = createElement("div", { class: "box" });
 

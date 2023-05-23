@@ -53,10 +53,10 @@ showComment.addEventListener("submit", function (event) {
 // show comments
 let set = [];
 let comm = JSON.parse(localStorage.getItem("comments"));
-for (let i = 0; i < comm.length; i++) {
-  let chech_m = comm[i]["get_movie_id"];
+for (const item of comm) {
+  let chech_m = item["get_movie_id"];
   if (chech_m == get_movie_id) {
-    set.push(comm[i]);
+    set.push(item);
   }
 }
 console.log(set);
@@ -68,8 +68,8 @@ console.log(todayDate);
 
 let times = moment("10032023", "DDMMYYYY").fromNow();
 
-for (let i = 0; i < set.length; i++) {
-  const momentTime = moment(set[i]["current_time"]);
+for (const item of set) {
+  const momentTime = moment(item["current_time"]);
 
   const diffInDays = moment().diff(momentTime, "days");
   let formattedDateTime;
@@ -94,17 +94,17 @@ for (let i = 0; i < set.length; i++) {
 
   let image = document.createElement("img");
   image.setAttribute("class", "commenter_img");
-  image.src = set[i]["comment_img"];
+  image.src = item["comment_img"];
   whole.append(image);
 
   let name = document.createElement("h2");
   name.setAttribute("class", "commenter_name");
-  name.innerText = set[i]["commenter_name"];
+  name.innerText = item["commenter_name"];
   whole.append(name);
 
   let span = document.createElement("span");
   whole.append(span);
-  if (set[i]["isEdited"]) {
+  if (item["isEdited"]) {
     let editComment = document.createElement("span");
     editComment.setAttribute("class", "editComment");
     editComment.setAttribute("id", "editComment");
@@ -119,18 +119,18 @@ for (let i = 0; i < set.length; i++) {
 
   let emailCheck = JSON.parse(localStorage.getItem("details"));
 
-  if (emailCheck == set[i]["user_email"]) {
+  if (emailCheck == item["user_email"]) {
     let edit = document.createElement("a");
     edit.setAttribute("id", "comment_edit");
     edit.setAttribute("class", "comments_edit");
-    edit.setAttribute("onclick", "edit(" + set[i]["comment_id"] + ")");
+    edit.setAttribute("onclick", "edit(" + item["comment_id"] + ")");
     edit.innerText = "Edit";
     whole.append(edit);
 
     let dele = document.createElement("a");
     dele.setAttribute("id", "comment_delete");
     dele.setAttribute("class", "comments_delete");
-    dele.setAttribute("onclick", "dele(" + set[i]["comment_id"] + ")");
+    dele.setAttribute("onclick", "dele(" + item["comment_id"] + ")");
     dele.innerText = "Delete";
     whole.append(dele);
   }
@@ -142,20 +142,20 @@ for (let i = 0; i < set.length; i++) {
 
   let div3 = document.createElement("div");
   div3.setAttribute("class", "comment_input");
-  div3.setAttribute("id", set[i]["comment_id"]);
+  div3.setAttribute("id", item["comment_id"]);
   final.append(div3);
 
   let input = document.createElement("input");
   input.setAttribute("class", "new_input");
   input.setAttribute("id", count);
   input.setAttribute("type", "text");
-  input.value = set[i]["input"];
+  input.value = item["input"];
   div3.append(input);
 
   let btn2 = document.createElement("button");
   btn2.setAttribute(
     "onclick",
-    "input(" + count + "," + set[i]["comment_id"] + ")"
+    "input(" + count + "," + item["comment_id"] + ")"
   );
   btn2.setAttribute("class", "input_btn");
   btn2.innerText = "Submit";
@@ -163,7 +163,7 @@ for (let i = 0; i < set.length; i++) {
 
   let inpu = document.createElement("span");
   inpu.setAttribute("class", "comment_input1");
-  inpu.innerText = set[i]["input"];
+  inpu.innerText = item["input"];
   comments.append(inpu);
 
   document.querySelector(".comment_con").prepend(final);
@@ -179,8 +179,8 @@ function likeBtn(x) {
 
 function edit(x) {
   let get_class = document.getElementsByClassName("comment_input");
-  for (let i = 0; i < get_class.length; i++) {
-    get_class[i].style.display = "none";
+  for (const element of get_class) {
+    element.style.display = "none";
   }
   let single_input = document.getElementById(x);
   single_input.style.display = "block";

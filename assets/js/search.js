@@ -4,26 +4,26 @@ let Movies = JSON.parse(localStorage.getItem("new_card"));
 
 console.log(Movies);
 function holdMovie() {
-  for (let i = 0; i < Movies.length; i++) {
+  for (let movie of Movies) {
     let suggesDiv = document.createElement("div");
     suggesDiv.setAttribute("class", "suggesDiv");
 
-    suggesAng = document.createElement("a");
+    let suggesAng = document.createElement("a");
     suggesAng.setAttribute("class", "suggesAng");
     suggesAng.setAttribute(
       "href",
-      "../pages/productDetails.html?id=" + Movies[i]["id"]
+      "../pages/productDetails.html?id=" + movie["id"]
     );
     suggesDiv.append(suggesAng);
 
     let suggesImg = document.createElement("img");
     suggesImg.setAttribute("class", "suggesImg");
-    suggesImg.setAttribute("src", Movies[i]["image"]);
+    suggesImg.setAttribute("src", movie["image"]);
     suggesAng.append(suggesImg);
 
     let suggesTitle = document.createElement("h2");
     suggesTitle.setAttribute("class", "suggesTitle");
-    suggesTitle.innerText = Movies[i]["title"];
+    suggesTitle.innerText = movie["title"];
 
     suggesAng.append(suggesTitle);
 
@@ -48,8 +48,7 @@ try {
   const cards = document.getElementsByClassName("suggesDiv");
 
   searchbar.addEventListener("input", () => {
-    for (let i = 0; i < cards.length; i++) {
-      const element = cards[i];
+    for (let element of cards) {
       if (
         element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())
       ) {

@@ -63,7 +63,7 @@ function view() {
     const showMoreContainer = document.querySelector(".showMore");
     const filterContainer = document.querySelector(".filter");
 
-    for (const movie of card) {
+    for (let movie of card) {
       const card_div = createCardElement(movie);
       showMoreContainer.append(card_div);
     }

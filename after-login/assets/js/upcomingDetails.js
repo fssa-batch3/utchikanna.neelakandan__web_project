@@ -13,11 +13,12 @@ let movieDetails = movieArray.find(function (event) {
 
 let ratingArr = JSON.parse(localStorage.getItem("ratings"));
 let ratingCount = 0;
-for (let i = 0; i < ratingArr.length; i++) {
-  if (ratingArr[i]["get_movie_id"] == get_movie_id) {
+for (const rating of ratingArr) {
+  if (rating.get_movie_id === get_movie_id) {
     ratingCount++;
   }
 }
+
 console.log(ratingCount);
 let showCount = document.getElementById("count");
 showCount.innerText = ratingCount;
@@ -75,10 +76,10 @@ try {
 try {
   let favList = JSON.parse(localStorage.getItem("favMovie"));
 
-  for (let i = 0; i < favList.length; i++) {
+  for (const favItem of favList) {
     if (
-      oneUser == favList[i]["get_email"] &&
-      get_movie_id == favList[i]["get_movie_id"]
+      oneUser === favItem.get_email &&
+      get_movie_id === favItem.get_movie_id
     ) {
       let favBtn = document.getElementById("Favbtn");
       favBtn.setAttribute("onclick", "remove()");
@@ -122,14 +123,14 @@ try {
 }
 
 function remove() {
-  for (let i = 0; i < favList.length; i++) {
+  for (const favItem of favList) {
     if (
-      oneUser == favList[i]["get_email"] &&
-      get_movie_id == favList[i]["get_movie_id"]
+      oneUser === favItem.get_email &&
+      get_movie_id === favItem.get_movie_id
     ) {
-      let index = favList.indexOf(favList[i]);
+      const index = favList.indexOf(favItem);
       favList.splice(index, 1);
-      console.log(favList[i]);
+      console.log(favItem);
       localStorage.setItem("favMovie", JSON.stringify(favList));
       location.reload();
       return;
@@ -145,25 +146,21 @@ let countRating = 0;
 
 let noOfUser = 0;
 
-for (let i = 0; i < ratingArray.length; i++) {
-  if (get_movie_id == ratingArray[i]["get_movie_id"]) {
+for (const rating of ratingArray) {
+  if (get_movie_id === rating.get_movie_id) {
     noOfUser++;
-    countRating += ratingArray[i]["rating"];
+    countRating += rating.rating;
   }
-  if (
-    get_movie_id == ratingArray[i]["get_movie_id"] &&
-    oneUser == ratingArray[i]["get_email"]
-  ) {
-    showRating = ratingArray[i]["rating"];
-    let rating = showRating.toString();
+  if (get_movie_id === rating.get_movie_id && oneUser === rating.get_email) {
+    let showRating = rating.rating;
+    let ratingText = showRating.toString();
 
     let info = document.getElementById("showRating");
-
-    info.innerText = rating + "/5";
+    info.innerText = ratingText + "/5";
 
     let yourRating = document.createElement("h2");
     yourRating.setAttribute("class", "rating");
-    yourRating.innerText = "Your Expection";
+    yourRating.innerText = "Your Expectation";
 
     document.querySelector(".star_rating").prepend(yourRating);
 

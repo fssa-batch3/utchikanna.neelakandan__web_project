@@ -23,9 +23,7 @@ function WebSeries() {
     document.querySelector(".menu").style.display = "none";
     const WebSeries = movieType("web series");
 
-    for (let i = 0; i < WebSeries.length; i++) {
-      const movie = WebSeries[i];
-
+    for (const movie of WebSeries) {
       // Create the card container
       const card_div5 = createElement("div", { class: "box" });
 

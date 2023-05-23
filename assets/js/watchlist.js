@@ -10,83 +10,62 @@ let fav = [];
 
 // find user's watchlist
 
-for (let j = 0; j < favMovie.length; j++) {
-  if (get_email == favMovie[j]["get_email"]) {
-    let findMovie = allMovie.find(function (one) {
-      let movie = one["id"];
-      if (movie == favMovie[j]["get_movie_id"]) {
-        return true;
-      }
-    });
+for (let favItem of favMovie) {
+  if (get_email === favItem["get_email"]) {
+    let findMovie = allMovie.find(
+      (one) => one["id"] === favItem["get_movie_id"]
+    );
     fav.push(findMovie);
   }
 }
 
-// card
-let card_div1;
-let image1;
-let rating1;
-let rate1;
-let title1;
-let a_tag1;
-let btn1;
-let link1;
+function createElement(tagName, attributes = {}, textContent) {
+  const element = document.createElement(tagName);
+  for (const [key, value] of Object.entries(attributes)) {
+    element.setAttribute(key, value);
+  }
+  if (textContent) {
+    element.textContent = textContent;
+  }
+  return element;
+}
 
-for (let i = 0; i < fav.length; i++) {
+for (let favItem of fav) {
   // box
-  card_div1 = document.createElement("div");
-  card_div1.setAttribute("class", "box");
+  card_div1 = createElement("div", { class: "box" });
 
   // a tag
-
-  a_tag1 = document.createElement("a");
-  a_tag1.setAttribute(
-    "href",
-    "../after-login/productDetails.html?id=" + fav[i]["id"]
-  );
+  a_tag1 = createElement("a", {
+    href: `../after-login/productDetails.html?id=${favItem["id"]}`,
+  });
   card_div1.append(a_tag1);
 
   // image
-
-  image1 = document.createElement("img");
-  image1.setAttribute("id", "image-1");
-  image1.setAttribute("src", fav[i]["image"]);
-  image1.setAttribute("alt", fav[i]["alt"]);
+  image1 = createElement("img", {
+    id: "image-1",
+    src: favItem["image"],
+    alt: favItem["alt"],
+  });
   card_div1.append(image1);
 
   // icon
-
-  rate1 = document.createElement("i");
-  rate1.setAttribute("id", "star");
-  rate1.setAttribute("class", "fa fa-star");
+  rate1 = createElement("i", { id: "star", class: "fa fa-star" });
   card_div1.append(rate1);
 
   // rating
-
-  rating1 = document.createElement("h3");
-  rating1.setAttribute("class", "rate");
-  rating1.innerText = fav[i]["rate"];
+  rating1 = createElement("h3", { class: "rate" }, favItem["rate"]);
   card_div1.append(rating1);
 
   // title
-
-  title1 = document.createElement("h2");
-  title1.setAttribute("class", "title");
-  title1.innerText = fav[i]["title"];
+  title1 = createElement("h2", { class: "title" }, favItem["title"]);
   rating1.append(title1);
 
   // a tag
-
-  link1 = document.createElement("a");
-  link1.setAttribute("class", "try");
-  link1.setAttribute("href", fav[i]["link"]);
+  link1 = createElement("a", { class: "try", href: favItem["link"] });
   card_div1.append(link1);
 
   // button
-
-  btn1 = document.createElement("button");
-  btn1.setAttribute("class", "btn");
-  btn1.innerText = "Trailer";
+  btn1 = createElement("button", { class: "btn" }, "Trailer");
   link1.append(btn1);
 
   document.querySelector(".favlist").append(card_div1);

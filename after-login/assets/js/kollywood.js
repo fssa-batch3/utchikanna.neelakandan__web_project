@@ -25,9 +25,7 @@ function Kollywood() {
     document.querySelector(".menu").style.display = "none";
     const kollywoodMovies = movieType("kollywood");
 
-    for (let i = 0; i < kollywoodMovies.length; i++) {
-      const movie = kollywoodMovies[i];
-
+    for (const movie of kollywoodMovies) {
       // Create the card container
       const card_div2 = createElement("div", { class: "box" });
 
