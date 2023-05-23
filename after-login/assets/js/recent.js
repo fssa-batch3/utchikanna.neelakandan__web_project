@@ -18,11 +18,11 @@ console.log(recent);
 
 let recentlyView = [];
 
-for (let j = 0; j < recent.length; j++) {
-  if (get_email == recent[j]["oneUser"]) {
-    let findMovie = allMovie.find(function (one) {
+for (const item of recent) {
+  if (get_email === item["oneUser"]) {
+    let findMovie = allMovie.find((one) => {
       let movie = one["id"];
-      if (movie == recent[j]["id"]) {
+      if (movie === item["id"]) {
         return true;
       }
     });
@@ -34,16 +34,18 @@ for (let j = 0; j < recent.length; j++) {
     hiddenClear.style.display = "block";
   }
 }
+
 let clearAll = [];
 let clear = document.getElementById("clearRecent");
 clear.addEventListener("click", function (event) {
   event.preventDefault();
 
-  for (let i = 0; i < recent.length; i++) {
-    if (recent[i]["oneUser"] != get_email) {
-      clearAll.push(recent[i]);
+  for (const item of recent) {
+    if (item["oneUser"] !== get_email) {
+      clearAll.push(item);
     }
   }
+
   localStorage.setItem("recent", JSON.stringify(clearAll));
   location.reload();
 });

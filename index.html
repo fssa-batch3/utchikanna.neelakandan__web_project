@@ -135,10 +135,11 @@
   <script>
     function showMoreMovie(id) {
       let buttons = document.getElementsByClassName("view");
-      for (let i = 0; i < buttons.length; i++) {
-        buttons[i].style.backgroundColor = "white";
-        buttons[i].style.color = "black";
+      for (const button of buttons) {
+        button.style.backgroundColor = "white";
+        button.style.color = "black";
       }
+
       let selectbutton = document.getElementById(id);
       selectbutton.style.backgroundColor = "black";
       selectbutton.style.color = "white";
