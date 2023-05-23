@@ -288,7 +288,7 @@ const backupData = [
   {
     image: "https://upload.wikimedia.org/wikipedia/en/2/24/Chainsawman.jpg",
     href: "#triangle",
-    rate: "NaN",
+    rate: "4",
     title: "Chainsaw Man",
     link: "https://www.netflix.com/in/title/81215627?source=35",
     movietype: "anime Series",
