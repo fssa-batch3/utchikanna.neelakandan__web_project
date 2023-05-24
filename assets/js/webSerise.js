@@ -1,126 +1,70 @@
-let card = [
-  {
-    image: "../assets/images/dragon.jpg",
-    href: "#dragon",
-    rate: 8.5,
-    title: "House of the Dragon",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/squid.jpg",
-    href: "#squid",
-    rate: 8,
-    title: "Squid Game",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/game.jpg",
-    href: "#game",
-    rate: 9,
-    title: "Game of Throne",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/bad.jpg",
-    href: "#bad",
-    rate: 9.5,
-    title: "Breaking Bad",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/money.jpg",
-    href: "#money",
-    rate: 8,
-    title: "Money Heist",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/prison.jpg",
-    href: "#prison",
-    rate: 8.5,
-    title: "Prison Break",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/peaky.jpg",
-    href: "#peaky",
-    rate: 8,
-    title: "Peaky Blinders",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/scam.jpg",
-    href: "#scam",
-    rate: 8.5,
-    title: "Scam 1992",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-];
+function WebSeries() {
+  // Function to create an element with optional attributes and text content
+  function createElement(tagName, attributes = {}, textContent = "") {
+    const element = document.createElement(tagName);
+    for (let attr in attributes) {
+      element.setAttribute(attr, attributes[attr]);
+    }
+    element.textContent = textContent;
+    return element;
+  }
 
-// card
-let card_div;
-let a_tag;
-let image;
-let rate;
-let rating;
-let title;
-let btn;
-let link;
+  function movieType(type) {
+    const create_card5 = JSON.parse(localStorage.getItem("new_card"));
+    const movietype = create_card5.filter((h) => h.movietype == type);
+    return movietype;
+  }
 
-for (let i = 0; i < card.length; i++) {
-  // box
-  card_div = document.createElement("div");
-  card_div.setAttribute("class", "box");
+  try {
+    let reMove = document.getElementById("showMore1");
+    while (reMove.hasChildNodes()) {
+      reMove.firstChild.remove();
+    }
+    document.querySelector(".menu").style.display = "none";
+    const WebSeries = movieType("web series");
 
-  // a tag
+    for (const movie of WebSeries) {
+      // Create the card container
+      const card_div5 = createElement("div", { class: "box" });
 
-  a_tag = document.createElement("a");
-  a_tag.setAttribute("href", card[i]["href"]);
-  card_div.append(a_tag);
+      // Create the link
+      const a_tag5 = createElement("a", {
+        href: `../pages/productDetails.html?id=${movie.id}`,
+        id: "recently",
+      });
+      card_div5.appendChild(a_tag5);
 
-  // image
+      // Create the image
+      const image5 = createElement("img", {
+        id: "image-1",
+        src: movie.image,
+        alt: "image",
+      });
+      a_tag5.appendChild(image5);
 
-  image = document.createElement("img");
-  image.setAttribute("id", "image-1");
-  image.setAttribute("src", card[i]["image"]);
-  image.setAttribute("alt", "image");
-  a_tag.append(image);
+      // Create the star
+      const rate5 = createElement("i", { id: "star", class: "fa fa-star" });
+      a_tag5.appendChild(rate5);
 
-  // star
+      // Create the rating
+      const rating5 = createElement("h3", { class: "rate" }, movie.rate);
+      a_tag5.appendChild(rating5);
 
-  rate = document.createElement("i");
-  rate.setAttribute("id", "star");
-  rate.setAttribute("class", "fa fa-star");
-  a_tag.append(rate);
+      // Create the title
+      const title5 = createElement("h2", { class: "title" }, movie.title);
+      rating5.appendChild(title5);
 
-  // rating
+      // Create the link for the button
+      const link5 = createElement("a", { class: "try", href: movie.link });
+      a_tag5.appendChild(link5);
 
-  rating = document.createElement("h3");
-  rating.setAttribute("class", "rate");
-  rating.innerText = card[i]["rate"];
-  a_tag.append(rating);
+      // Create the button
+      const btn5 = createElement("button", { class: "btn" }, "Trailer");
+      link5.appendChild(btn5);
 
-  // title
-
-  title = document.createElement("h2");
-  title.setAttribute("class", "title");
-  title.innerText = card[i]["title"];
-  rating.append(title);
-
-  // a tag
-
-  link = document.createElement("a");
-  link.setAttribute("class", "try");
-  link.setAttribute("href", card[i]["link"]);
-  a_tag.append(link);
-
-  // button
-
-  btn = document.createElement("button");
-  btn.setAttribute("href", card[i]["link"]);
-  btn.setAttribute("class", "btn");
-  btn.innerText = "Watch Now";
-  link.append(btn);
-
-  document.querySelector(".menu").append(card_div);
+      document.querySelector(".showMore").appendChild(card_div5);
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
 }

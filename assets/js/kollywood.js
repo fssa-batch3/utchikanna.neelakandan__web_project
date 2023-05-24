@@ -1,137 +1,72 @@
-let card = [
-  // {
-  //   image: "../assets/images/asuran_.jpg",
-  //   href: "#asuran",
-  //   rate: 8.5,
-  //   title: "Asuran",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/Nayakan.jpg",
-  //   href: "#nayakan",
-  //   rate: 8,
-  //   title: "Nayakan",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/thalapathy.jpg",
-  //   href: "#thalapathy",
-  //   rate: 8.5,
-  //   title: "Thalapathy",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/mahaan.jpg",
-  //   href: "#mahaan",
-  //   rate: 9,
-  //   title: "Mahaan",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/soorarai.jpg",
-  //   href: "#soorarai",
-  //   rate: 9.5,
-  //   title: "Soorarai Potru",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/kgf2.jpg",
-  //   href: "#captain",
-  //   rate: 8.5,
-  //   title: "KGF-2",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/vikram.jpg",
-  //   href: "#vikram",
-  //   rate: 7.5,
-  //   title: "Vikram",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-  // {
-  //   image: "../assets/images/vada.jpg",
-  //   href: "#vada",
-  //   rate: 8.5,
-  //   title: "Vada Chennai",
-  //   link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  // },
-];
+function Kollywood() {
+  document.querySelector(".menu").style.display = "none";
 
-// card
-let card_div;
-let a_tag;
-let image;
-let rate;
-let rating;
-let title;
-let btn;
-let link;
+  // Function to create an element with optional attributes and text content
+  function createElement(tagName, attributes = {}, textContent = "") {
+    const element = document.createElement(tagName);
+    for (let attr in attributes) {
+      element.setAttribute(attr, attributes[attr]);
+    }
+    element.textContent = textContent;
+    return element;
+  }
 
-let create_card = JSON.parse(localStorage.getItem("new_card"));
-console.log(create_card);
+  function movieType(type) {
+    const create_card2 = JSON.parse(localStorage.getItem("new_card"));
+    const movietype = create_card2.filter((h) => h.movietype == type);
+    return movietype;
+  }
 
-// for (let i = 0; i < create_card.length; i++) {
-//   card.push(create_card[i]);
-//   console.log(card);
-// }
+  try {
+    let reMove = document.getElementById("showMore1");
+    while (reMove.hasChildNodes()) {
+      reMove.firstChild.remove();
+    }
+    document.querySelector(".menu").style.display = "none";
+    const kollywoodMovies = movieType("kollywood");
 
-for (let i = 0; i < create_card.length; i++) {
-  // box
-  card_div = document.createElement("div");
-  card_div.setAttribute("class", "box");
+    for (let movie of kollywoodMovies) {
+      // Create the card container
+      const card_div2 = createElement("div", { class: "box" });
 
-  // a tag
+      // Create the link
+      const a_tag2 = createElement("a", {
+        href: `../pages/productDetails.html?id=${movie.id}`,
+        id: "recently",
+      });
+      card_div2.appendChild(a_tag2);
 
-  a_tag = document.createElement("a");
-  a_tag.setAttribute(
-    "href",
-    "../pages/productDetails.html?id=" + create_card[i]["id"]
-  );
-  card_div.append(a_tag);
+      // Create the image
+      const image2 = createElement("img", {
+        id: "image-1",
+        src: movie.image,
+        alt: "image",
+      });
+      a_tag2.appendChild(image2);
 
-  // image
+      // Create the star
+      const rate2 = createElement("i", { id: "star", class: "fa fa-star" });
+      a_tag2.appendChild(rate2);
 
-  image = document.createElement("img");
-  image.setAttribute("id", "image-1");
-  image.setAttribute("src", create_card[i]["image"]);
-  image.setAttribute("alt", "image");
-  a_tag.append(image);
+      // Create the rating
+      const rating2 = createElement("h3", { class: "rate" }, movie.rate);
+      a_tag2.appendChild(rating2);
 
-  // star
+      // Create the title
+      const title2 = createElement("h2", { class: "title" }, movie.title);
+      rating2.appendChild(title2);
 
-  rate = document.createElement("i");
-  rate.setAttribute("id", "star");
-  rate.setAttribute("class", "fa fa-star");
-  a_tag.append(rate);
+      // Create the link for the button
+      const link2 = createElement("a", { class: "try", href: movie.link });
+      a_tag2.appendChild(link2);
 
-  // rating
+      // Create the button
+      const btn2 = createElement("button", { class: "btn" }, "Trailer");
+      link2.appendChild(btn2);
 
-  rating = document.createElement("h3");
-  rating.setAttribute("class", "rate");
-  rating.innerText = create_card[i]["rate"];
-  a_tag.append(rating);
-
-  // title
-
-  title = document.createElement("h2");
-  title.setAttribute("class", "title");
-  title.innerText = create_card[i]["title"];
-  rating.append(title);
-
-  // a tag
-
-  link = document.createElement("a");
-  link.setAttribute("class", "try");
-  link.setAttribute("href", create_card[i]["link"]);
-  a_tag.append(link);
-
-  // button
-
-  btn = document.createElement("button");
-  btn.setAttribute("href", create_card[i]["link"]);
-  btn.setAttribute("class", "btn");
-  btn.innerText = "Watch Now";
-  link.append(btn);
-
-  document.querySelector(".menu").append(card_div);
+      document.querySelector(".showMore").appendChild(card_div2);
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
 }

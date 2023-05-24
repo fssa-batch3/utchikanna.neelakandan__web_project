@@ -52,7 +52,14 @@
           <span>Phone Number</span>
         </div>
         <div class="inputBox">
-          <input id="first_password" type="password" name="" required="true" />
+          <input
+            id="first_password"
+            type="password"
+            title="Password must be contain upper case , symbol & number"
+            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+            name=""
+            required="true"
+          />
 
           <span>Create Password</span>
         </div>
@@ -61,6 +68,7 @@
             id="first_re_password"
             type="password"
             name=""
+            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
             required="true"
           />
           <span>Confirm Password</span>
@@ -104,30 +112,28 @@
 
         let fname = document.getElementById("first_name").value;
         let lname = document.getElementById("last_name").value;
-        let email = document.getElementById("first_email").value;
-        let phone_no = document.getElementById("phone_no").value;
+        let email = document.getElementById("first_email").value.trim();
+        let phone_no = document.getElementById("phone_no").value.trim();
         let password = document.getElementById("first_password").value;
         let rePassword = document.getElementById("first_re_password").value;
         let id = Date.now();
-        if (password.length < 6) {
-          alert("Password is  must be 6 characters");
-          return false;
-        }
-        if (password != rePassword) {
-          alert("Confirm is diffrent from password");
-          return false;
-        }
+        //This for Phone number checking
         if (phone_no.length < 10) {
           alert("Phone number must be 10 number");
-          return false;
+          return;
         }
-
+        if (phone_no.length > 10) {
+          alert("Phone number must be 10 number");
+          return;
+        }
+        // This for checking local is empty or not . if local is empty if statement will run or else the else statement will run.
         if (localStorage.getItem("user") === null) {
           localStorage.setItem("user", JSON.stringify(arr));
         } else {
           let checking = JSON.parse(localStorage.getItem("user"));
           let match = false;
 
+          // this for checking email-id is already there or not
           for (let i = 0; i < checking.length; i++) {
             if (email == checking[i].email) {
               match = true;
@@ -145,8 +151,12 @@
               password,
               rePassword,
               id,
+              image: `https://ui-avatars.com/api/?name=${fname}${lname}&rounded=true&uppercase=false&background=random`,
               state: "Enter your State",
               country: "Enter your Country",
+              userName: "Enter your User name",
+              dob: "Enter your Date of Birth",
+              gender: "Enter your gender",
             };
             arr.push(userdata);
             let new_data = localStorage.getItem("user");

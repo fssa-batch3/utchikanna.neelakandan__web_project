@@ -1,145 +1,72 @@
-let card = [
-  {
-    image: "../assets/images/triangle.jpg",
-    href: "#triangle",
-    rate: 8.5,
-    title: "Triangle",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/top.jpg",
-    href: "#top",
-    rate: 8,
-    title: "Top Gun:Maverick",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/inter.jpg",
-    href: "#inter",
-    rate: 9,
-    title: "Intersteller",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/ince.jpg",
-    href: "#inception",
-    rate: 9.5,
-    title: "Inception",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/pre.jpg",
-    href: "#prestige",
-    rate: 9,
-    title: "The Prestige",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/pass.jpg",
-    href: "#pass",
-    rate: 8,
-    title: "Passengers",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/john.jpg",
-    href: "#john",
-    rate: 9,
-    title: "John Wick",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-  {
-    image: "../assets/images/dont.jpg",
-    href: "#carter",
-    rate: 8.5,
-    title: "Don't Breathe",
-    link: "https://www.hotstar.com/in/tv/house-of-the-dragon/1260110208?utm_source=gwa",
-  },
-];
+function Hollywood() {
+  document.querySelector(".menu").style.display = "none";
 
-// const url = window.location.search; // ?datas={}
-// const urlParams = new URLSearchParams(url); // converting string into key value pair
-// const datas = urlParams.get("datas"); // return value of the "name" key
+  // Function to create an element with optional attributes and text content
+  function createElement(tagName, attributes = {}, textContent = "") {
+    const element = document.createElement(tagName);
+    for (let attr in attributes) {
+      element.setAttribute(attr, attributes[attr]);
+    }
+    element.textContent = textContent;
+    return element;
+  }
 
-// card
-let card_div;
-let a_tag;
-let image;
-let rate;
-let rating;
-let title;
-let btn;
-let delete_btn;
-let edit_btn;
-let link;
+  function movieType(type) {
+    const create_card3 = JSON.parse(localStorage.getItem("new_card"));
+    const movietype = create_card3.filter((h) => h.movietype == type);
+    return movietype;
+  }
 
-let create_card = JSON.parse(localStorage.getItem("new_card"));
-console.log(create_card);
+  try {
+    let reMove = document.getElementById("showMore1");
+    while (reMove.hasChildNodes()) {
+      reMove.firstChild.remove();
+    }
+    document.querySelector(".menu").style.display = "none";
+    const hollywoodMovies = movieType("hollywood");
 
-for (let i = 0; i < create_card.length; i++) {
-  card.push(create_card[i]);
-  console.log(card);
+    for (let movie of hollywoodMovies) {
+      // Create the card container
+      const card_div3 = createElement("div", { class: "box" });
+
+      // Create the link
+      const a_tag3 = createElement("a", {
+        href: `../pages/productDetails.html?id=${movie.id}`,
+        id: "recently",
+      });
+      card_div3.appendChild(a_tag3);
+
+      // Create the image
+      const image3 = createElement("img", {
+        id: "image-1",
+        src: movie.image,
+        alt: "image",
+      });
+      a_tag3.appendChild(image3);
+
+      // Create the star
+      const rate3 = createElement("i", { id: "star", class: "fa fa-star" });
+      a_tag3.appendChild(rate3);
+
+      // Create the rating
+      const rating3 = createElement("h3", { class: "rate" }, movie.rate);
+      a_tag3.appendChild(rating3);
+
+      // Create the title
+      const title3 = createElement("h2", { class: "title" }, movie.title);
+      rating3.appendChild(title3);
+
+      // Create the link for the button
+      const link3 = createElement("a", { class: "try", href: movie.link });
+      a_tag3.appendChild(link3);
+
+      // Create the button
+      const btn3 = createElement("button", { class: "btn" }, "Trailer");
+      link3.appendChild(btn3);
+
+      document.querySelector(".showMore").appendChild(card_div3);
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
 }
-
-for (let i = 0; i < card.length; i++) {
-  // box
-  card_div = document.createElement("div");
-  card_div.setAttribute("class", "box");
-
-  // a tag
-
-  a_tag = document.createElement("a");
-  a_tag.setAttribute(
-    "href",
-    "../pages/productDetails.html?id=" + card[i]["id"]
-  );
-  card_div.append(a_tag);
-
-  // image
-
-  image = document.createElement("img");
-  image.setAttribute("id", "image-1");
-  image.setAttribute("src", card[i]["image"]);
-  image.setAttribute("alt", "image");
-  a_tag.append(image);
-
-  // star
-
-  rate = document.createElement("i");
-  rate.setAttribute("id", "star");
-  rate.setAttribute("class", "fa fa-star");
-  a_tag.append(rate);
-
-  // rating
-
-  rating = document.createElement("h3");
-  rating.setAttribute("class", "rate");
-  rating.innerText = card[i]["rate"];
-  a_tag.append(rating);
-
-  // title
-
-  title = document.createElement("h2");
-  title.setAttribute("class", "title");
-  title.innerText = card[i]["title"];
-  rating.append(title);
-
-  // a tag
-
-  link = document.createElement("a");
-  link.setAttribute("class", "try");
-  link.setAttribute("href", card[i]["link"]);
-  a_tag.append(link);
-
-  // button
-
-  btn = document.createElement("button");
-  btn.setAttribute("href", card[i]["link"]);
-  btn.setAttribute("class", "btn");
-  btn.innerText = "Watch Now";
-  link.append(btn);
-
-  document.querySelector(".menu").append(card_div);
-}
-
-// let newCard = localStorage.setItem("new_card", JSON.stringify(card));

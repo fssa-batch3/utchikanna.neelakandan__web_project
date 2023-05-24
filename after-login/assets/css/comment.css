@@ -1,10 +1,9 @@
 /* Input container */
-.input-container {
-  position: relative;
+.inputContainer {
   margin: 20px;
   margin-left: 950px;
   position: relative;
-  bottom: 450px;
+  bottom: 700px;
   width: 100%;
 }
 
@@ -41,7 +40,6 @@
   left: 0;
   height: 2px;
   width: 0;
-  background-color: #007bff;
   transition: all 0.3s ease;
 }
 
@@ -102,7 +100,7 @@
   border-radius: 400px;
 }
 .commenter_name {
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 10px;
   margin-left: 20px;
 }
@@ -113,9 +111,11 @@
   padding-right: 20px;
   position: relative;
   bottom: 35px;
+  font-size: 20px;
 }
 .comment_input {
   font-size: 20px;
+  display: none;
 }
 #showComment {
   margin-left: 1310px;
@@ -130,13 +130,13 @@
   color: #f5c518;
   margin-top: 15px;
   margin-bottom: 40px;
-  margin-left: 120px;
+  margin-left: 200px;
 }
 
-/* edit  */
+/* edit style  */
 
 .comments_edit {
-  margin-left: 60px;
+  margin-left: 40px;
   margin-right: 50px;
   margin-top: 25px;
   cursor: pointer;
@@ -147,8 +147,60 @@
 .comments_delete {
   cursor: pointer;
   margin-top: 25px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .comments_delete:hover {
   color: red;
+}
+
+/* edit  for js */
+
+.new_input {
+  margin-left: 150px;
+  margin-bottom: 10px;
+  padding: 30px;
+  width: 400px;
+  border-radius: 10px;
+}
+.new_input:valid {
+  border-width: 2px;
+  border-color: black;
+}
+.new_input:invalid {
+  border-width: 2px;
+  border-color: gray;
+}
+.input_btn {
+  padding: 10px;
+  font-size: 20px;
+  background-color: #f5c518;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  bottom: 10px;
+  transition: 0.4s;
+  margin-left: 530px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.input_btn:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  cursor: pointer;
+}
+.times {
+  position: relative;
+  left: 250px;
+  bottom: 90px;
+  font-size: 16px;
+}
+.editedMsg {
+  font-size: 18px;
+  position: relative;
+  bottom: 50px;
+  left: 400px;
+}
+.editComment {
+  font-size: 17px;
+  margin-left: 380px;
 }

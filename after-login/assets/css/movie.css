@@ -19,7 +19,7 @@ h1:hover {
   font-size: 40px;
   color: #333;
   margin-left: 50px;
-  margin-top: 200px;
+  margin-top: 230px;
   margin-bottom: 50px;
   border-bottom: 1px solid white;
   width: 1px;
@@ -65,9 +65,9 @@ h1:hover {
   width: auto;
   padding: 16px;
   margin-top: 155px;
-  margin-left: 10px;
+  margin-left: -45px;
   margin-right: 10px;
-  color: #333;
+  color: black;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -84,7 +84,7 @@ h1:hover {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: #666;
+  background-color: #333;
 }
 
 @keyframes box {
@@ -111,9 +111,10 @@ h1:hover {
   width: 40%;
   height: 350px;
   border-radius: 25px;
-  padding: 80px;
+  padding: 60px;
   line-height: 35px;
   margin-right: 10px;
+  margin-left: 10px;
   margin-bottom: 200px;
 }
 .left:hover {
@@ -142,13 +143,13 @@ ul {
   background-color: white;
   position: fixed;
   max-height: 100px;
-  width: 1485px;
+  width: 100%;
   z-index: 10;
 }
 .nav-list {
   display: inline-block;
   position: relative;
-  left: 800px;
+  left: 950px;
   bottom: 95px;
 }
 ul li a {
@@ -240,14 +241,13 @@ p {
 }
 /* slider card */
 .box {
-  margin-left: 80px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: white;
   max-width: 200px;
   height: 430px;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   cursor: pointer;
   box-shadow: 12px 15px 10px gray;
   transition: 0.4s;
@@ -255,6 +255,26 @@ p {
   animation-duration: 1.5s;
 }
 .box:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  max-width: 200px;
+  height: 430px;
+  margin-top: 50px;
+  margin-left: 80px;
+  margin-bottom: 100px;
+  cursor: pointer;
+  box-shadow: 12px 15px 10px gray;
+  transition: 0.4s;
+  animation-name: box;
+  animation-duration: 1.5s;
+}
+.card:hover {
   transform: scale(1.1);
   transition: 0.4s;
 }
@@ -292,15 +312,39 @@ p {
   color: gray;
 }
 /* slider */
-.menu {
-  margin-right: 20px;
+.menu,
+.hollywood,
+.kollywood,
+.animeSeries,
+.webSeries,
+.superHero,
+.recent,
+.showMore,
+.upcoming {
+  margin-top: 100px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+  background-color: #efefef;
+}
+.favlist {
+  margin-top: 100px;
+  display: flex;
+  margin-left: 4px;
   overflow-x: auto;
+  overflow-y: hidden;
   background-color: #efefef;
   scroll-behavior: smooth;
 }
-.menu::-webkit-scrollbar {
+.favlist::-webkit-scrollbar {
   display: none;
+}
+.filter {
+  margin-top: 160px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: row;
 }
 
 .gif {
@@ -311,7 +355,7 @@ p {
   bottom: 100px;
 }
 .about {
-  font-size: 40px;
+  font-size: 22px;
   color: #666;
   max-height: 300px;
 }
@@ -319,7 +363,7 @@ p {
   display: flex;
   margin-left: 40px;
   margin-right: 40px;
-  margin-top: 100px;
+  margin-top: 200px;
 }
 .film {
   color: black;
@@ -330,7 +374,7 @@ p {
   width: 1550px;
   height: 400px;
   position: relative;
-  top: 150px;
+  top: 10px;
   right: 30px;
   background-color: white;
 }
@@ -373,9 +417,6 @@ p {
   left: 600px;
 }
 
-.home {
-  max-width: 1440px;
-}
 .cast {
   font-size: 40px;
   margin-top: 60px;
@@ -431,7 +472,7 @@ p {
 }
 .btn3 {
   padding: 16px;
-  padding-left: 60px;
+  padding-right: 22px;
   font-size: 20px;
   font-weight: bold;
   background-color: #f5c518;
@@ -482,8 +523,12 @@ a {
   border: none;
   border-radius: 10px;
   transition: 0.4s;
-  margin-left: 80px;
+  margin-left: 20px;
+  margin-bottom: 300px;
   font-weight: bold;
+  position: fixed;
+  top: 130px;
+  z-index: 1;
 }
 .btn4:hover {
   transform: scale(1.1);
@@ -564,9 +609,7 @@ a {
 }
 .star_rating {
   user-select: none;
-  position: relative;
-  top: 250px;
-  left: 180px;
+  margin-left: 200px;
 }
 .star {
   color: #f5c518;
@@ -577,6 +620,23 @@ a {
 .star:hover {
   cursor: pointer;
 }
+.star1 {
+  color: #f5c518;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-left: 60px;
+  background-color: unset;
+  border: none;
+}
+.star1:hover {
+  cursor: pointer;
+}
+#showRating {
+  margin-left: 110px;
+  position: relative;
+  bottom: 46px;
+}
+
 .current_rate {
   margin-left: 80px;
 }
@@ -589,13 +649,27 @@ a {
   background-color: #f5c518;
   border: none;
   border-radius: 10px;
-  position: relative;
-  bottom: 10px;
+  margin-top: 20px;
   transition: 0.4s;
   margin-left: 20px;
   font-weight: bold;
 }
 .submit-rate:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  cursor: pointer;
+}
+.submit-post {
+  padding: 18px;
+  font-size: 20px;
+  background-color: #f5c518;
+  border: none;
+  border-radius: 10px;
+  transition: 0.4s;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.submit-post:hover {
   transform: scale(1.1);
   transition: 0.4s;
   cursor: pointer;
@@ -696,8 +770,8 @@ textarea:invalid {
 .form {
   border: 1px solid black;
   border-radius: 15px;
-  padding: 50px;
-  height: 350px;
+  padding: 40px;
+  height: 280px;
   position: relative;
   left: 680px;
   bottom: 550px;
@@ -737,6 +811,64 @@ textarea:invalid {
 .input-group {
   margin-left: 800px;
 }
+.view {
+  padding: 18px;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-left: 50px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  transition: 0.4s;
+  font-weight: bold;
+}
+.view:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.btnGroup {
+  margin-left: 120px;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+#noFound {
+  color: red;
+  margin-top: 200px;
+  margin-left: 500px;
+  margin-bottom: 300px;
+}
+#clearRecent {
+  color: #333;
+  margin-left: 1350px;
+  font-size: 25px;
+  display: none;
+}
+#clearRecent:hover {
+  cursor: pointer;
+  color: red;
+}
+#noViewed {
+  margin-bottom: 250px;
+  margin-top: 150px;
+  margin-left: 100px;
+}
+.firstBox {
+  position: relative;
+  top: 200px;
+}
+.secondBox {
+  position: relative;
+  top: 300px;
+}
+#count {
+  font-size: 20px;
+  color: #666;
+  margin-left: 10px;
+}
+
 /* responsive width 900px*/
 @media screen and (max-width: 900px) {
   h1 {

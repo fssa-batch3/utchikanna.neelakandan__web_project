@@ -6,10 +6,26 @@ productContainers.forEach((item, i) => {
   let containerDimensions = item.getBoundingClientRect();
   let containerWidth = containerDimensions.width;
 
-  nxtBtn[i].addEventListener("click", () => {
+  nxtBtn[i]?.addEventListener("click", () => {
     item.scrollLeft += containerWidth;
   });
-  prevBtn[i].addEventListener("click", () => {
+  prevBtn[i]?.addEventListener("click", () => {
     item.scrollLeft -= containerWidth;
   });
+});
+
+//search filter
+let searchbar = document.getElementById("searchbar");
+const cards = document.getElementsByClassName("box");
+
+searchbar.addEventListener("input", () => {
+  for (let element of cards) {
+    if (
+      element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())
+    ) {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  }
 });

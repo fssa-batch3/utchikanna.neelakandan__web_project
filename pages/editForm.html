@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/movie.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <div class="inputBox">
+        <input id="image_url" type="text" name="" required="required" />
+        <span>Image Url</span>
+      </div>
+      <div class="inputBox">
+        <input
+          id="rating"
+          type="number"
+          step="any"
+          name=""
+          required="required"
+        />
+        <span>Movie Rating</span>
+      </div>
+      <div class="inputBox">
+        <input id="title" type="text" name="" required="required" step="any" />
+        <span>Title</span>
+      </div>
+      <div class="inputBox">
+        <input id="link" type="text" name="" required="required" />
+        <span>Link</span>
+      </div>
+
+      <div class="inputBox">
+        <textarea
+          name=""
+          id="story"
+          cols="50"
+          rows="20"
+          required="required"
+        ></textarea>
+        <span>Short story about the movie</span>
+      </div>
+
+      <div class="inputBox">
+        <input id="releaseDate" type="text" name="" required="required" />
+        <span>Release Date</span>
+      </div>
+      <div class="inputBox">
+        <input id="directorName" type="text" name="" required="required" />
+        <span>Director Name</span>
+      </div>
+      <div class="inputBox">
+        <input id="mDirectorName" type="text" name="" required="required" />
+        <span>Music Director Name</span>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <div class="inputBox">
+        <input id="directorLink" type="text" name="" required="required" />
+        <span>Director Link</span>
+      </div>
+      <div class="inputBox">
+        <input id="mDirectorLink" type="text" name="" required="required" />
+        <span>Music Director Link</span>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <div class="inputBox">
+        <input id="actorWiki1" type="text" name="" required="required" />
+        <span>Actor Link</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorImg1" type="text" name="" required="required" />
+        <span>Actor Image</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorName1" type="text" name="" required="required" />
+        <span>Actor Name</span>
+      </div>
+      <br />
+      <hr />
+
+      <br />
+      <div class="inputBox">
+        <input id="actorWiki2" type="text" name="" required="required" />
+        <span>Actor Link</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorImg2" type="text" name="" required="required" />
+        <span>Actor Image</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorName2" type="text" name="" required="required" />
+        <span>Actor Name</span>
+      </div>
+      <br />
+      <hr />
+
+      <br />
+      <div class="inputBox">
+        <input id="actorWiki3" type="text" name="" required="required" />
+        <span>Actor Link</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorImg3" type="text" name="" required="required" />
+        <span>Actor Image</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorName3" type="text" name="" required="required" />
+        <span>Actor Name</span>
+      </div>
+      <br />
+      <hr />
+
+      <br />
+      <div class="inputBox">
+        <input id="actorWiki4" type="text" name="" required="required" />
+        <span>Actor Link</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorImg4" type="text" name="" required="required" />
+        <span>Actor Image</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorName4" type="text" name="" required="required" />
+        <span>Actor Name</span>
+      </div>
+      <br />
+      <hr />
+
+      <br />
+      <div class="inputBox">
+        <input id="actorWiki5" type="text" name="" required="required" />
+        <span>Actor Link</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorImg5" type="text" name="" required="required" />
+        <span>Actor Image</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorName5" type="text" name="" required="required" />
+        <span>Actor Name</span>
+      </div>
+      <br />
+      <hr />
+
+      <br />
+      <div class="inputBox">
+        <input id="actorWiki6" type="text" name="" required="required" />
+        <span>Actor Link</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorImg6" type="text" name="" required="required" />
+        <span>Actor Image</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorName6" type="text" name="" required="required" />
+        <span>Actor Name</span>
+      </div>
+      <br />
+      <hr />
+
+      <br />
+      <div class="inputBox">
+        <input id="actorWiki7" type="text" name="" required="required" />
+        <span>Actor Link</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorImg7" type="text" name="" required="required" />
+        <span>Actor Image</span>
+      </div>
+      <div class="inputBox">
+        <input id="actorName7" type="text" name="" required="required" />
+        <span>Actor Name</span>
+      </div>
+      <br />
+      <hr />
+
+      <br />
+      <div class="inputBox">
+        <input id="awardname" type="text" name="" required="required" />
+        <span>Award Name</span>
+      </div>
+      <div class="inputBox">
+        <input id="awardWiki" type="text" name="" required="required" />
+        <span>Award Link</span>
+      </div>
+      <div class="inputBox">
+        <input id="movieLink" type="text" name="" required="required" />
+        <span>Movie Link</span>
+      </div>
+      <div class="inputBox">
+        <select id="movietype" name="movietype" required="required">
+          <option value="hollywood">Hollywood</option>
+          <option value="kollywood">Kollywood</option>
+          <option value="web series">Web Series</option>
+          <option value="anime Series">Anime Series</option>
+          <option value="superhero movies">Superhero Movie</option>
+          <option value="upcoming movie">Upcoming Movie</option>
+        </select>
+      </div>
+      <br />
+      <hr />
+      <button type="submit" class="btn5">Send</button>
+    </form>
+    <button type="delete" onclick="del()" class="btn5">Delete</button>
+    <script src="../assets/js/admin_page.js "></script>
+    <script>
+      const c_id = window.location.search;
+      const c_params = new URLSearchParams(c_id);
+      const get_id = c_params.get("id");
+      console.log(get_id);
+
+      const cardarray = JSON.parse(localStorage.getItem("new_card"));
+      let oneCard = cardarray.find(function (event) {
+        let id = event["id"];
+        if (get_id == id) {
+          return true;
+        }
+      });
+      console.log(oneCard);
+
+      const image_url = document.getElementById("image_url");
+      const ratings = document.getElementById("rating");
+      const edit_title = document.getElementById("title");
+      const edit_link = document.getElementById("link");
+      const edit_story = document.getElementById("story");
+      const edit_releaseDate = document.getElementById("releaseDate");
+      const edit_directorName = document.getElementById("directorName");
+      const edit_mDirectorName = document.getElementById("mDirectorName");
+      const edit_directorLink = document.getElementById("directorLink");
+      const edit_mDirectorLink = document.getElementById("mDirectorLink");
+      const edit_actorWiki1 = document.getElementById("actorWiki1");
+      const edit_actorImg1 = document.getElementById("actorImg1");
+      const edit_actorName1 = document.getElementById("actorName1");
+      const edit_actorWiki2 = document.getElementById("actorWiki2");
+      const edit_actorImg2 = document.getElementById("actorImg2");
+      const edit_actorName2 = document.getElementById("actorName2");
+      const edit_actorWiki3 = document.getElementById("actorWiki3");
+      const edit_actorImg3 = document.getElementById("actorImg3");
+      const edit_actorName3 = document.getElementById("actorName3");
+      const edit_actorWiki4 = document.getElementById("actorWiki4");
+      const edit_actorImg4 = document.getElementById("actorImg4");
+      const edit_actorName4 = document.getElementById("actorName4");
+      const edit_actorWiki5 = document.getElementById("actorWiki5");
+      const edit_actorImg5 = document.getElementById("actorImg5");
+      const edit_actorName5 = document.getElementById("actorName5");
+      const edit_actorWiki6 = document.getElementById("actorWiki6");
+      const edit_actorImg6 = document.getElementById("actorImg6");
+      const edit_actorName6 = document.getElementById("actorName6");
+      const edit_actorWiki7 = document.getElementById("actorWiki7");
+      const edit_actorImg7 = document.getElementById("actorImg7");
+      const edit_actorName7 = document.getElementById("actorName7");
+      const edit_awardName = document.getElementById("awardname");
+      const edit_awardWiki = document.getElementById("awardWiki");
+      const edit_movieLink = document.getElementById("movieLink");
+      const edit_movieType = document.getElementById("movietype");
+
+      image_url.value = oneCard["image"];
+
+      ratings.value = oneCard["rate"];
+
+      edit_title.value = oneCard["title"];
+
+      edit_link.value = oneCard["link"];
+
+      edit_story.value = oneCard["story"];
+
+      edit_releaseDate.value = oneCard["releaseDate"];
+
+      edit_directorName.value = oneCard["directorName"];
+
+      edit_mDirectorName.value = oneCard["mDirectorName"];
+
+      edit_directorLink.value = oneCard["directorLink"];
+
+      edit_mDirectorLink.value = oneCard["mDirectorLink"];
+
+      edit_actorWiki1.value = oneCard["actorWiki1"];
+
+      edit_actorImg1.value = oneCard["actorImg1"];
+
+      edit_actorName1.value = oneCard["actorName1"];
+
+      edit_actorWiki2.value = oneCard["actorWiki2"];
+
+      edit_actorImg2.value = oneCard["actorImg2"];
+
+      edit_actorName2.value = oneCard["actorName2"];
+
+      edit_actorWiki3.value = oneCard["actorWiki3"];
+
+      edit_actorImg3.value = oneCard["actorImg3"];
+
+      edit_actorName3.value = oneCard["actorName3"];
+
+      edit_actorWiki4.value = oneCard["actorWiki4"];
+
+      edit_actorImg4.value = oneCard["actorImg4"];
+
+      edit_actorName4.value = oneCard["actorName4"];
+
+      edit_actorWiki5.value = oneCard["actorWiki5"];
+
+      edit_actorImg5.value = oneCard["actorImg5"];
+
+      edit_actorName5.value = oneCard["actorName5"];
+
+      edit_actorWiki6.value = oneCard["actorWiki6"];
+
+      edit_actorImg6.value = oneCard["actorImg6"];
+
+      edit_actorName6.value = oneCard["actorName6"];
+
+      edit_actorWiki7.value = oneCard["actorWiki7"];
+
+      edit_actorImg7.value = oneCard["actorImg7"];
+
+      edit_actorName7.value = oneCard["actorName7"];
+
+      edit_awardName.value = oneCard["awardName"];
+
+      edit_awardWiki.value = oneCard["awardWiki"];
+
+      edit_movieLink.value = oneCard["movieLink"];
+
+      edit_movieType.value = oneCard["movietype"];
+
+      let form = document.getElementById("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let updates = {};
+
+        let image_url = document.getElementById("image_url").value;
+        updates["image"] = image_url;
+
+        let rating = document.getElementById("rating").value;
+
+        updates["rate"] = rating;
+
+        let title = document.getElementById("title").value;
+
+        updates["title"] = title;
+
+        let link = document.getElementById("link").value;
+
+        updates["link"] = link;
+
+        let story = document.getElementById("story").value;
+        updates["story"] = story;
+
+        let releaseDate = document.getElementById("releaseDate").value;
+        updates["releaseDate"] = releaseDate;
+
+        let directorName = document.getElementById("directorName").value;
+        updates["directorName"] = directorName;
+
+        let mDirectorName = document.getElementById("mDirectorName").value;
+        updates["mDirectorName"] = mDirectorName;
+
+        let directorLink = document.getElementById("directorLink").value;
+        updates["directorLink"] = directorLink;
+
+        let mDirectorLink = document.getElementById("mDirectorLink").value;
+        updates["mDirectorLink"] = mDirectorLink;
+
+        let actorWiki1 = document.getElementById("actorWiki1").value;
+        updates["actorWiki1"] = actorWiki1;
+
+        let actorImg1 = document.getElementById("actorImg1").value;
+        updates["actorImg1"] = actorImg1;
+
+        let actorName1 = document.getElementById("actorName1").value;
+        updates["actorName1"] = actorName1;
+
+        let actorWiki2 = document.getElementById("actorWiki2").value;
+        updates["actorWiki2"] = actorWiki2;
+
+        let actorImg2 = document.getElementById("actorImg2").value;
+        updates["actorImg2"] = actorImg2;
+
+        let actorName2 = document.getElementById("actorName2").value;
+        updates["actorName2"] = actorName2;
+
+        let actorWiki3 = document.getElementById("actorWiki3").value;
+        updates["actorWiki3"] = actorWiki3;
+
+        let actorImg3 = document.getElementById("actorImg3").value;
+        updates["actorImg3"] = actorImg3;
+
+        let actorName3 = document.getElementById("actorName3").value;
+        updates["actorName3"] = actorName3;
+
+        let actorWiki4 = document.getElementById("actorWiki4").value;
+        updates["actorWiki4"] = actorWiki4;
+
+        let actorImg4 = document.getElementById("actorImg4").value;
+        updates["actorImg4"] = actorImg4;
+
+        let actorName4 = document.getElementById("actorName4").value;
+        updates["actorName4"] = actorName4;
+
+        let actorWiki5 = document.getElementById("actorWiki5").value;
+        updates["actorWiki5"] = actorWiki5;
+
+        let actorImg5 = document.getElementById("actorImg5").value;
+        updates["actorImg5"] = actorImg5;
+
+        let actorName5 = document.getElementById("actorName5").value;
+        updates["actorName5"] = actorName5;
+
+        let actorWiki6 = document.getElementById("actorWiki6").value;
+        updates["actorWiki6"] = actorWiki6;
+
+        let actorImg6 = document.getElementById("actorImg6").value;
+        updates["actorImg6"] = actorImg6;
+
+        let actorName6 = document.getElementById("actorName6").value;
+        updates["actorName6"] = actorName6;
+
+        let actorWiki7 = document.getElementById("actorWiki7").value;
+        updates["actorWiki7"] = actorWiki7;
+
+        let actorImg7 = document.getElementById("actorImg7").value;
+        updates["actorImg7"] = actorImg7;
+
+        let actorName7 = document.getElementById("actorName7").value;
+        updates["actorName7"] = actorName7;
+
+        let awardName = document.getElementById("awardname").value;
+        updates["awardName"] = awardName;
+
+        let awardWiki = document.getElementById("awardWiki").value;
+        updates["awardWiki"] = awardWiki;
+
+        let movieLink = document.getElementById("movieLink").value;
+        updates["movieLink"] = movieLink;
+
+        let movieType = document.getElementById("movietype").value;
+        updates["movietype"] = movieType;
+
+        let edit_card = Object.assign(oneCard, updates);
+
+        let index = cardarray.indexOf(oneCard);
+        console.log(index);
+
+        cardarray[index] = edit_card;
+
+        localStorage.setItem("new_card", JSON.stringify(cardarray));
+
+        alert("You have successfully updated your movie details!");
+
+        location.href = "../pages/admin_page.html";
+      });
+
+      function del() {
+        let index = cardarray.indexOf(oneCard);
+        let msg = confirm("Are you sure you want to delete this movie");
+        if (msg == true) {
+          cardarray.splice(index, 1);
+          console.log(cardarray);
+          localStorage.setItem("new_card", JSON.stringify(cardarray));
+          location.reload();
+          return;
+        } else {
+          return;
+        }
+      }
+    </script>
+  </body>
+</html>
